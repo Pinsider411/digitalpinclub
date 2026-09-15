@@ -7,15 +7,39 @@ export function BadgeMark({ className = "h-9 w-9" }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="32" cy="32" r="30" fill="#1A1D26" stroke="#7C5CFF" strokeWidth="2" />
+      <circle cx="32" cy="32" r="30" fill="#F4F1EA" stroke="#7C5CFF" strokeWidth="3" />
       <path
-        d="M32 12 L44 22 L40 40 L24 40 L20 22 Z"
-        fill="#7C5CFF"
-        opacity="0.9"
+        d="M18 38 C16 28, 24 18, 34 16"
+        stroke="#A78BFF"
+        strokeWidth="1.6"
+        fill="none"
+        strokeLinecap="round"
       />
-      <circle cx="32" cy="28" r="6" fill="#0B0C10" />
-      <rect x="28" y="36" width="8" height="10" rx="2" fill="#F4F1EA" opacity="0.85" />
-      <path d="M22 48 L32 52 L42 48" stroke="#3DDC97" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M30 48 C40 46, 48 36, 46 24"
+        stroke="#FF6B4A"
+        strokeWidth="1.6"
+        fill="none"
+        strokeLinecap="round"
+        opacity="0.85"
+      />
+      <path
+        d="M32 18 C38 18, 42 23, 42 29 C42 36, 32 46, 32 46 C32 46, 22 36, 22 29 C22 23, 26 18, 32 18 Z"
+        fill="#FF6B4A"
+      />
+      <circle cx="32" cy="28" r="4.5" fill="#F4F1EA" />
+      <path
+        d="M32 8 L33.2 11.2 L36.5 12.5 L33.2 13.8 L32 17 L30.8 13.8 L27.5 12.5 L30.8 11.2 Z"
+        fill="#3DDC97"
+      />
+      <path
+        d="M14 26 L14.9 28.2 L17.2 29.1 L14.9 30 L14 32.2 L13.1 30 L10.8 29.1 L13.1 28.2 Z"
+        fill="#3DDC97"
+      />
+      <path
+        d="M48 40 L48.7 41.8 L50.6 42.5 L48.7 43.2 L48 45 L47.3 43.2 L45.4 42.5 L47.3 41.8 Z"
+        fill="#3DDC97"
+      />
     </svg>
   );
 }
