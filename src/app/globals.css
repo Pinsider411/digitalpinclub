@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  /* Grey-forward light preview — slightly deeper cool zinc canvas */
-  --bg: #e4e4e7;
-  --surface: #d4d4d8;
+  /* Grey-forward light preview — deeper cool zinc canvas (still editorial, not dark mode) */
+  --bg: #d4d4d8;
+  --surface: #c4c4cc;
   --card: #ffffff;
-  --border: #a1a1aa;
-  --text: #18181b;
-  --muted: #52525b;
+  --border: #71717a;
+  --text: #09090b;
+  --muted: #3f3f46;
   --accent: #7c5cff;
   --accent-soft: #9b87f5;
   --live: #3ddc97;
@@ -60,9 +60,9 @@ body {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
 }
 
-/* Light glass — more white so header stays elevated on deeper canvas */
+/* Light glass — zinc-tinted elevation on deeper grey canvas */
 .glass {
-  background: color-mix(in srgb, #ffffff 78%, var(--bg));
+  background: color-mix(in srgb, #f4f4f5 65%, var(--bg));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
