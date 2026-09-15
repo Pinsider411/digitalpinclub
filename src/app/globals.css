@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f7f7f5;
-  --surface: #ffffff;
+  /* Grey-forward light preview — cool zinc canvas, no warm paper */
+  --bg: #f0f0f2;
+  --surface: #e8e8eb;
   --card: #ffffff;
-  --border: #e6e6e1;
-  --text: #111111;
-  --muted: #5c5c57;
+  --border: #d4d4d8;
+  --text: #18181b;
+  --muted: #71717a;
   --accent: #7c5cff;
-  --accent-soft: #a78bff;
+  --accent-soft: #9b87f5;
   --live: #3ddc97;
   --cta: #ff6b4a;
 }
@@ -46,7 +47,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 28%, transparent);
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
   color: var(--text);
 }
 
@@ -59,8 +60,9 @@ body {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
 }
 
+/* Light glass tuned for cool grey canvas */
 .glass {
-  background: color-mix(in srgb, #ffffff 82%, transparent);
+  background: color-mix(in srgb, #ffffff 70%, var(--bg));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
@@ -80,9 +82,9 @@ body {
   border-radius: 9999px;
 }
 
-/* Quiet soft shadow for decorative badges — no neon bloom */
+/* Quiet soft shadow — no neon bloom */
 .badge-glow {
-  filter: drop-shadow(0 6px 16px color-mix(in srgb, var(--text) 8%, transparent));
+  filter: drop-shadow(0 4px 12px color-mix(in srgb, var(--text) 6%, transparent));
 }
 
 .prose-club p {
