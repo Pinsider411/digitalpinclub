@@ -14,6 +14,10 @@ export default function HowDropsWorkPage() {
       level="Beginner"
       title="How drops work"
       description="Windows open, rotate, and close. Here is the collector’s map of storefront, capsules, bundles, and sets — without inventing odds or mint tables."
+      visual={{
+        src: "/learn/how-drops.png",
+        alt: "Original club illustration of a three-step drop flow — storefront, capsule, and pin trade — not official Disney art",
+      }}
       related={[
         { href: "/learn/editions-and-variants", label: "Editions & variants" },
         { href: "/learn/trading-and-marketplace", label: "Trading & Marketplace" },

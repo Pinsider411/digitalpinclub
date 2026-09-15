@@ -14,6 +14,10 @@ export default function PinbooksPage() {
       level="Intermediate"
       title="Pinbooks"
       description="Pinbooks are where your collection becomes a story — arrange pins, share boards, and celebrate sets without turning display into homework."
+      visual={{
+        src: "/learn/pinbook.png",
+        alt: "Original club illustration of abstract geometric pins arranged on a display board — not official Disney art",
+      }}
       related={[
         { href: "/learn/what-are-digital-pins", label: "What are digital pins?" },
         { href: "/learn/trading-and-marketplace", label: "Trading & Marketplace" },

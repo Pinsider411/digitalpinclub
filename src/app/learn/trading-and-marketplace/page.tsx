@@ -14,6 +14,10 @@ export default function TradingAndMarketplacePage() {
       level="Intermediate"
       title="Trading & Marketplace"
       description="Peer trading and the official web Marketplace are how collectors fill gaps after a drop. Digital Pin Club teaches norms — we do not run a marketplace."
+      visual={{
+        src: "/learn/trading.png",
+        alt: "Original club illustration of two pins with exchange arrows representing peer trading — not official Disney art",
+      }}
       related={[
         { href: "/learn/how-drops-work", label: "How drops work" },
         { href: "/learn/pinbooks", label: "Pinbooks" },

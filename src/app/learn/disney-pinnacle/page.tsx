@@ -14,6 +14,10 @@ export default function DisneyPinnaclePage() {
       level="Beginner"
       title="Disney Pinnacle overview"
       description="Disney Pinnacle is the official licensed digital pin experience. Digital Pin Club is the unofficial fan clubhouse next door."
+      visual={{
+        src: "/learn/hero-pin.png",
+        alt: "Original club illustration of a geometric enamel-style digital pin with a gold rim and soft purple orbit — not official Disney art",
+      }}
       related={[
         { href: "/learn/what-are-digital-pins", label: "What are digital pins?" },
         { href: "/learn/how-drops-work", label: "How drops work" },

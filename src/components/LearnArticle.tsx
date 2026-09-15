@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
+import { LearnVisual } from "@/components/LearnVisual";
 
 const OFFICIAL = "https://www.disneypinnacle.com";
 const DIGITAL_PINS_101 = "https://disneypinnacle.com/digital-pins-101";
@@ -12,6 +13,7 @@ export function LearnArticle({
   title,
   description,
   level,
+  visual,
   children,
   related = [],
 }: {
@@ -19,6 +21,7 @@ export function LearnArticle({
   title: string;
   description: string;
   level?: string;
+  visual?: { src: string; alt: string };
   children: ReactNode;
   related?: { href: string; label: string }[];
 }) {
@@ -34,6 +37,9 @@ export function LearnArticle({
         <p className="mb-2 font-mono text-xs text-accent">{level}</p>
       )}
       <PageHero eyebrow={eyebrow} title={title} description={description} />
+      {visual && (
+        <LearnVisual src={visual.src} alt={visual.alt} priority />
+      )}
 
       <article className="prose-club max-w-2xl space-y-4 text-sm">{children}</article>
 
