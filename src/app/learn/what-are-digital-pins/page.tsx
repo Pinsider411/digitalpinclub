@@ -14,10 +14,6 @@ export default function WhatAreDigitalPinsPage() {
       level="Beginner"
       title="What are digital pins?"
       description="Think classic enamel pin trading — but digital: collect, display, and trade with other collectors in an official app and on the web."
-      visual={{
-        src: "/learn/hero-pin.png",
-        alt: "Original club illustration of a geometric enamel-style digital pin with a gold rim and soft purple orbit — not official Disney art",
-      }}
       related={[
         { href: "/learn/disney-pinnacle", label: "Disney Pinnacle overview" },
         { href: "/learn/how-drops-work", label: "How drops work" },
