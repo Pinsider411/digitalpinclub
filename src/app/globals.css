@@ -8,7 +8,6 @@
   --text: #f4f1ea;
   --muted: #9aa0ae;
   --accent: #7c5cff;
-  --accent-soft: #a78bff;
   --live: #3ddc97;
   --cta: #ff6b4a;
 }
@@ -21,7 +20,6 @@
   --color-text: var(--text);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
   --color-live: var(--live);
   --color-cta: var(--cta);
   --font-sans: var(--font-inter);
