@@ -63,8 +63,7 @@ export default function CalendarPage() {
           curated {formatSnapshotDate(pinnacleReleasesSnapshotDate)}. This index lists{" "}
           <strong className="text-text">{pinnacleReleases.length} releases</strong> from
           the official Releases page (Star Wars Holiday / earliest through current), each
-          with a More info link out. Some older cards may lack parsed date windows — always
-          check the{" "}
+          with a More info link out and availability window. Always check the{" "}
           <a
             href={officialReleasesUrl}
             target="_blank"
