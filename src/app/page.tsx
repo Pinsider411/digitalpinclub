@@ -3,6 +3,12 @@ import { FloatingBadges } from "@/components/FloatingBadges";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { DigestForm } from "@/components/DigestForm";
 import { Section } from "@/components/Section";
+import {
+  clubFounder,
+  formatCount,
+  formatUsd,
+  spotlightsData,
+} from "@/data/spotlights";
 
 const trustChips = ["Independent", "Calendar", "Guides", "PinSider data"];
 
@@ -186,42 +192,63 @@ export default function HomePage() {
             <h2 className="mt-2 font-display text-3xl font-semibold text-text sm:text-4xl">
               Collectors in the club
             </h2>
+            <p className="mt-2 max-w-xl text-sm text-muted">
+              Rotates weekly · stats from Watch Pinnacle indexed activity.
+            </p>
           </div>
           <Link href="/spotlights" className="text-sm text-accent hover:underline">
             All spotlights →
           </Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <article className="card p-6 sm:col-span-2 lg:col-span-1">
-            <p className="font-mono text-xs text-live">Founder</p>
+          <article className="card border-accent/40 p-6 sm:col-span-2 lg:col-span-1">
+            <p className="font-mono text-xs text-live">Club founder</p>
             <h3 className="mt-2 font-display text-xl font-semibold text-text">
-              @apache1999
+              {clubFounder.handle}
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              Building Digital Pin Club and PinSider so collectors have a warm home base
-              and a clear data desk — without the store energy.
-            </p>
+            <p className="mt-1 font-mono text-[11px] text-accent">{clubFounder.role}</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">{clubFounder.blurb}</p>
           </article>
-          <article className="card p-6">
-            <p className="font-mono text-xs text-muted">Member</p>
-            <h3 className="mt-2 font-display text-xl font-semibold text-text">
-              @boardbuilder
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              Placeholder spotlight — thematic boards, patient trades, and Sunday digest
-              notes.
-            </p>
-          </article>
-          <article className="card p-6">
-            <p className="font-mono text-xs text-muted">Member</p>
-            <h3 className="mt-2 font-display text-xl font-semibold text-text">
-              @dropwatcher
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              Placeholder spotlight — calendar hawks who help the club never miss a set.
-            </p>
-          </article>
+          {spotlightsData.collectors.slice(0, 2).map((c) => (
+            <article key={c.address} className="card p-6">
+              {c.rankLabel ? (
+                <p className="font-mono text-xs text-accent">{c.rankLabel}</p>
+              ) : (
+                <p className="font-mono text-xs text-muted">Featured collector</p>
+              )}
+              <h3 className="mt-2 font-display text-xl font-semibold text-text">
+                {c.handle}
+              </h3>
+              <p className="mt-2 text-sm text-muted">
+                {formatCount(c.pinsHeld)} pins · {formatUsd(c.valueAsp)} ASP
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {c.badges.slice(0, 3).map((b) => (
+                  <span
+                    key={b}
+                    className="pill border border-border px-2 py-0.5 font-mono text-[10px] text-muted"
+                  >
+                    {b}
+                  </span>
+                ))}
+              </div>
+              <a
+                href={c.profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block text-sm text-accent hover:underline"
+              >
+                View on Watch Pinnacle →
+              </a>
+            </article>
+          ))}
         </div>
+        <p className="mt-4 text-xs text-muted">
+          Stats attributed to Watch Pinnacle public profiles · estimates only ·{" "}
+          <Link href="/spotlights" className="text-accent hover:underline">
+            see all six spotlights
+          </Link>
+        </p>
       </Section>
 
       {/* PinSider panel */}
