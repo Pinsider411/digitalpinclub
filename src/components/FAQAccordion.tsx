@@ -1,11 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useState, type ReactNode } from "react";
 
-const faqs = [
+const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "Is Digital Pin Club official?",
-    a: "No. Digital Pin Club is an independent fan community for collectors. We are not affiliated with, endorsed by, or sponsored by The Walt Disney Company, Dapper Labs, or Disney Pinnacle.",
+    a: (
+      <>
+        No. Digital Pin Club is an independent fan community for collectors. We are not
+        affiliated with, endorsed by, or sponsored by The Walt Disney Company, Dapper Labs,
+        or Disney Pinnacle. The official product is{" "}
+        <a
+          href="https://www.disneypinnacle.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent underline-offset-2 hover:underline"
+        >
+          Disney Pinnacle
+        </a>
+        .
+      </>
+    ),
   },
   {
     q: "Does it cost anything to join?",
@@ -13,15 +29,49 @@ const faqs = [
   },
   {
     q: "What are digital pins?",
-    a: "Digital pins are collectible digital enamel-style pins you can collect, trade, and display on a board in apps like Disney Pinnacle. Think pin trading for the digital era — rarities, drops, sets, and community culture included.",
+    a: (
+      <>
+        Digital pins are collectible digital enamel-style pins you can collect, trade, and
+        display in Pinbooks in Disney Pinnacle. Read our guide:{" "}
+        <Link href="/learn/what-are-digital-pins" className="text-accent underline-offset-2 hover:underline">
+          What are digital pins?
+        </Link>
+      </>
+    ),
   },
   {
     q: "Where do people trade?",
-    a: "Collectors trade inside the official app and through community channels. Digital Pin Club helps you learn norms, follow drops, and find people — we don’t run a marketplace on this site.",
+    a: (
+      <>
+        Collectors trade inside the official app (Trade Links / offers) and on the official
+        web Marketplace. Digital Pin Club helps you learn norms — we don’t run a marketplace
+        on this site. See{" "}
+        <Link href="/learn/trading-and-marketplace" className="text-accent underline-offset-2 hover:underline">
+          Trading &amp; Marketplace
+        </Link>
+        .
+      </>
+    ),
   },
   {
     q: "I’m brand new. Where should I start?",
-    a: "Head to Start Here for a friendly onboarding path, then browse Learn for guides and Calendar for upcoming drops and hangouts.",
+    a: (
+      <>
+        Head to{" "}
+        <Link href="/start" className="text-accent underline-offset-2 hover:underline">
+          Start Here
+        </Link>{" "}
+        for a friendly path, then browse{" "}
+        <Link href="/learn" className="text-accent underline-offset-2 hover:underline">
+          Learn
+        </Link>{" "}
+        for guides and{" "}
+        <Link href="/calendar" className="text-accent underline-offset-2 hover:underline">
+          Calendar
+        </Link>{" "}
+        for upcoming drops and hangouts.
+      </>
+    ),
   },
 ];
 
