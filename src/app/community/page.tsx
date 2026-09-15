@@ -1,0 +1,73 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { PageHero } from "@/components/PageHero";
+import { Section } from "@/components/Section";
+
+export const metadata: Metadata = {
+  title: "Community",
+  description: "Join Digital Pin Club — free, unofficial, run by collectors.",
+};
+
+export default function CommunityPage() {
+  return (
+    <Section>
+      <PageHero
+        eyebrow="Join"
+        title="Find your people."
+        description="Digital Pin Club is the join destination — a warm clubhouse for collectors who want conversation, calendar, and culture without a storefront."
+      />
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="card p-8">
+          <h2 className="font-display text-2xl font-semibold text-text">What you get</h2>
+          <ul className="mt-4 space-y-3 text-sm text-muted">
+            <li className="flex gap-2">
+              <span className="text-live">✓</span> Hangouts and open chats
+            </li>
+            <li className="flex gap-2">
+              <span className="text-live">✓</span> Spotlights and board culture
+            </li>
+            <li className="flex gap-2">
+              <span className="text-live">✓</span> Shared calendar of drops
+            </li>
+            <li className="flex gap-2">
+              <span className="text-live">✓</span> Guides written by collectors
+            </li>
+            <li className="flex gap-2">
+              <span className="text-live">✓</span> Free to join — forever on this site
+            </li>
+          </ul>
+        </div>
+        <div className="card border-accent/40 p-8">
+          <p className="font-mono text-xs text-accent">Ready?</p>
+          <h2 className="mt-2 font-display text-2xl font-semibold text-text">
+            Join the Club
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            Community channels will plug in here (Discord / social / email). For v1, say
+            hello via Contact or follow PinSider while we wire the clubhouse link.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="pill bg-cta px-5 py-2.5 text-sm font-medium text-white"
+            >
+              Say hello
+            </Link>
+            <a
+              href="https://pinsider.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pill border border-border px-5 py-2.5 text-sm text-text"
+            >
+              Visit PinSider
+            </a>
+          </div>
+        </div>
+      </div>
+      <p className="mt-8 text-sm text-muted">
+        Unofficial fan community. Not affiliated with Disney, Dapper Labs, or Disney
+        Pinnacle.
+      </p>
+    </Section>
+  );
+}

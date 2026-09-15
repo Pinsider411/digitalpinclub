@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0b0c10;
+  --surface: #14161c;
+  --card: #1a1d26;
+  --border: #2a2e3a;
+  --text: #f4f1ea;
+  --muted: #9aa0ae;
+  --accent: #7c5cff;
+  --live: #3ddc97;
+  --cta: #ff6b4a;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-live: var(--live);
+  --color-cta: var(--cta);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-inter-tight);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 40%, transparent);
+  color: var(--text);
+}
+
+.font-display {
+  font-family: var(--font-inter-tight), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-mono {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+}
+
+.glass {
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.hairline {
+  border: 1px solid var(--border);
+}
+
+.pill {
+  border-radius: 9999px;
+}
+
+.badge-glow {
+  filter: drop-shadow(0 0 24px color-mix(in srgb, var(--accent) 45%, transparent));
+}
+
+.prose-club p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.prose-club a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
