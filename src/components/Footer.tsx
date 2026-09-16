@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BadgeMark } from "./BadgeMark";
+import { SocialLinks } from "./SocialLinks";
 
 const links = [
   { href: "/about", label: "About" },
@@ -45,6 +46,14 @@ export function Footer() {
             </a>
           </nav>
         </div>
+
+        <div className="mt-8 border-t border-border pt-6">
+          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-accent">
+            Find us
+          </p>
+          <SocialLinks variant="footer" />
+        </div>
+
         <p className="mt-8 font-mono text-xs text-muted">
           © {new Date().getFullYear()} Digital Pin Club · Unofficial fan community
         </p>

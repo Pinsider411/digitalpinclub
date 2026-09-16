@@ -7,6 +7,7 @@ import { clubPins } from "@/data/pins";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { DigestForm } from "@/components/DigestForm";
 import { Section } from "@/components/Section";
+import { FindUsSection } from "@/components/SocialLinks";
 import {
   clubFounder,
   formatCount,
@@ -339,6 +340,9 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
+
+      {/* Find us / Connect */}
+      <FindUsSection />
 
       {/* Digest */}
       <Section className="!pt-0">
