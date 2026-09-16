@@ -58,7 +58,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <Section className="!pt-8 sm:!pt-12">
+      <Section className="!pt-8 sm:!pt-12 !pb-4 sm:!pb-6">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
             <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
@@ -95,7 +95,7 @@ export default function HomePage() {
       </Section>
 
       {/* This week */}
-      <Section>
+      <Section className="!pt-4 sm:!pt-6">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-live">This week</p>
