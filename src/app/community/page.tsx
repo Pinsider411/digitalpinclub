@@ -48,15 +48,15 @@ export default function CommunityPage() {
                 Join the Club
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                Community channels will plug in here (Discord / social / email). For v1, say
-                hello via Contact or follow PinSider while we wire the clubhouse link.
+                Sign up on the Join page to get on the club roster. Hangouts and channels
+                keep evolving — Community stays the clubhouse hub.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href="/contact"
+                  href="/join"
                   className="pill bg-cta px-5 py-2.5 text-sm font-medium text-cta-text"
                 >
-                  Say hello
+                  Join the Club
                 </Link>
                 <a
                   href="https://pinsider.io"

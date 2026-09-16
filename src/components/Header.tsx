@@ -46,7 +46,7 @@ export function Header() {
               PinSider
             </Link>
             <Link
-              href="/community"
+              href="/join"
               className="pill bg-cta px-4 py-2 text-sm font-medium text-cta-text transition hover:brightness-110"
             >
               Join the Club
@@ -92,7 +92,7 @@ export function Header() {
                 PinSider
               </Link>
               <Link
-                href="/community"
+                href="/join"
                 className="pill mt-1 inline-flex w-fit bg-cta px-4 py-2 text-sm font-medium text-cta-text"
                 onClick={() => setOpen(false)}
               >

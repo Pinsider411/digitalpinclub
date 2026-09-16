@@ -75,7 +75,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/community"
+                href="/join"
                 className="pill bg-cta px-6 py-3 text-sm font-medium text-cta-text transition hover:brightness-110"
               >
                 Join the Club

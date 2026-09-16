@@ -32,7 +32,7 @@ export default function AboutPage() {
         </p>
       </div>
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/community" className="pill bg-cta px-5 py-2.5 text-sm font-medium text-cta-text">
+        <Link href="/join" className="pill bg-cta px-5 py-2.5 text-sm font-medium text-cta-text">
           Join the Club
         </Link>
         <Link href="/disclaimer" className="pill border border-border px-5 py-2.5 text-sm text-text">

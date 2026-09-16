@@ -48,7 +48,7 @@ const steps = [
     n: "05",
     title: "Join the clubhouse",
     body: "Community is where collectors hang out. Introduce yourself, ask questions, and show a Pinbook when you’re ready.",
-    href: "/community",
+    href: "/join",
     linkLabel: "Join the Club",
   },
   {
@@ -152,7 +152,7 @@ export default function StartPage() {
         <Link href="/learn/glossary" className="pill border border-border px-5 py-2.5 text-sm text-text">
           Glossary
         </Link>
-        <Link href="/community" className="pill border border-border px-5 py-2.5 text-sm text-text">
+        <Link href="/join" className="pill border border-border px-5 py-2.5 text-sm text-text">
           Join the Club
         </Link>
       </div>

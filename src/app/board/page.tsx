@@ -27,7 +27,7 @@ export default function BoardPage() {
           <Link href="/spotlights" className="pill bg-accent px-5 py-2.5 text-sm font-medium text-cta-text">
             Spotlights
           </Link>
-          <Link href="/community" className="pill border border-border px-5 py-2.5 text-sm text-text">
+          <Link href="/join" className="pill border border-border px-5 py-2.5 text-sm text-text">
             Join the Club
           </Link>
         </div>

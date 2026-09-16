@@ -35,7 +35,8 @@ Open [http://localhost:3000](http://localhost:3000).
 - `/start` — New collector onboarding
 - `/learn` — Guides
 - `/calendar` — Drops & hangouts
-- `/community` — Join destination
+- `/join` — Join the Club signup
+- `/community` — Community clubhouse
 - `/spotlights` — Collector spotlights
 - `/board` — Board showcase (placeholder)
 - `/news` — Club news
