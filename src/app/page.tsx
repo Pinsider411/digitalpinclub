@@ -58,8 +58,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <Section className="!pt-10 sm:!pt-16">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <Section className="!pt-8 sm:!pt-12">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
             <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
               The Clubhouse
@@ -96,7 +96,7 @@ export default function HomePage() {
 
       {/* This week */}
       <Section>
-        <div className="mb-8 flex items-end justify-between gap-4">
+        <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-live">This week</p>
             <h2 className="mt-2 font-display text-3xl font-semibold text-text sm:text-4xl">
@@ -160,7 +160,7 @@ export default function HomePage() {
 
       {/* Full-width band */}
       <div className="border-y border-border bg-surface">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 sm:flex-row sm:items-center sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-10 sm:flex-row sm:items-center sm:px-6">
           <div>
             <h2 className="font-display text-2xl font-semibold text-text sm:text-3xl">
               Never collected a digital pin?
@@ -178,7 +178,7 @@ export default function HomePage() {
 
       {/* Spotlights */}
       <Section>
-        <div className="mb-8 flex items-end justify-between">
+        <div className="mb-6 flex items-end justify-between">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-accent">
               Spotlights
