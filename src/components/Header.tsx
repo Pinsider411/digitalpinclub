@@ -21,7 +21,7 @@ export function Header() {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
             <BadgeMark className="h-8 w-8" />
-            <span className="font-display text-base font-semibold text-text sm:text-lg">
+            <span className="font-display text-base font-semibold text-accent sm:text-lg">
               Digital Pin Club
             </span>
           </Link>
@@ -31,7 +31,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm text-muted transition hover:text-text"
+                className="text-sm text-muted transition hover:text-accent-soft"
               >
                 {item.label}
               </Link>
@@ -47,7 +47,7 @@ export function Header() {
             </Link>
             <Link
               href="/community"
-              className="pill bg-cta px-4 py-2 text-sm font-medium text-white transition hover:brightness-110"
+              className="pill bg-cta px-4 py-2 text-sm font-medium text-cta-text transition hover:brightness-110"
             >
               Join the Club
             </Link>
@@ -78,7 +78,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-muted hover:text-text"
+                  className="text-sm text-muted hover:text-accent-soft"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -93,7 +93,7 @@ export function Header() {
               </Link>
               <Link
                 href="/community"
-                className="pill mt-1 inline-flex w-fit bg-cta px-4 py-2 text-sm font-medium text-white"
+                className="pill mt-1 inline-flex w-fit bg-cta px-4 py-2 text-sm font-medium text-cta-text"
                 onClick={() => setOpen(false)}
               >
                 Join the Club

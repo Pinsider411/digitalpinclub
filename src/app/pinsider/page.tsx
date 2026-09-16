@@ -50,7 +50,7 @@ export default function PinSiderPage() {
             href="https://pinsider.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="pill bg-accent px-5 py-2.5 text-sm font-medium text-white hover:brightness-110"
+            className="pill bg-accent px-5 py-2.5 text-sm font-medium text-cta-text hover:brightness-110"
           >
             Go to pinsider.io
           </a>

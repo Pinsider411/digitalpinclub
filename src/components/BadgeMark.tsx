@@ -4,18 +4,31 @@ export function BadgeMark({ className = "h-9 w-9" }: { className?: string }) {
       viewBox="0 0 64 64"
       className={className}
       aria-hidden="true"
-      fill="none"
+      role="img"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="32" cy="32" r="30" fill="#1A1D26" stroke="#7C5CFF" strokeWidth="2" />
+      <defs>
+        <linearGradient id="badge-gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#F0D78C" />
+          <stop offset="45%" stopColor="#D4AF37" />
+          <stop offset="100%" stopColor="#A8892A" />
+        </linearGradient>
+      </defs>
+      <circle cx="32" cy="32" r="30" fill="#0A1628" stroke="url(#badge-gold)" strokeWidth="2.5" />
+      <circle cx="32" cy="32" r="24" fill="none" stroke="#D4AF37" strokeWidth="1" opacity="0.55" />
+      <path d="M32 14 L42 22 L39 38 L32 44 L25 38 L22 22 Z" fill="url(#badge-gold)" />
+      <circle cx="32" cy="26" r="5" fill="#0A1628" />
+      <rect x="29" y="32" width="6" height="8" rx="1.5" fill="#0A1628" opacity="0.85" />
       <path
-        d="M32 12 L44 22 L40 40 L24 40 L20 22 Z"
-        fill="#7C5CFF"
+        d="M48 18 L49 20.5 L51.5 21.5 L49 22.5 L48 25 L47 22.5 L44.5 21.5 L47 20.5 Z"
+        fill="#F0D78C"
         opacity="0.9"
       />
-      <circle cx="32" cy="28" r="6" fill="#0B0C10" />
-      <rect x="28" y="36" width="8" height="10" rx="2" fill="#F4F1EA" opacity="0.85" />
-      <path d="M22 48 L32 52 L42 48" stroke="#3DDC97" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M16 40 L16.7 41.8 L18.5 42.5 L16.7 43.2 L16 45 L15.3 43.2 L13.5 42.5 L15.3 41.8 Z"
+        fill="#F0D78C"
+        opacity="0.75"
+      />
     </svg>
   );
 }

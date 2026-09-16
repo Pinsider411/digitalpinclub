@@ -114,7 +114,7 @@ export default function StartPage() {
         Disney Pinnacle.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link href="/learn" className="pill bg-accent px-5 py-2.5 text-sm font-medium text-white">
+        <Link href="/learn" className="pill bg-accent px-5 py-2.5 text-sm font-medium text-cta-text">
           Browse Learn
         </Link>
         <Link href="/learn/glossary" className="pill border border-border px-5 py-2.5 text-sm text-text">

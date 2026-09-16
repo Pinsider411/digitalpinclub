@@ -200,7 +200,7 @@ export default function SpotlightsPage() {
             href={watchPinnacleSpotlightUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex pill bg-accent px-5 py-2.5 text-sm font-medium text-white transition hover:brightness-110"
+            className="mt-4 inline-flex pill bg-accent px-5 py-2.5 text-sm font-medium text-cta-text transition hover:brightness-110"
           >
             See Collector of the Day on Watch Pinnacle →
           </a>

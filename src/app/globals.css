@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* Grey-forward light preview — deeper cool zinc canvas (still editorial, not dark mode) */
-  --bg: #d4d4d8;
-  --surface: #c4c4cc;
-  --card: #ffffff;
-  --border: #71717a;
-  --text: #09090b;
-  --muted: #3f3f46;
-  --accent: #7c5cff;
-  --accent-soft: #9b87f5;
-  --live: #3ddc97;
-  --cta: #ff6b4a;
+  /* Navy-gold soft luxury club — PREVIEW ONLY (locked tokens) */
+  --bg: #0A1628;
+  --surface: #0F1F38;
+  --card: #13243F;
+  --border: #2A3F5F;
+  --text: #F5F0E6;
+  --muted: #9AA8BC;
+  --accent: #D4AF37;
+  --accent-soft: #F0D78C;
+  --accent-deep: #A8892A;
+  --live: #5B9FD4;
+  --cta: #D4AF37;
+  --cta-text: #0A1628;
 }
 
 @theme inline {
@@ -23,8 +25,10 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-accent-deep: var(--accent-deep);
   --color-live: var(--live);
   --color-cta: var(--cta);
+  --color-cta-text: var(--cta-text);
   --font-sans: var(--font-inter);
   --font-display: var(--font-inter-tight);
   --font-mono: var(--font-ibm-plex-mono);
@@ -47,7 +51,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
   color: var(--text);
 }
 
@@ -60,12 +64,12 @@ body {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
 }
 
-/* Light glass — zinc-tinted elevation on deeper grey canvas */
+/* Navy glass — soft gold wash at low opacity, no neon bloom */
 .glass {
-  background: color-mix(in srgb, #f4f4f5 65%, var(--bg));
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
 }
 
 .card {
@@ -82,9 +86,9 @@ body {
   border-radius: 9999px;
 }
 
-/* Quiet soft shadow — no neon bloom */
+/* Soft gold elevation — no neon crypto bloom */
 .badge-glow {
-  filter: drop-shadow(0 4px 12px color-mix(in srgb, var(--text) 6%, transparent));
+  filter: drop-shadow(0 6px 16px color-mix(in srgb, var(--accent) 16%, transparent));
 }
 
 .prose-club p {
@@ -96,4 +100,9 @@ body {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* Soft gold hover wash on navy */
+.gold-wash:hover {
+  background: color-mix(in srgb, var(--accent) 10%, var(--card));
 }

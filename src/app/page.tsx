@@ -72,7 +72,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/community"
-                className="pill bg-cta px-6 py-3 text-sm font-medium text-white transition hover:brightness-110"
+                className="pill bg-cta px-6 py-3 text-sm font-medium text-cta-text transition hover:brightness-110"
               >
                 Join the Club
               </Link>
@@ -152,7 +152,7 @@ export default function HomePage() {
             <Link
               key={p.href}
               href={p.href}
-              className="card group p-6 transition hover:border-accent"
+              className="card gold-wash group p-6 transition hover:border-accent"
             >
               <h3 className="font-display text-xl font-semibold text-text group-hover:text-accent">
                 {p.title}
@@ -175,7 +175,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/start"
-            className="pill bg-accent px-6 py-3 text-sm font-medium text-white transition hover:brightness-110"
+            className="pill bg-accent px-6 py-3 text-sm font-medium text-cta-text transition hover:brightness-110"
           >
             Start here
           </Link>
@@ -283,7 +283,7 @@ export default function HomePage() {
                   href="https://pinsider.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pill bg-accent px-5 py-2.5 text-sm font-medium text-white hover:brightness-110"
+                  className="pill bg-accent px-5 py-2.5 text-sm font-medium text-cta-text hover:brightness-110"
                 >
                   Open PinSider
                 </a>

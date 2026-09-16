@@ -17,7 +17,7 @@ export function Footer() {
           <div className="max-w-md">
             <div className="mb-3 flex items-center gap-2">
               <BadgeMark className="h-7 w-7" />
-              <span className="font-display font-semibold text-text">Digital Pin Club</span>
+              <span className="font-display font-semibold text-accent">Digital Pin Club</span>
             </div>
             <p className="text-sm leading-relaxed text-muted">
               Digital Pin Club is an independent fan community. Not affiliated with,

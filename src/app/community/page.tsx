@@ -49,7 +49,7 @@ export default function CommunityPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="pill bg-cta px-5 py-2.5 text-sm font-medium text-white"
+              className="pill bg-cta px-5 py-2.5 text-sm font-medium text-cta-text"
             >
               Say hello
             </Link>

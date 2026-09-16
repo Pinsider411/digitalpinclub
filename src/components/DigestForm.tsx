@@ -40,7 +40,7 @@ export function DigestForm() {
       />
       <button
         type="submit"
-        className="pill shrink-0 bg-accent px-6 py-3 text-sm font-medium text-white transition hover:brightness-110"
+        className="pill shrink-0 bg-accent px-6 py-3 text-sm font-medium text-cta-text transition hover:brightness-110"
       >
         Get the digest
       </button>
