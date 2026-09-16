@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
+import { PinMedia } from "@/components/PinMedia";
+import { PinDisclaimer } from "@/components/PinDisclaimer";
+import { clubPins } from "@/data/pins";
 
 export const metadata: Metadata = {
   title: "Start here",
@@ -65,6 +68,35 @@ export default function StartPage() {
         title="New? Start here."
         description="A short, warm path into digital pin collecting — no gatekeeping, no store pitch. Just what you need to feel at home."
       />
+
+      <aside className="mb-10 flex flex-col gap-4 rounded-[20px] border border-border bg-surface p-5 sm:flex-row sm:items-center sm:gap-6 sm:p-6">
+        <figure className="mx-auto w-36 shrink-0 sm:mx-0">
+          <PinMedia
+            pin={clubPins.fantasia85}
+            autoPlay={false}
+            className="aspect-square rounded-2xl border border-border bg-bg/60 p-2"
+            imgClassName="object-contain"
+            sizes="144px"
+          />
+          <figcaption className="mt-2 text-center font-mono text-[10px] text-muted sm:text-left">
+            Club example · what a digital pin can look like
+          </figcaption>
+        </figure>
+        <div className="min-w-0">
+          <p className="font-mono text-xs uppercase tracking-widest text-accent">
+            Visual peek
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Digital pins are enamel-inspired collectibles you display in Pinbooks —
+            shiny borders, character art, anniversary marks. The still below is a club
+            example collectors talk about, not an official product page.
+          </p>
+          <div className="mt-3">
+            <PinDisclaimer />
+          </div>
+        </div>
+      </aside>
+
       <ol className="space-y-4">
         {steps.map((s) => (
           <li key={s.n} className="card flex gap-5 p-6">

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LearnArticle } from "@/components/LearnArticle";
+import { PinMedia } from "@/components/PinMedia";
+import { PinDisclaimer } from "@/components/PinDisclaimer";
+import { clubPins } from "@/data/pins";
 
 export const metadata: Metadata = {
   title: "What are digital pins?",
@@ -38,6 +41,29 @@ export default function WhatAreDigitalPinsPage() {
         to enjoy the hobby — the app handles wallets and settlement so you can focus on
         sets, boards, and fair trades.
       </p>
+      <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-border bg-surface">
+        <div className="mx-auto max-w-[220px] px-4 pt-5">
+          <PinMedia
+            pin={clubPins.miguel}
+            autoPlay={false}
+            className="aspect-square"
+            imgClassName="object-contain"
+            sizes="220px"
+          />
+        </div>
+        <figcaption className="border-t border-border px-4 py-4">
+          <p className="font-display text-base font-semibold text-text">
+            {clubPins.miguel.title}
+          </p>
+          <p className="mt-1 text-sm text-muted">
+            Club example of what a digital pin looks like — enamel-style art with a
+            metallic frame. Caption from collector talk, not an official storefront.
+          </p>
+          <div className="mt-3">
+            <PinDisclaimer />
+          </div>
+        </figcaption>
+      </figure>
       <h2 className="!mt-8 font-display text-xl font-semibold text-text">
         Why collectors care
       </h2>

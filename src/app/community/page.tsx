@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
+import { PinMedia } from "@/components/PinMedia";
+import { PinDisclaimer } from "@/components/PinDisclaimer";
+import { clubPins } from "@/data/pins";
 
 export const metadata: Metadata = {
   title: "Community",
@@ -37,30 +40,49 @@ export default function CommunityPage() {
             </li>
           </ul>
         </div>
-        <div className="card border-accent/40 p-8">
-          <p className="font-mono text-xs text-accent">Ready?</p>
-          <h2 className="mt-2 font-display text-2xl font-semibold text-text">
-            Join the Club
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted">
-            Community channels will plug in here (Discord / social / email). For v1, say
-            hello via Contact or follow PinSider while we wire the clubhouse link.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="pill bg-cta px-5 py-2.5 text-sm font-medium text-cta-text"
-            >
-              Say hello
-            </Link>
-            <a
-              href="https://pinsider.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pill border border-border px-5 py-2.5 text-sm text-text"
-            >
-              Visit PinSider
-            </a>
+        <div className="card border-accent/40 overflow-hidden p-0">
+          <div className="flex gap-4 p-8">
+            <div className="min-w-0 flex-1">
+              <p className="font-mono text-xs text-accent">Ready?</p>
+              <h2 className="mt-2 font-display text-2xl font-semibold text-text">
+                Join the Club
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                Community channels will plug in here (Discord / social / email). For v1, say
+                hello via Contact or follow PinSider while we wire the clubhouse link.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="pill bg-cta px-5 py-2.5 text-sm font-medium text-cta-text"
+                >
+                  Say hello
+                </Link>
+                <a
+                  href="https://pinsider.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pill border border-border px-5 py-2.5 text-sm text-text"
+                >
+                  Visit PinSider
+                </a>
+              </div>
+            </div>
+            <figure className="w-24 shrink-0 self-start">
+              <PinMedia
+                pin={clubPins.pluto}
+                autoPlay={false}
+                className="aspect-square rounded-xl border border-border bg-bg/60 p-1"
+                imgClassName="object-contain"
+                sizes="96px"
+              />
+              <figcaption className="mt-2 font-mono text-[10px] text-muted">
+                Club example
+              </figcaption>
+            </figure>
+          </div>
+          <div className="border-t border-border px-8 py-3">
+            <PinDisclaimer />
           </div>
         </div>
       </div>
