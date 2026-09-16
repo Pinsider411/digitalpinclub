@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Grey-forward light preview — deeper cool zinc canvas (still editorial, not dark mode) */
+  /* Grey-modern clubhouse — hobby catalog, not crypto chrome */
   --bg: #d4d4d8;
   --surface: #c4c4cc;
   --card: #ffffff;
@@ -10,7 +10,13 @@
   --muted: #3f3f46;
   --accent: #7c5cff;
   --accent-soft: #9b87f5;
-  --live: #3ddc97;
+  --soft-wash: #ede9fe;
+  --event: #e8a317;
+  /* Quiet success / live-on (non-urgent) — teal over neon mint */
+  --live: #0e7490;
+  /* Drop-week only — keep mint where already wired */
+  --drop: #3ddc97;
+  /* Primary Join CTA — coral stays */
   --cta: #ff6b4a;
 }
 
@@ -23,7 +29,10 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-soft-wash: var(--soft-wash);
+  --color-event: var(--event);
   --color-live: var(--live);
+  --color-drop: var(--drop);
   --color-cta: var(--cta);
   --font-sans: var(--font-inter);
   --font-display: var(--font-inter-tight);
@@ -60,18 +69,16 @@ body {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
 }
 
-/* Light glass — zinc-tinted elevation on deeper grey canvas */
+/* Soft elevated panel — opaque clubhouse surface, not glassmorphism */
 .glass {
-  background: color-mix(in srgb, #f4f4f5 65%, var(--bg));
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: color-mix(in srgb, var(--card) 88%, var(--soft-wash));
   border: 1px solid var(--border);
 }
 
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 12px;
 }
 
 .hairline {
@@ -82,9 +89,55 @@ body {
   border-radius: 9999px;
 }
 
-/* Quiet soft shadow — no neon bloom */
+/* Quiet elevation — soft violet wash, no neon bloom */
 .badge-glow {
-  filter: drop-shadow(0 4px 12px color-mix(in srgb, var(--text) 6%, transparent));
+  filter: drop-shadow(0 2px 8px color-mix(in srgb, var(--accent) 8%, transparent));
+}
+
+.soft-wash {
+  background: var(--soft-wash);
+}
+
+/* Taxonomy chips — functional color, not decorative neon */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 0.15rem 0.65rem;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.chip-new {
+  background: var(--soft-wash);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  color: var(--accent);
+}
+
+.chip-drop {
+  background: color-mix(in srgb, var(--event) 16%, var(--card));
+  border-color: color-mix(in srgb, var(--event) 40%, var(--border));
+  color: color-mix(in srgb, var(--event) 75%, var(--text));
+}
+
+.chip-iso {
+  background: color-mix(in srgb, var(--live) 12%, var(--card));
+  border-color: color-mix(in srgb, var(--live) 35%, var(--border));
+  color: var(--live);
+}
+
+.chip-haul {
+  background: color-mix(in srgb, var(--accent-soft) 18%, var(--card));
+  border-color: color-mix(in srgb, var(--accent-soft) 40%, var(--border));
+  color: color-mix(in srgb, var(--accent) 70%, var(--muted));
 }
 
 .prose-club p {

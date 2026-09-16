@@ -55,9 +55,10 @@ v1 uses in-file placeholder content (arrays in page components). A CMS can repla
 
 ## Design system (quick ref)
 
-- Background `#0B0C10` · surfaces `#14161C` · cards `#1A1D26` · borders `#2A2E3A`
-- Text `#F4F1EA` · muted `#9AA0AE`
-- Accent violet `#7C5CFF` · live `#3DDC97` · CTA `#FF6B4A`
+- Background `#D4D4D8` · surfaces `#C4C4CC` · cards `#FFFFFF` · borders `#71717A`
+- Text `#09090B` · muted `#3F3F46`
+- Accent violet `#7C5CFF` · soft wash `#EDE9FE` · event amber `#E8A317`
+- Quiet live/on `#0E7490` · drop-week mint `#3DDC97` · CTA coral `#FF6B4A`
 - Display: Inter Tight · Body: Inter · Mono: IBM Plex Mono
 
 ## License / affiliation

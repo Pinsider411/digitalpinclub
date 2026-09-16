@@ -1,13 +1,11 @@
 export function FloatingBadges() {
   return (
     <div className="relative mx-auto h-[300px] w-full max-w-md sm:h-[360px]">
-      <div className="absolute inset-0 rounded-[28px] bg-surface hairline shadow-[0_1px_2px_rgba(9,9,11,0.04)]" />
+      <div className="absolute inset-0 rounded-xl bg-surface hairline shadow-[0_1px_2px_rgba(9,9,11,0.04)]" />
+      {/* Soft violet wash — no neon bloom / mint glow gradients */}
       <div
-        className="absolute inset-8 rounded-3xl opacity-30"
-        style={{
-          background:
-            "radial-gradient(circle at 28% 28%, rgba(124,92,255,0.06), transparent 55%), radial-gradient(circle at 72% 72%, rgba(61,220,151,0.04), transparent 50%)",
-        }}
+        className="absolute inset-8 rounded-xl opacity-80"
+        style={{ background: "var(--soft-wash)" }}
       />
 
       {/* Badge 1 — geometric diamond */}
@@ -50,7 +48,7 @@ export function FloatingBadges() {
         <rect x="42" y="36" width="16" height="16" rx="3" fill="#09090B" opacity="0.12" />
       </svg>
 
-      {/* Badge 3 — ring + bar */}
+      {/* Badge 3 — ring + bar (mint kept for drop-week enamel accent) */}
       <svg
         className="badge-glow absolute bottom-[14%] left-[30%] h-20 w-20 animate-[float_6.5s_ease-in-out_infinite] sm:h-24 sm:w-24"
         viewBox="0 0 100 100"
@@ -63,8 +61,8 @@ export function FloatingBadges() {
         <rect x="34" y="62" width="32" height="10" rx="5" fill="#3DDC97" />
       </svg>
 
-      <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-border bg-surface/90 px-3 py-1.5 shadow-[0_1px_2px_rgba(9,9,11,0.04)]">
-        <span className="h-2 w-2 rounded-full bg-live" />
+      <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 shadow-[0_1px_2px_rgba(9,9,11,0.04)]">
+        <span className="h-2 w-2 rounded-full bg-drop" />
         <span className="font-mono text-xs text-muted">Drop week</span>
       </div>
 

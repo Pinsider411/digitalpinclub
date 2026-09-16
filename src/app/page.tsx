@@ -95,10 +95,7 @@ export default function HomePage() {
       <div className="border-y border-border bg-surface">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-3 px-4 py-5 sm:justify-between sm:px-6">
           {trustChips.map((chip) => (
-            <span
-              key={chip}
-              className="font-mono text-xs uppercase tracking-wider text-muted"
-            >
+            <span key={chip} className="chip chip-new">
               {chip}
             </span>
           ))}
@@ -109,7 +106,7 @@ export default function HomePage() {
       <Section>
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-live">This week</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-event">This week</p>
             <h2 className="mt-2 font-display text-3xl font-semibold text-text sm:text-4xl">
               What’s on the board
             </h2>
@@ -120,8 +117,18 @@ export default function HomePage() {
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {thisWeek.map((card) => (
-            <article key={card.title} className="glass rounded-[20px] p-5">
-              <p className="font-mono text-xs text-accent">{card.label}</p>
+            <article key={card.title} className="card p-5 transition hover:bg-soft-wash/40">
+              <span
+                className={
+                  card.label === "Next drop"
+                    ? "chip chip-drop"
+                    : card.label === "Club hangout"
+                      ? "chip chip-haul"
+                      : "chip chip-new"
+                }
+              >
+                {card.label}
+              </span>
               <h3 className="mt-2 font-display text-xl font-semibold text-text">
                 {card.title}
               </h3>
@@ -152,7 +159,7 @@ export default function HomePage() {
             <Link
               key={p.href}
               href={p.href}
-              className="card group p-6 transition hover:border-accent"
+              className="card group p-6 transition hover:border-accent hover:bg-soft-wash/50"
             >
               <h3 className="font-display text-xl font-semibold text-text group-hover:text-accent">
                 {p.title}
@@ -300,7 +307,7 @@ export default function HomePage() {
                 {["Floor pulse", "Watchlist alerts", "Set history"].map((row) => (
                   <div
                     key={row}
-                    className="flex items-center justify-between rounded-2xl border border-border bg-card px-4 py-3"
+                    className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3"
                   >
                     <span className="text-sm text-text">{row}</span>
                     <span className="font-mono text-xs text-muted">pinsider.io</span>
@@ -314,7 +321,7 @@ export default function HomePage() {
 
       {/* Digest */}
       <Section className="!pt-0">
-        <div className="rounded-[20px] border border-border bg-surface px-6 py-10 sm:px-10">
+        <div className="rounded-xl border border-border bg-surface px-6 py-10 sm:px-10">
           <p className="font-mono text-xs uppercase tracking-widest text-accent">
             Sunday digest
           </p>
