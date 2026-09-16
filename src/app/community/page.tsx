@@ -5,6 +5,7 @@ import { Section } from "@/components/Section";
 import { PinMedia } from "@/components/PinMedia";
 import { PinDisclaimer } from "@/components/PinDisclaimer";
 import { clubPins } from "@/data/pins";
+import { PinSiderMark } from "@/components/PinSiderMark";
 
 export const metadata: Metadata = {
   title: "Community",
@@ -62,9 +63,13 @@ export default function CommunityPage() {
                   href="https://pinsider.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pill border border-border px-5 py-2.5 text-sm text-text"
+                  className="pill inline-flex items-center gap-2 border border-border px-5 py-2.5 text-sm text-text hover:border-accent"
+                  aria-label="Visit PinSider"
                 >
-                  Visit PinSider
+                  <PinSiderMark className="h-5 w-5" size={20} />
+                  <span>
+                    Visit <span className="font-semibold">PinSider</span>
+                  </span>
                 </a>
               </div>
             </div>

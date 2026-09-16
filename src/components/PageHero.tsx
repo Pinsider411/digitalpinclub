@@ -1,10 +1,12 @@
+import type { ReactNode } from "react";
+
 export function PageHero({
   eyebrow,
   title,
   description,
 }: {
   eyebrow?: string;
-  title: string;
+  title: ReactNode;
   description: string;
 }) {
   return (

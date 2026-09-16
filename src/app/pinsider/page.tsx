@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
+import { PinSiderLockup, PinSiderMark } from "@/components/PinSiderMark";
 
 export const metadata: Metadata = {
   title: "PinSider",
@@ -13,7 +14,16 @@ export default function PinSiderPage() {
     <Section>
       <PageHero
         eyebrow="Data desk"
-        title="PinSider"
+        title={
+          <PinSiderLockup
+            markSize={48}
+            markClassName="h-12 w-12"
+            wordmarkSize="lg"
+            withIo
+            label="PinSider"
+            className="inline-flex items-center gap-3"
+          />
+        }
         description="The companion tool next door: prices, alerts, and history so you can collect with clearer signal. Digital Pin Club stays free — PinSider is optional."
       />
       <div className="grid gap-4 md:grid-cols-2">
@@ -50,9 +60,16 @@ export default function PinSiderPage() {
             href="https://pinsider.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="pill bg-accent px-5 py-2.5 text-sm font-medium text-cta-text hover:brightness-110"
+            className="pill inline-flex items-center gap-2 bg-accent px-5 py-2.5 text-sm font-medium text-cta-text hover:brightness-110"
+            aria-label="Go to pinsider.io"
           >
-            Go to pinsider.io
+            <PinSiderMark className="h-5 w-5 ring-[#0A1628]/20" size={20} />
+            <span>
+              Go to{" "}
+              <span className="font-semibold">
+                PinSider<span className="text-[#F0D78C]">.io</span>
+              </span>
+            </span>
           </a>
           <Link href="/community" className="pill border border-border px-5 py-2.5 text-sm text-text">
             Back to Community

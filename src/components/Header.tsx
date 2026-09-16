@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { BadgeMark } from "./BadgeMark";
+import { PinSiderLockup } from "./PinSiderMark";
 
 const nav = [
   { href: "/learn", label: "Learn" },
@@ -41,9 +42,15 @@ export function Header() {
           <div className="hidden items-center gap-4 md:flex">
             <Link
               href="/pinsider"
-              className="text-sm text-muted transition hover:text-accent"
+              className="inline-flex items-center gap-1.5 transition hover:opacity-90"
+              aria-label="PinSider"
             >
-              PinSider
+              <PinSiderLockup
+                markSize={22}
+                markClassName="h-[22px] w-[22px]"
+                wordmarkSize="sm"
+                withIo
+              />
             </Link>
             <Link
               href="/join"
@@ -86,10 +93,16 @@ export function Header() {
               ))}
               <Link
                 href="/pinsider"
-                className="text-sm text-muted hover:text-accent"
+                className="inline-flex w-fit items-center gap-1.5"
+                aria-label="PinSider"
                 onClick={() => setOpen(false)}
               >
-                PinSider
+                <PinSiderLockup
+                  markSize={22}
+                  markClassName="h-[22px] w-[22px]"
+                  wordmarkSize="sm"
+                  withIo
+                />
               </Link>
               <Link
                 href="/join"

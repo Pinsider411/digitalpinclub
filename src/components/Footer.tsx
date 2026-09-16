@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BadgeMark } from "./BadgeMark";
 import { SocialLinks } from "./SocialLinks";
+import { PinSiderLockup } from "./PinSiderMark";
 
 const links = [
   { href: "/about", label: "About" },
@@ -26,7 +27,7 @@ export function Footer() {
               Disney Pinnacle.
             </p>
           </div>
-          <nav className="flex flex-wrap gap-x-5 gap-y-2" aria-label="Footer">
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Footer">
             {links.map((l) => (
               <Link
                 key={l.href}
@@ -40,9 +41,15 @@ export function Footer() {
               href="https://pinsider.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted transition hover:text-accent"
+              className="inline-flex items-center gap-1.5 transition hover:opacity-90"
+              aria-label="PinSider"
             >
-              PinSider
+              <PinSiderLockup
+                markSize={20}
+                markClassName="h-5 w-5"
+                wordmarkSize="sm"
+                withIo
+              />
             </a>
           </nav>
         </div>

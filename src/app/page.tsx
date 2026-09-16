@@ -8,6 +8,7 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { DigestForm } from "@/components/DigestForm";
 import { Section } from "@/components/Section";
 import { FindUsSection } from "@/components/SocialLinks";
+import { PinSiderLockup, PinSiderMark, PinSiderWordmark } from "@/components/PinSiderMark";
 import {
   clubFounder,
   formatCount,
@@ -272,8 +273,14 @@ export default function HomePage() {
               <p className="font-mono text-xs uppercase tracking-widest text-accent">
                 Companion data desk
               </p>
-              <h2 className="mt-2 font-display text-3xl font-semibold text-text">
-                PinSider
+              <h2 className="mt-3">
+                <PinSiderLockup
+                  markSize={40}
+                  markClassName="h-10 w-10"
+                  wordmarkSize="lg"
+                  withIo
+                  label="PinSider"
+                />
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 Prices, alerts, and history for collectors who want signal without noise.
@@ -296,9 +303,13 @@ export default function HomePage() {
                   href="https://pinsider.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pill bg-accent px-5 py-2.5 text-sm font-medium text-cta-text hover:brightness-110"
+                  className="pill inline-flex items-center gap-2 bg-accent px-5 py-2.5 text-sm font-medium text-cta-text hover:brightness-110"
+                  aria-label="Open PinSider"
                 >
-                  Open PinSider
+                  <PinSiderMark className="h-5 w-5 ring-[#0A1628]/20" size={20} />
+                  <span>
+                    Open <span className="font-semibold">PinSider</span>
+                  </span>
                 </a>
                 <Link
                   href="/pinsider"
@@ -316,7 +327,10 @@ export default function HomePage() {
                     className="flex items-center justify-between rounded-2xl border border-border bg-card px-4 py-3"
                   >
                     <span className="text-sm text-text">{row}</span>
-                    <span className="font-mono text-xs text-muted">pinsider.io</span>
+                    <span className="inline-flex items-center gap-1.5" aria-label="pinsider.io">
+                      <PinSiderMark className="h-4 w-4" size={16} />
+                      <PinSiderWordmark withIo size="sm" className="!text-xs text-muted" />
+                    </span>
                   </div>
                 ))}
               </div>

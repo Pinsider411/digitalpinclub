@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
+import { PinSiderLockup } from "@/components/PinSiderMark";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -29,9 +30,15 @@ export default function ContactPage() {
                 href="https://pinsider.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent hover:underline"
+                className="mt-1 inline-flex items-center gap-1.5 transition hover:opacity-90"
+                aria-label="pinsider.io"
               >
-                pinsider.io
+                <PinSiderLockup
+                  markSize={22}
+                  markClassName="h-[22px] w-[22px]"
+                  wordmarkSize="sm"
+                  withIo
+                />
               </a>
             </dd>
           </div>

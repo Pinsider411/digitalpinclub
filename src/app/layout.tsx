@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Inter_Tight, IBM_Plex_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PinSiderMark } from "@/components/PinSiderMark";
 import "./globals.css";
 
 const inter = Inter({
@@ -55,15 +56,20 @@ export default function RootLayout({
         </a>
         <div className="border-b border-border bg-surface">
           <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2 text-center sm:justify-between sm:px-6">
-            <p className="font-mono text-[11px] text-muted sm:text-xs">
+            <p className="inline-flex flex-wrap items-center justify-center gap-1.5 font-mono text-[11px] text-muted sm:text-xs">
               Unofficial club · Data desk on{" "}
               <a
                 href="https://pinsider.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent underline-offset-2 hover:underline"
+                className="inline-flex items-center gap-1.5 text-accent underline-offset-2 hover:underline"
+                aria-label="PinSider"
               >
-                PinSider →
+                <PinSiderMark className="h-4 w-4" size={16} />
+                <span className="font-display text-xs font-semibold tracking-tight text-text">
+                  PinSider<span className="text-[#D4AF37]">.io</span>
+                </span>
+                <span aria-hidden="true">→</span>
               </a>
             </p>
           </div>
