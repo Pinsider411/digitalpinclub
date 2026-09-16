@@ -15,8 +15,6 @@ import {
   spotlightsData,
 } from "@/data/spotlights";
 
-const trustChips = ["Independent", "Calendar", "Guides", "PinSider data"];
-
 const thisWeek = [
   {
     label: "Next drop",
@@ -95,20 +93,6 @@ export default function HomePage() {
           <FloatingBadges />
         </div>
       </Section>
-
-      {/* Trust row */}
-      <div className="border-y border-border bg-surface">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-3 px-4 py-5 sm:justify-between sm:px-6">
-          {trustChips.map((chip) => (
-            <span
-              key={chip}
-              className="font-mono text-xs uppercase tracking-wider text-muted"
-            >
-              {chip}
-            </span>
-          ))}
-        </div>
-      </div>
 
       {/* This week */}
       <Section>
