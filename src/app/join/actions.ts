@@ -3,6 +3,7 @@
 import { getSql } from "@/lib/db";
 import { mirrorMemberToSheet } from "@/lib/sheets";
 import { DISNEY_IPS, COLLECTOR_LEVELS } from "@/lib/join-constants";
+import { sendWelcomeEmail } from "@/lib/welcome-email";
 
 export type JoinState = {
   ok: boolean;
@@ -116,6 +117,13 @@ export async function joinClub(
     } else if (mirror.reason) {
       console.info("[join]", mirror.reason);
     }
+
+    // Welcome email is best-effort — never fail signup after member is saved.
+    await sendWelcomeEmail({
+      name: row.name as string,
+      email: row.email as string,
+      memberId: row.id as string,
+    });
 
     return { ok: true };
   } catch (err: unknown) {
