@@ -9,7 +9,16 @@ import { DiscordInvite } from "@/components/DiscordInvite";
 import { PinSiderLockup, PinSiderMark, PinSiderWordmark } from "@/components/PinSiderMark";
 import { getFeaturedThisWeek } from "@/data/creators";
 
-const thisWeek = [
+const thisWeek: {
+  label: string;
+  title: string;
+  meta: string;
+  body: string;
+  href?: string;
+  logoSrc?: string;
+  cta?: string;
+  note?: string;
+}[] = [
   {
     label: "Next drop",
     title: "Weekend set tease",
@@ -17,10 +26,14 @@ const thisWeek = [
     body: "Placeholder: watch for the next digital pin drop window and set reveals.",
   },
   {
-    label: "Club hangout",
-    title: "Collector open chat",
-    meta: "Sat · 7pm PT",
-    body: "Placeholder: casual hangout for trades, tips, and board flexes.",
+    label: "Disney+ Perks",
+    title: "Monthly free digital pin",
+    meta: "Disney+ · Opt-in",
+    body: "Disney+ subscribers can opt into Disney+ Perks and redeem a monthly Mystery Capsule with an Open Edition Disney Pinnacle digital pin. Sign up with the same email as your Disney+ account — eligibility and terms live on Disney+.",
+    href: "https://www.disneyplus.com/perks",
+    logoSrc: "/brand/disney-plus/disney-plus-wordmark.svg",
+    cta: "Sign up for Perks",
+    note: "Independent tip · not affiliated with Disney+",
   },
   {
     label: "Digest",
@@ -122,13 +135,44 @@ export default function HomePage() {
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {thisWeek.map((card) => (
-            <article key={card.title} className="glass rounded-[20px] p-5">
-              <p className="font-mono text-xs text-accent">{card.label}</p>
+            <article
+              key={card.title}
+              className="glass flex flex-col rounded-[20px] p-5"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <p className="font-mono text-xs text-accent">{card.label}</p>
+                {card.logoSrc ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={card.logoSrc}
+                    alt="Disney+"
+                    width={88}
+                    height={48}
+                    className="h-5 w-auto shrink-0 opacity-90"
+                  />
+                ) : null}
+              </div>
               <h3 className="mt-2 font-display text-xl font-semibold text-text">
                 {card.title}
               </h3>
               <p className="mt-1 font-mono text-xs text-muted">{card.meta}</p>
               <p className="mt-3 text-sm leading-relaxed text-muted">{card.body}</p>
+              {card.note ? (
+                <p className="mt-3 font-mono text-[10px] leading-snug text-muted/80">
+                  {card.note}
+                </p>
+              ) : null}
+              {card.href ? (
+                <a
+                  href={card.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex w-fit items-center gap-1 rounded-full border border-accent/40 bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent transition hover:border-accent hover:bg-accent/20"
+                >
+                  {card.cta ?? "Learn more"}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ) : null}
             </article>
           ))}
         </div>
