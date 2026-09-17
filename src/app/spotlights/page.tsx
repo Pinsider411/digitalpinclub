@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
-import { PinMedia } from "@/components/PinMedia";
-import { PinDisclaimer } from "@/components/PinDisclaimer";
-import { clubPins } from "@/data/pins";
 import {
   buildSpotlightNarrative,
-  clubFounder,
   formatCount,
   formatUsd,
   spotlightsData,
@@ -143,40 +139,6 @@ export default function SpotlightsPage() {
         title="Collector spotlights"
         description="Rotates weekly · stats from Watch Pinnacle indexed activity. Faces and boards from the hobby — attributed clearly, estimated values only."
       />
-
-      {/* Club founder — separate from Watch Pinnacle featured collectors */}
-      <div className="mb-10 card border-accent/40 overflow-hidden p-0">
-        <div className="flex flex-wrap items-start justify-between gap-4 p-6 sm:p-8">
-          <div className="min-w-0 flex-1">
-            <p className="font-mono text-xs uppercase tracking-widest text-live">Club note</p>
-            <h2 className="mt-2 font-display text-2xl font-semibold text-text">
-              {clubFounder.handle}
-            </h2>
-            <p className="mt-1 font-mono text-xs text-accent">{clubFounder.role}</p>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
-              {clubFounder.blurb}
-            </p>
-          </div>
-          <figure className="w-28 shrink-0">
-            <PinMedia
-              pin={clubPins.fantasia85}
-              autoPlay={false}
-              className="aspect-square rounded-xl border border-border bg-bg/60 p-1"
-              imgClassName="object-contain"
-              sizes="112px"
-            />
-            <figcaption className="mt-2 font-mono text-[10px] text-muted">
-              Club example · {clubPins.fantasia85.title}
-            </figcaption>
-          </figure>
-          <p className="w-full font-mono text-[11px] text-muted sm:w-auto">
-            Digital Pin Club · not a WP profile
-          </p>
-        </div>
-        <div className="border-t border-border px-6 py-3 sm:px-8">
-          <PinDisclaimer />
-        </div>
-      </div>
 
       <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>

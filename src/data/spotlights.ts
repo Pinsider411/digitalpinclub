@@ -35,13 +35,6 @@ export type SpotlightsData = {
   collectors: SpotlightCollector[];
 };
 
-export const clubFounder = {
-  handle: "@apache1999",
-  role: "Founder of Digital Pin Club / Pinsider",
-  blurb:
-    "Building Digital Pin Club and Pinsider so collectors have a warm home base and a clear data desk — without the store energy.",
-} as const;
-
 export const spotlightsData: SpotlightsData = {
   updatedAt: "2026-09-15",
   sourceNote:
