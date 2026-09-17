@@ -90,7 +90,7 @@ export function JoinForm() {
 
       <div>
         <label className={label} htmlFor="handle">
-          PinSider / collector handle{" "}
+          Pinnacle/Collector handle{" "}
           <span className="font-normal text-muted">(optional)</span>
         </label>
         <input
