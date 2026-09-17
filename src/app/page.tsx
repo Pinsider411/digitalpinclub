@@ -1,21 +1,12 @@
 import Link from "next/link";
 import { FloatingBadges } from "@/components/FloatingBadges";
 import { PinsInTheClub } from "@/components/PinsInTheClub";
-import { PinMedia } from "@/components/PinMedia";
-import { PinDisclaimer } from "@/components/PinDisclaimer";
-import { clubPins } from "@/data/pins";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { DigestForm } from "@/components/DigestForm";
 import { Section } from "@/components/Section";
 import { FindUsSection } from "@/components/SocialLinks";
 import { DiscordInvite } from "@/components/DiscordInvite";
 import { PinSiderLockup, PinSiderMark, PinSiderWordmark } from "@/components/PinSiderMark";
-import {
-  clubFounder,
-  formatCount,
-  formatUsd,
-  spotlightsData,
-} from "@/data/spotlights";
 import { getFeaturedThisWeek } from "@/data/creators";
 
 const thisWeek = [
@@ -268,94 +259,6 @@ export default function HomePage() {
         >
           Watch &amp; Follow →
         </Link>
-      </Section>
-
-      {/* Spotlights */}
-      <Section>
-        <div className="mb-6 flex items-end justify-between">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-accent">
-              Spotlights
-            </p>
-            <h2 className="mt-2 font-display text-3xl font-semibold text-text sm:text-4xl">
-              Collectors in the club
-            </h2>
-            <p className="mt-2 max-w-xl text-sm text-muted">
-              Rotates weekly · stats from Watch Pinnacle indexed activity.
-            </p>
-          </div>
-          <Link href="/spotlights" className="text-sm text-accent hover:underline">
-            All spotlights →
-          </Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <article className="card border-accent/40 overflow-hidden p-0 sm:col-span-2 lg:col-span-1">
-            <div className="flex gap-4 p-6">
-              <div className="min-w-0 flex-1">
-                <p className="font-mono text-xs text-live">Club founder</p>
-                <h3 className="mt-2 font-display text-xl font-semibold text-text">
-                  {clubFounder.handle}
-                </h3>
-                <p className="mt-1 font-mono text-[11px] text-accent">{clubFounder.role}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{clubFounder.blurb}</p>
-              </div>
-              <figure className="hidden w-20 shrink-0 sm:block">
-                <PinMedia
-                  pin={clubPins.mickeyLny}
-                  autoPlay={false}
-                  className="aspect-square rounded-xl border border-border bg-bg/60 p-1"
-                  imgClassName="object-contain"
-                  sizes="80px"
-                />
-                <figcaption className="sr-only">
-                  Club example pin accent — {clubPins.mickeyLny.caption}
-                </figcaption>
-              </figure>
-            </div>
-            <div className="border-t border-border px-6 py-2">
-              <PinDisclaimer />
-            </div>
-          </article>
-          {spotlightsData.collectors.slice(0, 2).map((c) => (
-            <article key={c.address} className="card p-6">
-              {c.rankLabel ? (
-                <p className="font-mono text-xs text-accent">{c.rankLabel}</p>
-              ) : (
-                <p className="font-mono text-xs text-muted">Featured collector</p>
-              )}
-              <h3 className="mt-2 font-display text-xl font-semibold text-text">
-                {c.handle}
-              </h3>
-              <p className="mt-2 text-sm text-muted">
-                {formatCount(c.pinsHeld)} pins · {formatUsd(c.valueAsp)} ASP
-              </p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {c.badges.slice(0, 3).map((b) => (
-                  <span
-                    key={b}
-                    className="pill border border-border px-2 py-0.5 font-mono text-[10px] text-muted"
-                  >
-                    {b}
-                  </span>
-                ))}
-              </div>
-              <a
-                href={c.profileUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block text-sm text-accent hover:underline"
-              >
-                View on Watch Pinnacle →
-              </a>
-            </article>
-          ))}
-        </div>
-        <p className="mt-4 text-xs text-muted">
-          Stats attributed to Watch Pinnacle public profiles · estimates only ·{" "}
-          <Link href="/spotlights" className="text-accent hover:underline">
-            see all six spotlights
-          </Link>
-        </p>
       </Section>
 
       {/* Pinsider panel */}
