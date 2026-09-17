@@ -4,7 +4,10 @@ export const DISNEY_IPS = [
   "Marvel",
   "Mickey & Friends",
   "Princess",
-  "Parks",
+  "20th Century",
+  "Villains",
+  "Frozen",
+  "Disney Animation",
   "Other",
 ] as const;
 
