@@ -42,11 +42,11 @@ export default function WhatAreDigitalPinsPage() {
         sets, boards, and fair trades.
       </p>
       <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-border bg-surface">
-        <div className="mx-auto max-w-[220px] px-4 pt-5">
+        <div className="mx-auto max-w-[220px] bg-transparent px-4 pt-5">
           <PinMedia
             pin={clubPins.elsa}
-            autoPlay={false}
-            className="aspect-square"
+            autoPlay
+            className="aspect-square bg-transparent"
             imgClassName="object-contain"
             sizes="220px"
           />

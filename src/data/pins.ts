@@ -6,9 +6,13 @@ export type ClubPin = {
   alt: string;
   kind: "still" | "video";
   src: string;
+  /** Optional VP9+alpha WebM for browsers that support it */
+  srcWebm?: string;
   poster?: string;
   width: number;
   height: number;
+  /** Knock out encoded black (MP4) via mix-blend-mode on dark UI */
+  knockoutBlack?: boolean;
 };
 
 export const clubPins = {
@@ -40,9 +44,11 @@ export const clubPins = {
     alt: "Club example digital pin: Elsa from Frozen in an ornate teal snowflake frame with Disney Frozen nameplate",
     kind: "video" as const,
     src: "/pins/elsa.mp4",
-    poster: "/pins/elsa-poster.jpg",
+    srcWebm: "/pins/elsa.webm",
+    poster: "/pins/elsa-poster.png",
     width: 720,
     height: 720,
+    knockoutBlack: true,
   },
   mickeyLny: {
     id: "pin-3",

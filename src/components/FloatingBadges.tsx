@@ -49,13 +49,13 @@ export function FloatingBadges() {
           <figcaption className="sr-only">{still.caption}</figcaption>
         </figure>
 
-        {/* Elsa loop — 1 of 2 hero autoplays */}
+        {/* Elsa loop — 1 of 2 hero autoplays (transparent nest so black knock-out / WebM alpha sits on surface) */}
         <figure className="absolute right-[8%] top-[22%] w-[36%] rotate-[8deg] sm:right-[10%] sm:w-[34%]">
-          <div className="hero-float overflow-hidden rounded-2xl border border-border bg-bg/80 p-1.5 shadow-[0_8px_24px_rgba(10,22,40,0.45)] [animation-delay:0.6s]">
+          <div className="hero-float overflow-hidden rounded-2xl border border-border/60 bg-transparent p-1.5 shadow-[0_8px_24px_rgba(10,22,40,0.45)] [animation-delay:0.6s]">
             <PinMedia
               pin={loopA}
               autoPlay
-              className="aspect-square"
+              className="aspect-square bg-transparent"
               imgClassName="object-contain"
               sizes="(max-width: 768px) 35vw, 150px"
             />
