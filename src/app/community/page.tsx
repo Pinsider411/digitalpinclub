@@ -97,7 +97,7 @@ export default function CommunityPage() {
         <DiscordInvite variant="full" />
       </div>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+      <div className="mt-8 max-w-xl">
         <Link
           href="/community/watch"
           className="card block p-6 transition hover:border-accent"
@@ -111,15 +111,6 @@ export default function CommunityPage() {
             worth following. Listing is not an endorsement.
           </p>
           <p className="mt-4 font-mono text-xs text-accent">Open Watch &amp; Follow →</p>
-        </Link>
-        <Link href="/learn/burns" className="card block p-6 transition hover:border-accent">
-          <p className="font-mono text-xs text-accent">Learn</p>
-          <h2 className="mt-2 font-display text-xl font-semibold text-text">Burns</h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted">
-            Why leftover LE pins are often burned on-chain — and how circulating supply
-            can sit under the announced cap.
-          </p>
-          <p className="mt-4 font-mono text-xs text-accent">Read Burns →</p>
         </Link>
       </div>
 
