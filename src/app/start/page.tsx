@@ -5,6 +5,7 @@ import { Section } from "@/components/Section";
 import { PinMedia } from "@/components/PinMedia";
 import { PinDisclaimer } from "@/components/PinDisclaimer";
 import { clubPins } from "@/data/pins";
+import { DiscordInvite } from "@/components/DiscordInvite";
 
 export const metadata: Metadata = {
   title: "Start here",
@@ -143,6 +144,11 @@ export default function StartPage() {
           </li>
         ))}
       </ol>
+
+      <div className="mt-10">
+        <DiscordInvite variant="aside" />
+      </div>
+
       <p className="mt-8 max-w-2xl text-sm text-muted">
         Official product docs:{" "}
         <a

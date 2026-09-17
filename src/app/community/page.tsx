@@ -6,6 +6,7 @@ import { PinMedia } from "@/components/PinMedia";
 import { PinDisclaimer } from "@/components/PinDisclaimer";
 import { clubPins } from "@/data/pins";
 import { PinSiderMark } from "@/components/PinSiderMark";
+import { DiscordInvite } from "@/components/DiscordInvite";
 
 export const metadata: Metadata = {
   title: "Community",
@@ -90,6 +91,10 @@ export default function CommunityPage() {
             <PinDisclaimer />
           </div>
         </div>
+      </div>
+
+      <div className="mt-8">
+        <DiscordInvite variant="full" />
       </div>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">

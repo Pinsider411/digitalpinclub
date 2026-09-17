@@ -5,6 +5,7 @@ import { Section } from "@/components/Section";
 import { WatchFollowClient } from "@/components/watch/WatchFollowClient";
 import { SubmitCreatorForm } from "@/components/watch/SubmitCreatorForm";
 import { getFeaturedThisWeek } from "@/data/creators";
+import { DiscordInvite } from "@/components/DiscordInvite";
 
 export const metadata: Metadata = {
   title: "Watch & Follow",
@@ -45,6 +46,10 @@ export default function WatchFollowPage() {
         <div className="mt-6 max-w-lg">
           <SubmitCreatorForm />
         </div>
+      </div>
+
+      <div className="mt-10 max-w-2xl">
+        <DiscordInvite variant="aside" />
       </div>
 
       <aside className="mt-10 max-w-2xl rounded-2xl border border-border bg-surface p-5 text-sm leading-relaxed text-muted">
