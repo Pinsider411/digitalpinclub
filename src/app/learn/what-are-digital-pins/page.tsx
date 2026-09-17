@@ -57,7 +57,7 @@ export default function WhatAreDigitalPinsPage() {
           </p>
           <p className="mt-1 text-sm text-muted">
             Club example of what a digital pin looks like — enamel-style art with a
-            metallic frame. Caption from collector talk, not an official storefront.
+            metallic frame. Limited Edition — mint of 333.
           </p>
           <div className="mt-3">
             <PinDisclaimer />

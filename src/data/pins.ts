@@ -40,7 +40,7 @@ export const clubPins = {
   elsa: {
     id: "elsa",
     title: "Elsa · Frozen",
-    caption: "Arendelle collectors keep this snowflake frame in rotation",
+    caption: "Limited Edition Elsa — mint of 333; Arendelle favorite",
     alt: "Club example digital pin: Elsa from Frozen in an ornate teal snowflake frame with Disney Frozen nameplate",
     kind: "video" as const,
     src: "/pins/elsa.mp4",
