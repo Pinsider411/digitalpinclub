@@ -63,11 +63,11 @@ export default function RootLayout({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-accent underline-offset-2 hover:underline"
-                aria-label="PinSider"
+                aria-label="Pinsider"
               >
                 <PinSiderMark className="h-4 w-4" size={16} />
                 <span className="font-display text-xs font-semibold tracking-tight text-text">
-                  PinSider<span className="text-[#D4AF37]">.io</span>
+                  Pinsider<span className="text-[#D4AF37]">.io</span>
                 </span>
                 <span aria-hidden="true">→</span>
               </a>

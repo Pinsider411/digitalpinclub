@@ -43,7 +43,7 @@ export function Header() {
             <Link
               href="/pinsider"
               className="inline-flex items-center gap-1.5 transition hover:opacity-90"
-              aria-label="PinSider"
+              aria-label="Pinsider"
             >
               <PinSiderLockup
                 markSize={22}
@@ -94,7 +94,7 @@ export function Header() {
               <Link
                 href="/pinsider"
                 className="inline-flex w-fit items-center gap-1.5"
-                aria-label="PinSider"
+                aria-label="Pinsider"
                 onClick={() => setOpen(false)}
               >
                 <PinSiderLockup

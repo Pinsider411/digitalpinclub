@@ -23,7 +23,7 @@ export function JoinForm() {
         </h2>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
           Thanks for joining. Watch your inbox for club emails if you opted in — and hang
-          out on Community and PinSider anytime.
+          out on Community and Pinsider anytime.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link

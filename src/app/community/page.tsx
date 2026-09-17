@@ -64,11 +64,11 @@ export default function CommunityPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="pill inline-flex items-center gap-2 border border-border px-5 py-2.5 text-sm text-text hover:border-accent"
-                  aria-label="Visit PinSider"
+                  aria-label="Visit Pinsider"
                 >
                   <PinSiderMark className="h-5 w-5" size={20} />
                   <span>
-                    Visit <span className="font-semibold">PinSider</span>
+                    Visit <span className="font-semibold">Pinsider</span>
                   </span>
                 </a>
               </div>

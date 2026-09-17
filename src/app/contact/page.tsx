@@ -18,7 +18,7 @@ export default function ContactPage() {
       />
       <div className="card max-w-lg p-8">
         <p className="text-sm leading-relaxed text-muted">
-          For v1, reach out via PinSider or the channels we’ll list as the clubhouse
+          For v1, reach out via Pinsider or the channels we’ll list as the clubhouse
           opens. You can also use the Sunday digest form on the home page to stay in the
           loop.
         </p>

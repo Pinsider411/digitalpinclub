@@ -38,7 +38,7 @@ export default function DisclaimerPage() {
           involves risk; do your own research.
         </p>
         <p>
-          PinSider is a separate companion product. Links to third-party sites are provided
+          Pinsider is a separate companion product. Links to third-party sites are provided
           for convenience; we are not responsible for their content or policies.
         </p>
       </div>

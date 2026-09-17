@@ -65,7 +65,7 @@ export default function TradingAndMarketplacePage() {
         Digital Pin Club helps you learn norms, follow context on the{" "}
         <Link href="/calendar">Calendar</Link>, and find people in{" "}
         <Link href="/community">Community</Link>.{" "}
-        <Link href="/pinsider">PinSider</Link> can help with price history and alerts.
+        <Link href="/pinsider">Pinsider</Link> can help with price history and alerts.
         Neither replaces official trading rails, and this website will not process your
         pin sales.
       </p>

@@ -33,7 +33,7 @@ const thisWeek = [
     label: "Digest",
     title: "Sunday Pin Press",
     meta: "Sun · Inbox",
-    body: "Placeholder: weekly roundup of drops, community notes, and PinSider highlights.",
+    body: "Placeholder: weekly roundup of drops, community notes, and Pinsider highlights.",
   },
 ];
 
@@ -50,7 +50,7 @@ const pillars = [
   },
   {
     href: "/pinsider",
-    title: "PinSider",
+    title: "Pinsider",
     body: "Companion data desk for prices, alerts, and history. Free tier + Pro ~$5/mo.",
   },
 ];
@@ -265,7 +265,7 @@ export default function HomePage() {
         </p>
       </Section>
 
-      {/* PinSider panel */}
+      {/* Pinsider panel */}
       <Section className="!pt-0">
         <div className="card overflow-hidden p-0">
           <div className="grid lg:grid-cols-2">
@@ -279,12 +279,12 @@ export default function HomePage() {
                   markClassName="h-10 w-10"
                   wordmarkSize="lg"
                   withIo
-                  label="PinSider"
+                  label="Pinsider"
                 />
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 Prices, alerts, and history for collectors who want signal without noise.
-                Digital Pin Club stays free and open — PinSider is optional tooling next
+                Digital Pin Club stays free and open — Pinsider is optional tooling next
                 door.
               </p>
               <ul className="mt-5 space-y-2 text-sm text-muted">
@@ -304,11 +304,11 @@ export default function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="pill inline-flex items-center gap-2 bg-accent px-5 py-2.5 text-sm font-medium text-cta-text hover:brightness-110"
-                  aria-label="Open PinSider"
+                  aria-label="Open Pinsider"
                 >
                   <PinSiderMark className="h-5 w-5 ring-[#0A1628]/20" size={20} />
                   <span>
-                    Open <span className="font-semibold">PinSider</span>
+                    Open <span className="font-semibold">Pinsider</span>
                   </span>
                 </a>
                 <Link

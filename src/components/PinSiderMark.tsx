@@ -25,7 +25,7 @@ type PinSiderWordmarkProps = {
   size?: "sm" | "md" | "lg";
 };
 
-/** Text wordmark: PinSider with optional gold .io */
+/** Text wordmark: Pinsider with optional gold .io */
 export function PinSiderWordmark({
   className = "",
   withIo = true,
@@ -42,7 +42,7 @@ export function PinSiderWordmark({
     <span
       className={`font-display font-semibold tracking-tight text-text ${sizeClass} ${className}`}
     >
-      PinSider
+      Pinsider
       {withIo && <span className="text-[#D4AF37]">.io</span>}
     </span>
   );
@@ -65,7 +65,7 @@ export function PinSiderLockup({
   markSize = 28,
   withIo = true,
   wordmarkSize = "md",
-  label = "PinSider",
+  label = "Pinsider",
 }: PinSiderLockupProps) {
   return (
     <span className={className} aria-label={label}>

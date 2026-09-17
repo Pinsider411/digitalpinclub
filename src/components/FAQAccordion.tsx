@@ -25,7 +25,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Does it cost anything to join?",
-    a: "The club is free to join. PinSider — our companion data desk for prices, alerts, and history — offers a free tier and an optional Pro plan around $5/month. This club site itself is never paywalled.",
+    a: "The club is free to join. Pinsider — our companion data desk for prices, alerts, and history — offers a free tier and an optional Pro plan around $5/month. This club site itself is never paywalled.",
   },
   {
     q: "What are digital pins?",

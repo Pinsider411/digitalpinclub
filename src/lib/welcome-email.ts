@@ -60,7 +60,7 @@ export function renderWelcomeEmailHtml(name: string): string {
                 You’re on the roster. Thanks for joining Digital Pin Club — an independent fan community for Disney digital pin collectors.
               </p>
               <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:${COLORS.muted};">
-                Browse calendars, learn guides, community spots, and the PinSider data desk whenever you’re ready. No store energy — just collectors helping collectors.
+                Browse calendars, learn guides, community spots, and the Pinsider data desk whenever you’re ready. No store energy — just collectors helping collectors.
               </p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 24px;">
                 <tr>
@@ -76,7 +76,7 @@ export function renderWelcomeEmailHtml(name: string): string {
               </p>
               <ul style="margin:0 0 24px;padding-left:18px;color:${COLORS.text};font-size:14px;line-height:1.7;">
                 <li><a href="${COMMUNITY_URL}" style="color:${COLORS.soft};text-decoration:underline;">Community</a> — say hello and find fellow traders</li>
-                <li><a href="${PINSIDER_URL}" style="color:${COLORS.soft};text-decoration:underline;">PinSider</a> — prices, alerts, and history next door</li>
+                <li><a href="${PINSIDER_URL}" style="color:${COLORS.soft};text-decoration:underline;">Pinsider</a> — prices, alerts, and history next door</li>
               </ul>
               <p style="margin:0;font-size:13px;line-height:1.55;color:${COLORS.muted};">
                 Glad you’re here — see you around the clubhouse.
@@ -110,7 +110,7 @@ export function renderWelcomeEmailText(name: string): string {
     "",
     `Visit the clubhouse: ${SITE_URL}`,
     `Community: ${COMMUNITY_URL}`,
-    `PinSider: ${PINSIDER_URL}`,
+    `Pinsider: ${PINSIDER_URL}`,
     "",
     "Digital Pin Club is an independent fan community. Not affiliated with, endorsed by, or sponsored by The Walt Disney Company, Disney Pinnacle, or related entities.",
   ].join("\n");

@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           this page.
         </p>
         <p>
-          We do not sell personal information. If you contact us or use PinSider, those
+          We do not sell personal information. If you contact us or use Pinsider, those
           interactions are governed by the channels and products you use.
         </p>
         <p>

@@ -27,7 +27,7 @@ export default function AboutPage() {
           Pinnacle. We don’t use official licensed artwork for our brand.
         </p>
         <p>
-          PinSider (pinsider.io) is our companion data desk for prices, alerts, and
+          Pinsider (pinsider.io) is our companion data desk for prices, alerts, and
           history. The club site itself is free and never paywalled.
         </p>
       </div>

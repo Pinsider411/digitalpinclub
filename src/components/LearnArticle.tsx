@@ -109,7 +109,7 @@ export function LearnArticle({
           href="/pinsider"
           className="pill border border-border px-4 py-2 text-sm text-text transition hover:border-accent"
         >
-          PinSider
+          Pinsider
         </Link>
         {related.map((r) => (
           <Link

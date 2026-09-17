@@ -66,7 +66,7 @@ const terms: { term: string; def: string }[] = [
     def: "This unofficial fan community — guides, calendar context, culture. Not affiliated with Disney, Dapper Labs, or Disney Pinnacle. Not a marketplace.",
   },
   {
-    term: "PinSider",
+    term: "Pinsider",
     def: "Companion data desk (prices, alerts, history). Optional; the club site stays free.",
   },
 ];

@@ -42,7 +42,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 transition hover:opacity-90"
-              aria-label="PinSider"
+              aria-label="Pinsider"
             >
               <PinSiderLockup
                 markSize={20}

@@ -53,10 +53,10 @@ const steps = [
   },
   {
     n: "06",
-    title: "Optional: PinSider data",
-    body: "When you want prices, alerts, and history, PinSider is the companion desk. Free tier available; Pro is optional. The club site stays free.",
+    title: "Optional: Pinsider data",
+    body: "When you want prices, alerts, and history, Pinsider is the companion desk. Free tier available; Pro is optional. The club site stays free.",
     href: "/pinsider",
-    linkLabel: "About PinSider",
+    linkLabel: "About Pinsider",
   },
 ];
 

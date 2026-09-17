@@ -69,8 +69,8 @@ export default function DisneyPinnaclePage() {
       <p>
         We teach hobby norms, publish collector-friendly guides, share calendar context,
         and point people toward community.{" "}
-        <Link href="/pinsider">PinSider</Link> is our companion data desk for prices and
-        alerts. Neither this site nor PinSider replaces the official app — and neither
+        <Link href="/pinsider">Pinsider</Link> is our companion data desk for prices and
+        alerts. Neither this site nor Pinsider replaces the official app — and neither
         sells you official pins.
       </p>
       <p>

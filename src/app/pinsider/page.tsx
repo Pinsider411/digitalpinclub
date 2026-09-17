@@ -5,8 +5,8 @@ import { Section } from "@/components/Section";
 import { PinSiderLockup, PinSiderMark } from "@/components/PinSiderMark";
 
 export const metadata: Metadata = {
-  title: "PinSider",
-  description: "PinSider is the companion data desk for digital pin collectors — prices, alerts, history.",
+  title: "Pinsider",
+  description: "Pinsider is the companion data desk for digital pin collectors — prices, alerts, history.",
 };
 
 export default function PinSiderPage() {
@@ -20,11 +20,11 @@ export default function PinSiderPage() {
             markClassName="h-12 w-12"
             wordmarkSize="lg"
             withIo
-            label="PinSider"
+            label="Pinsider"
             className="inline-flex items-center gap-3"
           />
         }
-        description="The companion tool next door: prices, alerts, and history so you can collect with clearer signal. Digital Pin Club stays free — PinSider is optional."
+        description="The companion tool next door: prices, alerts, and history so you can collect with clearer signal. Digital Pin Club stays free — Pinsider is optional."
       />
       <div className="grid gap-4 md:grid-cols-2">
         <div className="card p-6">
@@ -52,7 +52,7 @@ export default function PinSiderPage() {
         </h2>
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
           Learn, Calendar, Community, Spotlights, News, and everything on digitalpinclub.com
-          remain open. PinSider is a separate product for collectors who want data tooling —
+          remain open. Pinsider is a separate product for collectors who want data tooling —
           not a gate on belonging here.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
@@ -67,7 +67,7 @@ export default function PinSiderPage() {
             <span>
               Go to{" "}
               <span className="font-semibold">
-                PinSider<span className="text-[#F0D78C]">.io</span>
+                Pinsider<span className="text-[#F0D78C]">.io</span>
               </span>
             </span>
           </a>
