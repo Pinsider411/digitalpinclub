@@ -5,7 +5,6 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { DigestForm } from "@/components/DigestForm";
 import { Section } from "@/components/Section";
 import { FindUsSection } from "@/components/SocialLinks";
-import { DiscordInvite } from "@/components/DiscordInvite";
 import { PinSiderLockup, PinSiderMark, PinSiderWordmark } from "@/components/PinSiderMark";
 import { getFeaturedThisWeek } from "@/data/creators";
 
@@ -245,11 +244,6 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
-
-      {/* Official Discord — near Community / Watch */}
-      <Section className="!pt-0">
-        <DiscordInvite variant="compact" />
-      </Section>
 
       {/* Watch the club */}
       <Section className="!pt-0">
