@@ -91,15 +91,20 @@ export const creators: Creator[] = [
         label: "X",
         href: "https://x.com/vevefanz",
       },
+      {
+        platform: "youtube",
+        label: "YouTube",
+        href: "https://www.youtube.com/@MagicPinCollector",
+      },
     ],
     tags: ["How-to", "Drop recap", "YouTube"],
     featured: [
       {
         title: "How to Use Analytics on Disney Pinnacle",
         videoId: null,
-        href: "https://x.com/vevefanz",
+        href: "https://www.youtube.com/@MagicPinCollector/shorts",
         tags: ["How-to"],
-        note: "Featured topic placeholder — follow on X for the latest shorts; exact YouTube id not verified at publish.",
+        note: "Analytics how-tos and Pinnacle shorts on YouTube — open the channel or Shorts tab for the latest.",
       },
     ],
   },
@@ -148,6 +153,11 @@ export const creators: Creator[] = [
         platform: "x",
         label: "X",
         href: "https://x.com/PaulieWizWit",
+      },
+      {
+        platform: "youtube",
+        label: "YouTube",
+        href: "https://www.youtube.com/@collectinandconnectin",
       },
       {
         platform: "instagram",
