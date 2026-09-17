@@ -5,7 +5,7 @@ import { PinMedia } from "@/components/PinMedia";
 /** Hero collage: 1 still + up to 2 muted loops (respects prefers-reduced-motion). */
 export function FloatingBadges() {
   const still = clubPins.fantasia85;
-  const loopA = clubPins.miguel;
+  const loopA = clubPins.elsa;
   const loopB = clubPins.pluto;
 
   return (
@@ -49,7 +49,7 @@ export function FloatingBadges() {
           <figcaption className="sr-only">{still.caption}</figcaption>
         </figure>
 
-        {/* Miguel loop — 1 of 2 hero autoplays */}
+        {/* Elsa loop — 1 of 2 hero autoplays */}
         <figure className="absolute right-[8%] top-[22%] w-[36%] rotate-[8deg] sm:right-[10%] sm:w-[34%]">
           <div className="hero-float overflow-hidden rounded-2xl border border-border bg-bg/80 p-1.5 shadow-[0_8px_24px_rgba(10,22,40,0.45)] [animation-delay:0.6s]">
             <PinMedia

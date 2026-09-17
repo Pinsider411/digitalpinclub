@@ -44,7 +44,7 @@ export default function WhatAreDigitalPinsPage() {
       <figure className="not-prose my-8 overflow-hidden rounded-2xl border border-border bg-surface">
         <div className="mx-auto max-w-[220px] px-4 pt-5">
           <PinMedia
-            pin={clubPins.miguel}
+            pin={clubPins.elsa}
             autoPlay={false}
             className="aspect-square"
             imgClassName="object-contain"
@@ -53,7 +53,7 @@ export default function WhatAreDigitalPinsPage() {
         </div>
         <figcaption className="border-t border-border px-4 py-4">
           <p className="font-display text-base font-semibold text-text">
-            {clubPins.miguel.title}
+            {clubPins.elsa.title}
           </p>
           <p className="mt-1 text-sm text-muted">
             Club example of what a digital pin looks like — enamel-style art with a
