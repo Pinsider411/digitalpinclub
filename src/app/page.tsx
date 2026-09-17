@@ -15,6 +15,7 @@ import {
   formatUsd,
   spotlightsData,
 } from "@/data/spotlights";
+import { getFeaturedThisWeek } from "@/data/creators";
 
 const thisWeek = [
   {
@@ -37,11 +38,29 @@ const thisWeek = [
   },
 ];
 
+const homeLearnTiles = [
+  {
+    href: "/learn/what-are-digital-pins",
+    title: "What are digital pins?",
+    body: "Friendly intro to the hobby.",
+  },
+  {
+    href: "/learn/burns",
+    title: "Burns",
+    body: "Leftovers, circulating supply, and why collectors care.",
+  },
+  {
+    href: "/learn/how-drops-work",
+    title: "How drops work",
+    body: "Storefront, capsules, and windows.",
+  },
+];
+
 const pillars = [
   {
     href: "/learn",
     title: "Learn",
-    body: "Guides for beginners and veterans — how drops work, board etiquette, and collecting smarter.",
+    body: "Guides for beginners and veterans — drops, editions, burns, board etiquette, and collecting smarter.",
   },
   {
     href: "/community",
@@ -56,6 +75,7 @@ const pillars = [
 ];
 
 export default function HomePage() {
+  const watchCreators = getFeaturedThisWeek();
   return (
     <>
       {/* Hero */}
@@ -154,6 +174,19 @@ export default function HomePage() {
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{p.body}</p>
               <span className="mt-4 inline-block text-sm text-accent">Explore →</span>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          {homeLearnTiles.map((t) => (
+            <Link
+              key={t.href}
+              href={t.href}
+              className="rounded-2xl border border-border bg-surface/60 px-4 py-4 transition hover:border-accent"
+            >
+              <p className="font-mono text-[11px] text-accent">Learn</p>
+              <p className="mt-1 font-display text-base font-semibold text-text">{t.title}</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted">{t.body}</p>
             </Link>
           ))}
         </div>
@@ -341,6 +374,61 @@ export default function HomePage() {
 
       {/* Find us / Connect */}
       <FindUsSection />
+
+
+      {/* Watch the club */}
+      <Section className="!pt-0">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-widest text-accent">
+              Watch the club
+            </p>
+            <h2 className="mt-2 font-display text-3xl font-semibold text-text sm:text-4xl">
+              Creators to follow
+            </h2>
+            <p className="mt-2 max-w-xl text-sm text-muted">
+              Independent collectors — views their own. Listing ≠ endorsement.
+            </p>
+          </div>
+          <Link
+            href="/community/watch"
+            className="hidden text-sm text-accent hover:underline sm:inline"
+          >
+            Watch &amp; Follow →
+          </Link>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {watchCreators.map((c) => (
+            <article key={c.id} className="card p-6">
+              <p className="font-mono text-xs text-accent">{c.role}</p>
+              <h3 className="mt-2 font-display text-xl font-semibold text-text">{c.name}</h3>
+              {c.aka && (
+                <p className="mt-1 font-mono text-[11px] text-muted">aka {c.aka}</p>
+              )}
+              <p className="mt-2 text-sm leading-relaxed text-muted">{c.whyFollow}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {c.links.slice(0, 3).map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pill border border-border px-3 py-1 font-mono text-[11px] text-muted transition hover:border-accent"
+                  >
+                    {l.label}
+                  </a>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <Link
+          href="/community/watch"
+          className="mt-6 inline-block text-sm text-accent hover:underline sm:hidden"
+        >
+          Watch &amp; Follow →
+        </Link>
+      </Section>
 
       {/* Digest */}
       <Section className="!pt-0">

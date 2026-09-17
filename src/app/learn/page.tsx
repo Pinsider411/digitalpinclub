@@ -6,7 +6,7 @@ import { Section } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Learn",
   description:
-    "Collector-to-collector guides for digital pins — Disney Pinnacle basics, drops, editions, trading, pinbooks, and a glossary. Unofficial fan community.",
+    "Collector-to-collector guides for digital pins — Disney Pinnacle basics, drops, editions, burns, trading, pinbooks, and a glossary. Unofficial fan community.",
 };
 
 const guides = [
@@ -35,6 +35,12 @@ const guides = [
     body: "Starter, Open Edition, Limited Edition, and variants like Chaser, Digital Display, and Color Splash — what collectors mean when they talk rarity.",
   },
   {
+    href: "/learn/burns",
+    title: "Burns",
+    level: "Intermediate",
+    body: "After LE and event drops, leftover minted-but-unclaimed pins are typically destroyed on-chain — why circulating supply can sit under the announced cap.",
+  },
+  {
     href: "/learn/trading-and-marketplace",
     title: "Trading & Marketplace",
     level: "Intermediate",
@@ -60,7 +66,7 @@ export default function LearnPage() {
       <PageHero
         eyebrow="Guides"
         title="Learn the hobby."
-        description="Collector-to-collector guides for digital pin collecting. Warm, practical, and accurate — with links to the official Disney Pinnacle docs when details matter."
+        description="Collector-to-collector guides for digital pin collecting — drops, editions, burns, trading, and more. Warm, practical, and accurate — with links to the official Disney Pinnacle docs when details matter."
       />
       <div className="grid gap-4 sm:grid-cols-2">
         {guides.map((g) => (
@@ -83,7 +89,11 @@ export default function LearnPage() {
         <Link href="/start" className="text-accent hover:underline">
           Start here
         </Link>{" "}
-        for a sequenced path. Official platform:{" "}
+        for a sequenced path. Prefer video?{" "}
+        <Link href="/community/watch" className="text-accent hover:underline">
+          Watch &amp; Follow
+        </Link>
+        . Official platform:{" "}
         <a
           href="https://www.disneypinnacle.com"
           target="_blank"

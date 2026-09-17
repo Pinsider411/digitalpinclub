@@ -9,7 +9,7 @@ import { PinSiderMark } from "@/components/PinSiderMark";
 
 export const metadata: Metadata = {
   title: "Community",
-  description: "Join Digital Pin Club — free, unofficial, run by collectors.",
+  description: "Join Digital Pin Club — free, unofficial, run by collectors. Hangouts, Watch & Follow creators, and clubhouse culture.",
 };
 
 export default function CommunityPage() {
@@ -91,6 +91,33 @@ export default function CommunityPage() {
           </div>
         </div>
       </div>
+
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <Link
+          href="/community/watch"
+          className="card block p-6 transition hover:border-accent"
+        >
+          <p className="font-mono text-xs text-accent">Watch &amp; Follow</p>
+          <h2 className="mt-2 font-display text-xl font-semibold text-text">
+            Creators in the hobby
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Drop alerts, how-tos, cafe hangs, and collector podcasts — independent voices
+            worth following. Listing is not an endorsement.
+          </p>
+          <p className="mt-4 font-mono text-xs text-accent">Open Watch &amp; Follow →</p>
+        </Link>
+        <Link href="/learn/burns" className="card block p-6 transition hover:border-accent">
+          <p className="font-mono text-xs text-accent">Learn</p>
+          <h2 className="mt-2 font-display text-xl font-semibold text-text">Burns</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Why leftover LE pins are often burned on-chain — and how circulating supply
+            can sit under the announced cap.
+          </p>
+          <p className="mt-4 font-mono text-xs text-accent">Read Burns →</p>
+        </Link>
+      </div>
+
       <p className="mt-8 text-sm text-muted">
         Unofficial fan community. Not affiliated with Disney, Dapper Labs, or Disney
         Pinnacle.

@@ -28,12 +28,13 @@ const steps = [
   },
   {
     n: "03",
-    title: "Learn drops, editions & trading",
-    body: "Read how storefront windows and capsules work, what OE vs LE means, and how Trade Links plus the Marketplace fill gaps — then verify fees and windows officially.",
+    title: "Learn drops, editions, burns & trading",
+    body: "Read how storefront windows and capsules work, what OE vs LE means, why leftover LE pins are often burned so circulating supply can sit under the cap, and how Trade Links plus the Marketplace fill gaps — then verify fees and windows officially.",
     href: "/learn/how-drops-work",
     linkLabel: "How drops work",
     extra: [
       { href: "/learn/editions-and-variants", label: "Editions & variants" },
+      { href: "/learn/burns", label: "Burns" },
       { href: "/learn/trading-and-marketplace", label: "Trading & Marketplace" },
     ],
   },
@@ -95,6 +96,25 @@ export default function StartPage() {
             <PinDisclaimer />
           </div>
         </div>
+      </aside>
+
+      <aside className="mb-10 rounded-[20px] border border-accent/30 bg-surface p-5 sm:p-6">
+        <p className="font-mono text-xs uppercase tracking-widest text-accent">
+          Early tip · burns
+        </p>
+        <p className="mt-2 text-sm leading-relaxed text-muted">
+          After Limited Edition and event drops, leftover minted-but-unclaimed pins are
+          typically destroyed on-chain (“burned”) so they don’t enter circulation later.
+          That means circulating supply can be lower than the announced mint cap — useful
+          set math before you chase every serial. Read the plain-English guide when you’re
+          ready, and always verify on official recaps.
+        </p>
+        <Link
+          href="/learn/burns"
+          className="mt-3 inline-block font-mono text-xs text-accent hover:underline"
+        >
+          Burns guide →
+        </Link>
       </aside>
 
       <ol className="space-y-4">
