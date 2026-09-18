@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { ReleaseTimeline } from "@/components/ReleaseTimeline";
 import { Section } from "@/components/Section";
@@ -12,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Release calendar",
   description:
-    "Unofficial chronological history of Disney Pinnacle releases — availability windows, prices when listed, and links to official release pages. Digital Pin Club is an independent fan community.",
+    "Chronological history of Disney Pinnacle releases — availability windows, prices when listed, and links to official release pages.",
 };
 
 function formatSnapshotDate(iso: string): string {
@@ -33,7 +32,7 @@ export default function CalendarPage() {
       <PageHero
         eyebrow="Schedule"
         title="Release calendar / history"
-        description="An unofficial index of 225 Disney Pinnacle releases from the official Releases page — from Star Wars Holiday / earliest through current — with availability windows when known, optional prices, and More info links out."
+        description="An index of 225 Disney Pinnacle releases from the official Releases page — from Star Wars Holiday / earliest through current — with availability windows when known, optional prices, and More info links out."
       />
 
       <div className="mb-10 space-y-4">
@@ -43,8 +42,8 @@ export default function CalendarPage() {
           </p>
           <p className="mt-2 text-sm leading-relaxed text-muted">
             For the complete live catalog, drop timing, and purchase options, always check
-            Disney Pinnacle Releases directly. This page is an unofficial collector
-            snapshot — text and UI only, no licensed artwork.
+            Disney Pinnacle Releases directly. This page is a collector snapshot —
+            text and UI only, no licensed artwork.
           </p>
           <a
             href={officialReleasesUrl}
@@ -57,10 +56,8 @@ export default function CalendarPage() {
         </div>
 
         <p className="rounded-[20px] border border-border bg-surface px-4 py-3 text-sm text-muted">
-          <strong className="text-text">Unofficial fan site.</strong> Digital Pin Club is
-          an independent collector community — not affiliated with, endorsed by, or
-          sponsored by The Walt Disney Company, Dapper Labs, or Disney Pinnacle. Snapshot
-          curated {formatSnapshotDate(pinnacleReleasesSnapshotDate)}. This index lists{" "}
+          Snapshot curated {formatSnapshotDate(pinnacleReleasesSnapshotDate)}. This index
+          lists{" "}
           <strong className="text-text">{pinnacleReleases.length} releases</strong> from
           the official Releases page (Star Wars Holiday / earliest through current), each
           with a More info link out and availability window. Always check the{" "}
@@ -72,18 +69,14 @@ export default function CalendarPage() {
           >
             official Releases page
           </a>{" "}
-          for the live catalog. See our{" "}
-          <Link href="/disclaimer" className="text-accent hover:underline">
-            disclaimer
-          </Link>
-          .
+          for the live catalog.
         </p>
       </div>
 
       <ReleaseTimeline releases={pinnacleReleases} />
 
       <p className="mt-8 max-w-2xl text-sm text-muted">
-        This list is an unofficial snapshot for convenience. Titles, windows, and prices
+        This list is a snapshot for convenience. Titles, windows, and prices
         mirror what was listed on{" "}
         <a
           href={officialReleasesUrl}

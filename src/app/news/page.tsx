@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "News",
   description:
-    "Unofficial Pin Press index of recent Disney Pinnacle News — titles and dates with links out to official articles. Digital Pin Club is an independent fan community.",
+    "Pin Press index of recent Disney Pinnacle News — titles and dates with links out to official articles.",
 };
 
 function formatDisplayDate(iso: string): string {
@@ -33,7 +33,7 @@ export default function NewsPage() {
       <PageHero
         eyebrow="Pin Press"
         title="News from the hobby"
-        description="An unofficial index of recent items from Disney Pinnacle News. We link out to official articles — we don’t republish full posts or licensed artwork."
+        description="An index of recent items from Disney Pinnacle News. We link out to official articles — we don’t republish full posts or licensed artwork."
       />
 
       <div className="mb-10 space-y-4">
@@ -57,12 +57,9 @@ export default function NewsPage() {
         </div>
 
         <p className="rounded-[20px] border border-border bg-surface px-4 py-3 text-sm text-muted">
-          <strong className="text-text">Unofficial fan site.</strong> Digital Pin Club is
-          an independent collector community — not affiliated with, endorsed by, or
-          sponsored by The Walt Disney Company, Dapper Labs, or Disney Pinnacle. Snapshot
-          curated {formatDisplayDate(pinnacleNewsSnapshotDate)}. Repeated “Special Welcome
-          Offer” posts are deduped here; check the official News page for everything
-          current.
+          Snapshot curated {formatDisplayDate(pinnacleNewsSnapshotDate)}. Repeated
+          “Special Welcome Offer” posts are deduped here; check the official News page for
+          everything current.
         </p>
       </div>
 

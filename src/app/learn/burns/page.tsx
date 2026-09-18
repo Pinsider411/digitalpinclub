@@ -5,7 +5,7 @@ import { LearnArticle } from "@/components/LearnArticle";
 export const metadata: Metadata = {
   title: "Burns — leftover pins & circulating supply",
   description:
-    "Plain-English guide to burns after Limited Edition and event drops: what gets destroyed on-chain, what usually does not, and how collectors check circulating supply. Unofficial Digital Pin Club.",
+    "Plain-English guide to burns after Limited Edition and event drops: what gets destroyed on-chain, what usually does not, and how collectors check circulating supply.",
 };
 
 const LAST_VERIFIED = "2026-09-17";
@@ -247,9 +247,7 @@ export default function BurnsPage() {
         <p className="mt-2">
           Rules, inventory handling, and published burn outcomes can change. We paraphrase
           for collectors; we are <strong className="text-text">not the issuer</strong>.
-          Digital Pin Club is an independent fan community — not affiliated with,
-          endorsed by, or sponsored by The Walt Disney Company, Dapper Labs, or Disney
-          Pinnacle. Verify every claim on official pages before you act on it.
+          Verify every claim on official pages before you act on it.
         </p>
       </aside>
     </LearnArticle>

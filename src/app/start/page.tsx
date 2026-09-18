@@ -23,7 +23,7 @@ const steps = [
   {
     n: "02",
     title: "Meet the official platform",
-    body: "Disney Pinnacle (by Dapper Labs) is where pins live — app, storefront, capsules, trading, and Marketplace. Digital Pin Club is the unofficial clubhouse beside it.",
+    body: "Disney Pinnacle (by Dapper Labs) is where pins live — app, storefront, capsules, trading, and Marketplace. Digital Pin Club is the clubhouse beside it.",
     href: "/learn/disney-pinnacle",
     linkLabel: "Disney Pinnacle overview",
   },
@@ -168,8 +168,7 @@ export default function StartPage() {
         >
           disneypinnacle.com
         </a>
-        . Digital Pin Club is unofficial and not affiliated with Disney, Dapper Labs, or
-        Disney Pinnacle.
+        .
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <Link href="/learn" className="pill bg-accent px-5 py-2.5 text-sm font-medium text-cta-text">

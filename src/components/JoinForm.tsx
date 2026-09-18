@@ -210,9 +210,7 @@ export function JoinForm() {
         <Link href="/privacy" className="text-accent underline-offset-2 hover:underline">
           Privacy
         </Link>
-        . Digital Pin Club is an independent fan community — not affiliated with,
-        endorsed by, or connected to The Walt Disney Company, Dapper Labs, or Disney
-        Pinnacle.
+        .
       </p>
     </form>
   );

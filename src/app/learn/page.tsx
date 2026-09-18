@@ -6,7 +6,7 @@ import { Section } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Learn",
   description:
-    "Collector-to-collector guides for digital pins — Disney Pinnacle basics, drops, editions, burns, trading, pinbooks, and a glossary. Unofficial fan community.",
+    "Collector-to-collector guides for digital pins — Disney Pinnacle basics, drops, editions, burns, trading, pinbooks, and a glossary.",
 };
 
 const guides = [

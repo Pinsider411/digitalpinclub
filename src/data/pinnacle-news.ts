@@ -207,7 +207,7 @@ export const clubNotes: ClubNote[] = [
   {
     date: "2026-09-14",
     title: "Digital Pin Club v1 is live",
-    body: "The clubhouse ships: Learn, Calendar, Community, Spotlights, and a clear link to Pinsider. Unofficial, free, collector-run.",
+    body: "The clubhouse ships: Learn, Calendar, Community, Spotlights, and a clear link to Pinsider. Free, collector-run.",
     href: "/",
   },
 ];

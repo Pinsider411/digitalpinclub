@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     template: "%s · Digital Pin Club",
   },
   description:
-    "Independent fan community for digital pin collectors. Learn the hobby, follow drops, show off your board, and find your people. Not affiliated with Disney, Dapper Labs, or Disney Pinnacle.",
+    "Community for digital pin collectors. Learn the hobby, follow drops, show off your board, and find your people. Not affiliated with Disney, Dapper Labs, or Disney Pinnacle.",
   openGraph: {
     title: "Digital Pin Club — Community for Digital Pin Collectors",
     description:
-      "Independent fan community for digital pin collectors. Learn, trade smarter, and belong.",
+      "Community for digital pin collectors. Learn, trade smarter, and belong.",
     siteName: "Digital Pin Club",
     type: "website",
   },
@@ -57,7 +57,7 @@ export default function RootLayout({
         <div className="border-b border-border bg-surface">
           <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2 text-center sm:justify-between sm:px-6">
             <p className="inline-flex flex-wrap items-center justify-center gap-1.5 font-mono text-[11px] text-muted sm:text-xs">
-              Unofficial club · Data desk on{" "}
+              Data desk on{" "}
               <a
                 href="https://pinsider.io"
                 target="_blank"

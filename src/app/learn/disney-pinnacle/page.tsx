@@ -13,7 +13,7 @@ export default function DisneyPinnaclePage() {
     <LearnArticle
       level="Beginner"
       title="Disney Pinnacle overview"
-      description="Disney Pinnacle is the official licensed digital pin experience. Digital Pin Club is the unofficial fan clubhouse next door."
+      description="Disney Pinnacle is the official licensed digital pin experience. Digital Pin Club is the collector clubhouse next door."
       related={[
         { href: "/learn/what-are-digital-pins", label: "What are digital pins?" },
         { href: "/learn/how-drops-work", label: "How drops work" },
@@ -74,10 +74,8 @@ export default function DisneyPinnaclePage() {
         sells you official pins.
       </p>
       <p>
-        Brand reminder: we are <strong className="text-text">Digital Pin Club</strong>,
-        an unofficial fan community. We are not “Disney Pin Club,” and we are not
-        affiliated with, endorsed by, or sponsored by The Walt Disney Company, Dapper
-        Labs, or Disney Pinnacle.
+        Brand reminder: we are <strong className="text-text">Digital Pin Club</strong> —
+        a collector community. We are not “Disney Pin Club.”
       </p>
       <p>
         Ready for mechanics? Read{" "}

@@ -63,7 +63,7 @@ const terms: { term: string; def: string }[] = [
   },
   {
     term: "Digital Pin Club",
-    def: "This unofficial fan community — guides, calendar context, culture. Not affiliated with Disney, Dapper Labs, or Disney Pinnacle. Not a marketplace.",
+    def: "This collector community — guides, calendar context, culture. Not affiliated with Disney, Dapper Labs, or Disney Pinnacle. Not a marketplace.",
   },
   {
     term: "Pinsider",

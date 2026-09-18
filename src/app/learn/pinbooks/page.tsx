@@ -5,7 +5,7 @@ import { LearnArticle } from "@/components/LearnArticle";
 export const metadata: Metadata = {
   title: "Pinbooks",
   description:
-    "How Pinbooks work for displaying and sharing your digital pin collection — themes, layouts, and collector culture. Unofficial guide.",
+    "How Pinbooks work for displaying and sharing your digital pin collection — themes, layouts, and collector culture.",
 };
 
 export default function PinbooksPage() {

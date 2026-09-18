@@ -62,7 +62,7 @@ export function Footer() {
         </div>
 
         <p className="mt-8 font-mono text-xs text-muted">
-          © {new Date().getFullYear()} Digital Pin Club · Unofficial fan community
+          © {new Date().getFullYear()} Digital Pin Club
         </p>
       </div>
     </footer>

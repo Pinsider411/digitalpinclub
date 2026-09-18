@@ -10,7 +10,7 @@ import { DiscordInvite } from "@/components/DiscordInvite";
 
 export const metadata: Metadata = {
   title: "Community",
-  description: "Join Digital Pin Club — free, unofficial, run by collectors. Hangouts, Watch & Follow creators, and clubhouse culture.",
+  description: "Join Digital Pin Club — free, run by collectors. Hangouts, Watch & Follow creators, and clubhouse culture.",
 };
 
 export default function CommunityPage() {
@@ -114,10 +114,6 @@ export default function CommunityPage() {
         </Link>
       </div>
 
-      <p className="mt-8 text-sm text-muted">
-        Unofficial fan community. Not affiliated with Disney, Dapper Labs, or Disney
-        Pinnacle.
-      </p>
     </Section>
   );
 }

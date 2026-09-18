@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Spotlights",
   description:
-    "Collector spotlights from Digital Pin Club — Watch Pinnacle–style profiles with stats from indexed on-chain activity. Unofficial fan site.",
+    "Collector spotlights from Digital Pin Club — Watch Pinnacle–style profiles with stats from indexed on-chain activity.",
 };
 
 function StatCell({ label, value }: { label: string; value: string }) {
@@ -200,10 +200,7 @@ export default function SpotlightsPage() {
       <div className="mt-10 space-y-4">
         <div className="rounded-[20px] border border-border bg-surface px-5 py-5 sm:px-6">
           <p className="text-sm leading-relaxed text-muted">
-            <strong className="text-text">Disclaimer.</strong> Digital Pin Club is an
-            unofficial fan site — not affiliated with, endorsed by, or sponsored by The Walt
-            Disney Company, Dapper Labs, or Disney Pinnacle. Collector stats on this page
-            come from{" "}
+            Collector stats on this page come from{" "}
             <a
               href={watchPinnacleSpotlightUrl}
               target="_blank"
@@ -214,7 +211,8 @@ export default function SpotlightsPage() {
             </a>{" "}
             public profiles / on-chain index ({sourceNote}). History before mid-2024 may
             still be backfilling; values are estimates (ASP / low ask), not offers to buy or
-            sell. Featured pin stills nearby are club examples collectors talk about — not official product pages.
+            sell. Featured pin stills nearby are club examples collectors talk about — not
+            official product pages.
           </p>
           <a
             href={watchPinnacleSpotlightUrl}

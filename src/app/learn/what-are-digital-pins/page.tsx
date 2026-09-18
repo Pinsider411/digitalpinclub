@@ -8,7 +8,7 @@ import { clubPins } from "@/data/pins";
 export const metadata: Metadata = {
   title: "What are digital pins?",
   description:
-    "A friendly intro to digital enamel-style pins — collecting, displaying, and trading in Disney Pinnacle. Unofficial Digital Pin Club guide.",
+    "A friendly intro to digital enamel-style pins — collecting, displaying, and trading in Disney Pinnacle.",
 };
 
 export default function WhatAreDigitalPinsPage() {

@@ -112,7 +112,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="mt-5 font-mono text-xs text-muted">
-              Free to join · Unofficial · Run by collectors
+              Free to join · Run by collectors
             </p>
           </div>
           <FloatingBadges />

@@ -5,7 +5,7 @@ import { Section } from "@/components/Section";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "About Digital Pin Club — independent fan community for digital pin collectors.",
+  description: "About Digital Pin Club — a community for people who collect digital pins.",
 };
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="A clubhouse for collectors."
-        description="Digital Pin Club is an unofficial fan community for people who collect digital pins. We help you learn the hobby, follow drops, show boards, and find your people."
+        description="Digital Pin Club is a community for people who collect digital pins. We help you learn the hobby, follow drops, show boards, and find your people."
       />
       <div className="prose-club max-w-2xl space-y-4 text-sm">
         <p>

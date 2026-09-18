@@ -5,7 +5,7 @@ import { LearnArticle } from "@/components/LearnArticle";
 export const metadata: Metadata = {
   title: "How drops work",
   description:
-    "Revolving Storefront, Mystery Capsules, bundles, and sets — how Disney Pinnacle drops typically work. Unofficial Digital Pin Club guide.",
+    "Revolving Storefront, Mystery Capsules, bundles, and sets — how Disney Pinnacle drops typically work.",
 };
 
 export default function HowDropsWorkPage() {

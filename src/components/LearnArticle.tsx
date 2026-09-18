@@ -37,28 +37,6 @@ export function LearnArticle({
 
       <article className="prose-club max-w-2xl space-y-4 text-sm">{children}</article>
 
-      <aside className="mt-10 max-w-2xl rounded-2xl border border-border bg-surface p-5 text-sm leading-relaxed text-muted">
-        <p className="font-mono text-xs uppercase tracking-widest text-accent">
-          Unofficial note
-        </p>
-        <p className="mt-2">
-          Digital Pin Club is an independent fan community. We are{" "}
-          <strong className="text-text">
-            not affiliated with, endorsed by, or sponsored by
-          </strong>{" "}
-          The Walt Disney Company, Dapper Labs, or Disney Pinnacle. Official features,
-          fees, windows, and odds change — always verify on the{" "}
-          <a href={OFFICIAL} target="_blank" rel="noopener noreferrer">
-            official Disney Pinnacle site
-          </a>{" "}
-          and{" "}
-          <a href={DIGITAL_PINS_101} target="_blank" rel="noopener noreferrer">
-            Digital Pins 101
-          </a>
-          .
-        </p>
-      </aside>
-
       <nav
         className="mt-8 flex flex-wrap gap-3"
         aria-label="Related links"

@@ -10,7 +10,7 @@ import { DiscordInvite } from "@/components/DiscordInvite";
 export const metadata: Metadata = {
   title: "Watch & Follow",
   description:
-    "Independent Disney Pinnacle creators to watch — drop alerts, how-tos, cafe hangs, and collector podcasts. Unofficial Digital Pin Club directory.",
+    "Disney Pinnacle creators to watch — drop alerts, how-tos, cafe hangs, and collector podcasts. Digital Pin Club directory.",
 };
 
 export default function WatchFollowPage() {
@@ -58,8 +58,7 @@ export default function WatchFollowPage() {
         </p>
         <p className="mt-2">
           Independent collectors and creators. Views are their own. Listing ≠ endorsement
-          by Disney, Dapper Labs, Disney Pinnacle, or Digital Pin Club. We are an
-          unofficial fan community.
+          by Disney, Dapper Labs, Disney Pinnacle, or Digital Pin Club.
         </p>
       </aside>
 
