@@ -19,10 +19,12 @@ const thisWeek: {
   note?: string;
 }[] = [
   {
-    label: "Next drop",
-    title: "Weekend set tease",
-    meta: "Fri · TBA",
-    body: "Placeholder: watch for the next digital pin drop window and set reveals.",
+    label: "Live drop",
+    title: "Cats & Dogs Vol.1 [3/4]",
+    meta: "Sep 15–22 · $4.99",
+    body: "Open Edition mystery capsules are live — Nana & Pluto, with Standard, Silver Sparkle, Golden, and Digital Display variants. Window closes Sep 22.",
+    href: "https://disneypinnacle.com/releases/ea47ea55-a332-400e-aae8-c67c52efed39",
+    cta: "Official release →",
   },
   {
     label: "Disney+ Perks",
