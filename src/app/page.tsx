@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FloatingBadges } from "@/components/FloatingBadges";
-import { PinsInTheClub } from "@/components/PinsInTheClub";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { DigestForm } from "@/components/DigestForm";
 import { Section } from "@/components/Section";
@@ -185,10 +184,6 @@ export default function HomePage() {
         </Link>
       </Section>
 
-      {/* Pins in the club */}
-      <Section className="!pt-0">
-        <PinsInTheClub />
-      </Section>
 
       {/* A club, not a store */}
       <Section className="!pt-0">
