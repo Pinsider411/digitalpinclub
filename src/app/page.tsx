@@ -121,7 +121,7 @@ export default function HomePage() {
       </Section>
 
       {/* This week */}
-      <Section className="!pt-4 sm:!pt-6">
+      <Section className="!pt-4 sm:!pt-6 !pb-6 sm:!pb-8">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-live">This week</p>
@@ -186,7 +186,7 @@ export default function HomePage() {
 
 
       {/* A club, not a store */}
-      <Section className="!pt-0">
+      <Section className="!pt-0 !pb-6 sm:!pb-8">
         <h2 className="font-display text-3xl font-semibold text-text sm:text-4xl">
           A club, not a store.
         </h2>
@@ -226,7 +226,7 @@ export default function HomePage() {
 
       {/* Full-width band */}
       <div className="border-y border-border bg-surface">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-10 sm:flex-row sm:items-center sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 py-6 sm:py-7 sm:flex-row sm:items-center sm:px-6">
           <div>
             <h2 className="font-display text-2xl font-semibold text-text sm:text-3xl">
               Never collected a digital pin?
@@ -243,7 +243,7 @@ export default function HomePage() {
       </div>
 
       {/* Watch the club */}
-      <Section className="!pt-0">
+      <Section className="!pt-6 sm:!pt-8">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-accent">
