@@ -156,6 +156,27 @@ export default function SpotlightsPage() {
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
               {clubFounder.blurb}
             </p>
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <a
+                href={clubFounder.tradeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill bg-cta px-5 py-2.5 text-sm font-medium text-cta-text transition hover:brightness-110"
+              >
+                Trade with me
+              </a>
+              <a
+                href={clubFounder.xUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill border border-accent px-5 py-2.5 text-sm font-medium text-accent transition hover:bg-accent/10"
+              >
+                X · @Apache1999
+              </a>
+            </div>
+            <p className="mt-2 font-mono text-[11px] text-muted">
+              Trade opens on Disney Pinnacle · confirm in app
+            </p>
           </div>
           <figure className="w-28 shrink-0">
             <PinMedia

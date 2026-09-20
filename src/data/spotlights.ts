@@ -40,6 +40,8 @@ export const clubFounder = {
   role: "Founder of Digital Pin Club / Pinsider",
   blurb:
     "Building Digital Pin Club and Pinsider so collectors have a warm home base and a clear data desk — without the store energy.",
+  tradeUrl: "https://disneypinnacle.com/trade?user=@Apache1999",
+  xUrl: "https://x.com/Apache1999",
 } as const;
 
 export const spotlightsData: SpotlightsData = {
