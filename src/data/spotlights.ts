@@ -37,9 +37,9 @@ export type SpotlightsData = {
 
 export const clubFounder = {
   handle: "@apache1999",
-  role: "Founder of Digital Pin Club / Pinsider",
+  role: "Founder of Digital Pin Club / Pinsider.io",
   blurb:
-    "Building Digital Pin Club and Pinsider so collectors have a warm home base and a clear data desk — without the store energy.",
+    "Building Digital Pin Club and Pinsider.io so collectors have a warm home base and a clear data desk — without the store energy.",
   tradeUrl: "https://disneypinnacle.com/trade?user=@Apache1999",
   xUrl: "https://x.com/Apache1999",
 } as const;
