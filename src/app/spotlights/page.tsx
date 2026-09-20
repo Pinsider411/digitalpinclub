@@ -229,7 +229,7 @@ export default function SpotlightsPage() {
             Featured collectors
           </p>
           <h2 className="mt-1 font-display text-2xl font-semibold text-text">
-            Watch Pinnacle–style spotlights
+            Community Spotlights
           </h2>
         </div>
         <p className="font-mono text-[11px] text-muted">Updated {updatedAt}</p>
