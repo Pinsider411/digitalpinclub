@@ -178,19 +178,26 @@ export default function SpotlightsPage() {
             </p>
           </div>
           <figure className="mx-auto w-40 shrink-0 sm:mx-0 sm:w-48 md:w-56">
-            <div className="overflow-hidden rounded-xl border border-border bg-bg/60">
-              <Image
-                src="/club/apache1999-pinbook.jpg"
-                alt="@apache1999 Pinbook page — some favorite pins"
-                width={1000}
-                height={1755}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 224px"
-              />
-            </div>
-            <figcaption className="mt-2 text-center font-mono text-[10px] text-muted">
-              some of my favorite pins
-            </figcaption>
+            <a
+              href={clubFounder.pinbookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block transition hover:opacity-90"
+            >
+              <div className="overflow-hidden rounded-xl border border-border bg-bg/60">
+                <Image
+                  src="/club/apache1999-pinbook.jpg"
+                  alt="@apache1999 Pinbook page — some favorite pins"
+                  width={1000}
+                  height={1755}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 224px"
+                />
+              </div>
+              <figcaption className="mt-2 text-center font-mono text-[10px] text-muted">
+                some of my favorite pins
+              </figcaption>
+            </a>
           </figure>
         </div>
         <div className="border-t border-border px-6 py-3 sm:px-8">

@@ -42,6 +42,8 @@ export const clubFounder = {
     "Building Digital Pin Club and Pinsider.io so collectors have a warm home base and a clear data desk — without the store energy.",
   tradeUrl: "https://disneypinnacle.com/trade?user=@Apache1999",
   xUrl: "https://x.com/Apache1999",
+  pinbookUrl:
+    "https://disneypinnacle.com/pinbooks/pinbook-27c10805-53af-41e1-aa3c-246b96f9056a",
 } as const;
 
 export const spotlightsData: SpotlightsData = {
