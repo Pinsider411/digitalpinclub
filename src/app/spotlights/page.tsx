@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
-import { PinMedia } from "@/components/PinMedia";
 import { PinDisclaimer } from "@/components/PinDisclaimer";
-import { clubPins } from "@/data/pins";
 import {
   buildSpotlightNarrative,
   clubFounder,
@@ -146,7 +145,7 @@ export default function SpotlightsPage() {
 
       {/* Club founder — separate from Watch Pinnacle featured collectors */}
       <div className="mb-10 card border-accent/40 overflow-hidden p-0">
-        <div className="flex flex-wrap items-start justify-between gap-4 p-6 sm:p-8">
+        <div className="flex flex-col gap-6 p-6 sm:flex-row sm:items-start sm:justify-between sm:gap-8 sm:p-8">
           <div className="min-w-0 flex-1">
             <p className="font-mono text-xs uppercase tracking-widest text-live">Club note</p>
             <h2 className="mt-2 font-display text-2xl font-semibold text-text">
@@ -175,19 +174,22 @@ export default function SpotlightsPage() {
               </a>
             </div>
             <p className="mt-2 font-mono text-[11px] text-muted">
-              Trade opens on Disney Pinnacle · confirm in app
+              Trade with me opens on Disney Pinnacle
             </p>
           </div>
-          <figure className="w-28 shrink-0">
-            <PinMedia
-              pin={clubPins.fantasia85}
-              autoPlay={false}
-              className="aspect-square rounded-xl border border-border bg-bg/60 p-1"
-              imgClassName="object-contain"
-              sizes="112px"
-            />
-            <figcaption className="mt-2 font-mono text-[10px] text-muted">
-              Club example · {clubPins.fantasia85.title}
+          <figure className="mx-auto w-40 shrink-0 sm:mx-0 sm:w-48 md:w-56">
+            <div className="overflow-hidden rounded-xl border border-border bg-bg/60">
+              <Image
+                src="/club/apache1999-pinbook.jpg"
+                alt="@apache1999 Pinbook page — some favorite pins"
+                width={1000}
+                height={1755}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 224px"
+              />
+            </div>
+            <figcaption className="mt-2 text-center font-mono text-[10px] text-muted">
+              some of my favorite pins
             </figcaption>
           </figure>
         </div>
