@@ -16,7 +16,19 @@ const thisWeek: {
   logoSrc?: string;
   cta?: string;
   note?: string;
+  /** Live chip styling (text-live) */
+  live?: boolean;
 }[] = [
+  {
+    label: "Trading event · Live",
+    title: "Pinnacle Trading Event",
+    meta: "Sep 18 – Sep 25 (confirm end time in app)",
+    body: "Trade with unique partners to unlock 3 digital pin variants at 5, 15, and 30 partners. Trading is only open during this window.",
+    href: "https://disneypinnacle.com/trade",
+    cta: "Trade on Disney Pinnacle →",
+    note: "Confirm timing and rules officially in the Disney Pinnacle app.",
+    live: true,
+  },
   {
     label: "Live drop",
     title: "Cats & Dogs Vol.1 [3/4]",
@@ -24,6 +36,7 @@ const thisWeek: {
     body: "Open Edition mystery capsules are live — Nana & Pluto, with Standard, Silver Sparkle, Golden, and Digital Display variants. Window closes Sep 22.",
     href: "https://disneypinnacle.com/releases/ea47ea55-a332-400e-aae8-c67c52efed39",
     cta: "Official release →",
+    live: true,
   },
   {
     label: "Disney+ Perks",
@@ -34,12 +47,6 @@ const thisWeek: {
     logoSrc: "/brand/disney-plus/disney-plus-wordmark.svg",
     cta: "Sign up for Perks",
     note: "Independent tip · not affiliated with Disney+",
-  },
-  {
-    label: "Digest",
-    title: "Sunday Pin Press",
-    meta: "Sun · Inbox",
-    body: "Placeholder: weekly roundup of drops, community notes, and Pinsider highlights.",
   },
 ];
 
@@ -140,7 +147,7 @@ export default function HomePage() {
               className="glass flex flex-col rounded-[20px] p-5"
             >
               <div className="flex items-start justify-between gap-3">
-                <p className="font-mono text-xs text-accent">{card.label}</p>
+                <p className={`font-mono text-xs ${card.live ? "text-live" : "text-accent"}`}>{card.label}</p>
                 {card.logoSrc ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img

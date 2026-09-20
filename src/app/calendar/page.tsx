@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { ReleaseTimeline } from "@/components/ReleaseTimeline";
 import { Section } from "@/components/Section";
+import { calendarEvents } from "@/data/calendar-events";
 import {
   officialReleasesUrl,
   pinnacleReleases,
@@ -34,6 +35,69 @@ export default function CalendarPage() {
         title="Release calendar / history"
         description="An index of 225 Disney Pinnacle releases from the official Releases page — from Star Wars Holiday / earliest through current — with availability windows when known, optional prices, and More info links out."
       />
+
+      {calendarEvents.length > 0 ? (
+        <div className="mb-10">
+          <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-widest text-live">
+                Happening now
+              </p>
+              <h2 className="mt-1 font-display text-2xl font-semibold text-text">
+                Current events
+              </h2>
+            </div>
+            <p className="font-mono text-[11px] text-muted">
+              Confirm timing officially
+            </p>
+          </div>
+          <ul className="space-y-3">
+            {calendarEvents.map((event) => (
+              <li key={event.id} className="card border-accent/30 p-5 sm:p-6">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span
+                    className={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] ${
+                      event.chipTone === "live"
+                        ? "border-live/40 bg-live/10 text-live"
+                        : "border-accent/40 bg-accent/10 text-accent"
+                    }`}
+                  >
+                    {event.chip}
+                  </span>
+                  <p className="font-mono text-xs text-muted">{event.dates}</p>
+                </div>
+                <h3 className="mt-2 font-display text-lg font-semibold text-text">
+                  {event.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {event.oneLiner}
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <a
+                    href={event.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 rounded-full border border-accent/40 bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent transition hover:border-accent hover:bg-accent/20"
+                  >
+                    {event.cta ?? "More info →"}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  {event.secondaryHref ? (
+                    <a
+                      href={event.secondaryHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs text-muted hover:text-accent hover:underline"
+                    >
+                      {event.secondaryCta ?? "Source"} ↗
+                    </a>
+                  ) : null}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
 
       <div className="mb-10 space-y-4">
         <div className="card border-accent/40 p-5 sm:p-6">
