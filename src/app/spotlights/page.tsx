@@ -190,9 +190,6 @@ export default function SpotlightsPage() {
               Club example · {clubPins.fantasia85.title}
             </figcaption>
           </figure>
-          <p className="w-full font-mono text-[11px] text-muted sm:w-auto">
-            Digital Pin Club · not a WP profile
-          </p>
         </div>
         <div className="border-t border-border px-6 py-3 sm:px-8">
           <PinDisclaimer />
