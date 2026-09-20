@@ -9,6 +9,8 @@ export type SpotlightCollector = {
   handle: string;
   address: string;
   profileUrl: string;
+  /** Disney Pinnacle trade link; defaults to /trade?user=handle when omitted */
+  tradeUrl?: string;
   rankLabel: string | null;
   badges: string[];
   pinsHeld: number;

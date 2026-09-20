@@ -29,6 +29,9 @@ function StatCell({ label, value }: { label: string; value: string }) {
 
 function CollectorCard({ collector, featured }: { collector: SpotlightCollector; featured?: boolean }) {
   const narrative = buildSpotlightNarrative(collector);
+  const tradeUrl =
+    collector.tradeUrl ??
+    `https://disneypinnacle.com/trade?user=${encodeURIComponent(collector.handle)}`;
 
   return (
     <article
@@ -45,14 +48,29 @@ function CollectorCard({ collector, featured }: { collector: SpotlightCollector;
             </h2>
             <p className="mt-1 font-mono text-[11px] text-muted">{collector.address}</p>
           </div>
-          <a
-            href={collector.profileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pill border border-border bg-card px-4 py-2 text-xs font-medium text-text transition hover:border-accent"
-          >
-            View on Watch Pinnacle →
-          </a>
+          <div className="flex flex-col items-stretch gap-2 sm:items-end">
+            <div className="flex flex-wrap items-center justify-end gap-2">
+              <a
+                href={tradeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill bg-cta px-4 py-2 text-xs font-medium text-cta-text transition hover:brightness-110"
+              >
+                Trade with me
+              </a>
+              <a
+                href={collector.profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill border border-border bg-card px-4 py-2 text-xs font-medium text-text transition hover:border-accent"
+              >
+                View on Watch Pinnacle →
+              </a>
+            </div>
+            <p className="font-mono text-[11px] text-muted sm:text-right">
+              Trade with me opens on Disney Pinnacle
+            </p>
+          </div>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {collector.badges.map((badge) => (
