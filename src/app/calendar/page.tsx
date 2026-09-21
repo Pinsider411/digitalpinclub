@@ -54,6 +54,20 @@ export default function CalendarPage() {
           <ul className="space-y-3">
             {calendarEvents.map((event) => (
               <li key={event.id} className="card border-accent/30 p-5 sm:p-6">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+                  {event.imageSrc ? (
+                    <div className="w-full shrink-0 overflow-hidden rounded-xl border border-accent/20 bg-surface sm:w-36">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={event.imageSrc}
+                        alt={event.imageAlt ?? event.title}
+                        width={600}
+                        height={450}
+                        className="aspect-[4/3] w-full object-cover"
+                      />
+                    </div>
+                  ) : null}
+                  <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <span
                     className={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] ${
@@ -92,6 +106,8 @@ export default function CalendarPage() {
                       {event.secondaryCta ?? "Source"} ↗
                     </a>
                   ) : null}
+                </div>
+                  </div>
                 </div>
               </li>
             ))}

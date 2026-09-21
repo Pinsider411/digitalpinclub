@@ -11,6 +11,9 @@ export type CalendarEvent = {
   /** Optional secondary cite (e.g. official X announcement) */
   secondaryHref?: string;
   secondaryCta?: string;
+  /** Optional announce / hero thumb */
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 /**
@@ -28,6 +31,8 @@ export const calendarEvents: CalendarEvent[] = [
       "Seven sets · packs from $4.99 · trade rewards · confirm windows officially",
     href: "https://disneypinnacle.com/news/summer-sunset-event",
     cta: "Official details →",
+    imageSrc: "/events/summer-sunset/announce.webp",
+    imageAlt: "Summer Sunset Event official announce art",
   },
   {
     id: "trading-event-sep-2026",

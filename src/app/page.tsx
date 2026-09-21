@@ -14,6 +14,10 @@ const thisWeek: {
   body: string;
   href?: string;
   logoSrc?: string;
+  /** Optional hero thumb (event announce art) */
+  imageSrc?: string;
+  imageAlt?: string;
+  imageCaption?: string;
   cta?: string;
   note?: string;
   /** Live chip styling (text-live) */
@@ -25,6 +29,9 @@ const thisWeek: {
     meta: "Sep 25 – Oct 2 · from $4.99",
     body: "Seven sets · Limited + Open Edition · trade rewards and a Genesis chase. Verify pack windows on official News — times can shift.",
     href: "https://disneypinnacle.com/news/summer-sunset-event",
+    imageSrc: "/events/summer-sunset/announce.webp",
+    imageAlt: "Summer Sunset Event official announce art",
+    imageCaption: "Official announce art · Disney Pinnacle",
     cta: "Official details →",
     note: "Confirm windows and pricing officially in the Disney Pinnacle app.",
   },
@@ -159,6 +166,23 @@ export default function HomePage() {
                   />
                 ) : null}
               </div>
+              {card.imageSrc ? (
+                <figure className="mt-3 overflow-hidden rounded-xl border border-accent/20 bg-surface">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={card.imageSrc}
+                    alt={card.imageAlt ?? card.title}
+                    width={600}
+                    height={450}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  {card.imageCaption ? (
+                    <figcaption className="border-t border-accent/15 px-2.5 py-1.5 font-mono text-[10px] text-muted/80">
+                      {card.imageCaption}
+                    </figcaption>
+                  ) : null}
+                </figure>
+              ) : null}
               <h3 className="mt-2 font-display text-xl font-semibold text-text">
                 {card.title}
               </h3>
