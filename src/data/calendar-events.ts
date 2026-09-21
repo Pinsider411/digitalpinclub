@@ -46,5 +46,7 @@ export const calendarEvents: CalendarEvent[] = [
     cta: "More info →",
     secondaryHref: "https://x.com/DisneyPinnacle/status/2101085557644239074",
     secondaryCta: "Announcement on X",
+    imageSrc: "/events/trading-event/hero.webp",
+    imageAlt: "Disney Pinnacle Trading Event official art",
   },
 ];
