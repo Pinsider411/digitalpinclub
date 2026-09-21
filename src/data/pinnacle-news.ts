@@ -24,7 +24,7 @@ export type ClubNote = {
 };
 
 /** When this index was last curated from the official News page. */
-export const pinnacleNewsSnapshotDate = "2026-09-15";
+export const pinnacleNewsSnapshotDate = "2026-09-21";
 
 export const officialNewsIndexUrl = "https://disneypinnacle.com/news";
 
@@ -34,6 +34,13 @@ export const officialNewsIndexUrl = "https://disneypinnacle.com/news";
  * Duplicate holiday-unlock test cards omitted.
  */
 export const pinnacleNewsItems: PinnacleNewsItem[] = [
+  {
+    date: "2026-09-20",
+    title: "Summer Sunset Event",
+    category: "Drop Event",
+    url: "https://disneypinnacle.com/news/summer-sunset-event",
+    blurb: "Seven sets drop event — Limited, Open Edition, and trade rewards. Verify windows on official News.",
+  },
   {
     date: "2026-08-12",
     title: "D23: Ultimate Fan Event 2026 & Summer Showcase Event",
