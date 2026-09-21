@@ -19,6 +19,17 @@ export type CalendarEvent = {
  */
 export const calendarEvents: CalendarEvent[] = [
   {
+    id: "summer-sunset-2026",
+    chip: "Drop event",
+    chipTone: "accent",
+    title: "Summer Sunset Event",
+    dates: "Sep 25 – Oct 2, 2026",
+    oneLiner:
+      "Seven sets · packs from $4.99 · trade rewards · confirm windows officially",
+    href: "https://disneypinnacle.com/news/summer-sunset-event",
+    cta: "Official details →",
+  },
+  {
     id: "trading-event-sep-2026",
     chip: "Trading",
     chipTone: "live",

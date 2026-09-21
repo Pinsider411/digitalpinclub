@@ -39,7 +39,7 @@ export const pinnacleNewsItems: PinnacleNewsItem[] = [
     title: "Summer Sunset Event",
     category: "Drop Event",
     url: "https://disneypinnacle.com/news/summer-sunset-event",
-    blurb: "Seven sets drop event — Limited, Open Edition, and trade rewards. Verify windows on official News.",
+    blurb: "Sep 25–Oct 2 · seven sets, Limited + OE, trade rewards. Confirm windows in the app.",
   },
   {
     date: "2026-08-12",

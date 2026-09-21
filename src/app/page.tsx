@@ -20,22 +20,22 @@ const thisWeek: {
   live?: boolean;
 }[] = [
   {
+    label: "Upcoming drop",
+    title: "Summer Sunset Event",
+    meta: "Sep 25 – Oct 2 · from $4.99",
+    body: "Seven sets · Limited + Open Edition · trade rewards and a Genesis chase. Verify pack windows on official News — times can shift.",
+    href: "https://disneypinnacle.com/news/summer-sunset-event",
+    cta: "Official details →",
+    note: "Confirm windows and pricing officially in the Disney Pinnacle app.",
+  },
+  {
     label: "Trading event · Live",
     title: "Pinnacle Trading Event",
     meta: "Sep 18 – Sep 25 (confirm end time in app)",
-    body: "Trade with unique partners to unlock 3 digital pin variants at 5, 15, and 30 partners. Trading is only open during this window.",
+    body: "Trade with unique partners to unlock 3 digital pin variants at 5, 15, and 30 partners. Trading is only open during this window — may overlap Summer Sunset open.",
     href: "https://disneypinnacle.com/trade",
     cta: "Trade on Disney Pinnacle →",
     note: "Confirm timing and rules officially in the Disney Pinnacle app.",
-    live: true,
-  },
-  {
-    label: "Live drop",
-    title: "Cats & Dogs Vol.1 [3/4]",
-    meta: "Sep 15–22 · $4.99",
-    body: "Open Edition mystery capsules are live — Nana & Pluto, with Standard, Silver Sparkle, Golden, and Digital Display variants. Window closes Sep 22.",
-    href: "https://disneypinnacle.com/releases/ea47ea55-a332-400e-aae8-c67c52efed39",
-    cta: "Official release →",
     live: true,
   },
   {
