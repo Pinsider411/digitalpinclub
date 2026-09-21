@@ -9,6 +9,7 @@ import {
   type Creator,
   type FeaturedItem,
 } from "@/data/creators";
+import { CreatorAvatar } from "@/components/CreatorAvatar";
 import { YouTubeEmbed } from "./YouTubeEmbed";
 
 function PlatformChips({ creator }: { creator: Creator }) {
@@ -58,11 +59,21 @@ function FeaturedBlock({ item }: { item: FeaturedItem }) {
 function CreatorCard({ creator }: { creator: Creator }) {
   return (
     <article className="card flex flex-col p-6">
-      <p className="font-mono text-xs text-accent">{creator.role}</p>
-      <h3 className="mt-2 font-display text-xl font-semibold text-text">{creator.name}</h3>
-      {creator.aka && (
-        <p className="mt-1 font-mono text-[11px] text-muted">aka {creator.aka}</p>
-      )}
+      <div className="flex items-start gap-3 sm:gap-4">
+        <CreatorAvatar
+          src={creator.avatarSrc}
+          alt={creator.avatarAlt ?? creator.name}
+          size={64}
+          className="mt-0.5"
+        />
+        <div className="min-w-0 flex-1">
+          <p className="font-mono text-xs text-accent">{creator.role}</p>
+          <h3 className="mt-1 font-display text-xl font-semibold text-text">{creator.name}</h3>
+          {creator.aka && (
+            <p className="mt-1 font-mono text-[11px] text-muted">aka {creator.aka}</p>
+          )}
+        </div>
+      </div>
       <p className="mt-3 text-sm leading-relaxed text-muted">{creator.whyFollow}</p>
       <PlatformChips creator={creator} />
       <div className="mt-2 flex flex-wrap gap-1.5">
@@ -86,12 +97,21 @@ function FeaturedWeekCard({ creator }: { creator: Creator }) {
   const primary = creator.links[0];
   return (
     <article className="glass rounded-[20px] p-5">
-      <p className="font-mono text-xs text-live">Featured</p>
-      <h3 className="mt-2 font-display text-lg font-semibold text-text">{creator.name}</h3>
-      {creator.aka && (
-        <p className="mt-1 font-mono text-[10px] text-muted">aka {creator.aka}</p>
-      )}
-      <p className="mt-2 text-sm leading-relaxed text-muted">{creator.whyFollow}</p>
+      <div className="flex items-start gap-3">
+        <CreatorAvatar
+          src={creator.avatarSrc}
+          alt={creator.avatarAlt ?? creator.name}
+          size={56}
+        />
+        <div className="min-w-0 flex-1">
+          <p className="font-mono text-xs text-live">Featured</p>
+          <h3 className="mt-1 font-display text-lg font-semibold text-text">{creator.name}</h3>
+          {creator.aka && (
+            <p className="mt-1 font-mono text-[10px] text-muted">aka {creator.aka}</p>
+          )}
+        </div>
+      </div>
+      <p className="mt-3 text-sm leading-relaxed text-muted">{creator.whyFollow}</p>
       {primary && (
         <a
           href={primary.href}
@@ -139,13 +159,23 @@ export function WatchFollowClient({
       </div>
 
       <div className="card border-accent/30 p-6 sm:p-8">
-        <p className="font-mono text-xs text-accent">Hub channel</p>
-        <h2 className="mt-2 font-display text-2xl font-semibold text-text">
-          {hubChannel.name}
-        </h2>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-          {hubChannel.blurb}
-        </p>
+        <div className="flex items-start gap-4">
+          <CreatorAvatar
+            src={hubChannel.avatarSrc}
+            alt={hubChannel.avatarAlt ?? hubChannel.name}
+            size={72}
+            className="mt-0.5"
+          />
+          <div className="min-w-0 flex-1">
+            <p className="font-mono text-xs text-accent">Hub channel</p>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-text">
+              {hubChannel.name}
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+              {hubChannel.blurb}
+            </p>
+          </div>
+        </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {hubChannel.links.map((l) => (
             <a

@@ -39,12 +39,18 @@ export type Creator = {
   links: CreatorLink[];
   tags: ContentTag[];
   featured: FeaturedItem[];
+  /** Optional public profile/channel avatar under /public/creators/{id}/ */
+  avatarSrc?: string;
+  avatarAlt?: string;
 };
 
 export type HubChannel = {
   name: string;
   blurb: string;
   links: CreatorLink[];
+  /** Optional hub channel avatar */
+  avatarSrc?: string;
+  avatarAlt?: string;
 };
 
 export const FILTER_CHIPS: ContentTag[] = [
@@ -59,6 +65,8 @@ export const hubChannel: HubChannel = {
   name: "Collectin & Connectin",
   blurb:
     "Home channel for cafe hangs, podcasts, and collector culture — including Briar Jay Café and What Do You Collect?",
+  avatarSrc: "/creators/collectin-connectin/avatar.webp",
+  avatarAlt: "Collectin & Connectin channel avatar",
   links: [
     {
       platform: "youtube",
@@ -85,6 +93,8 @@ export const creators: Creator[] = [
     aka: "VeVe Magic Pin Collector / formerly VeVeFanz",
     role: "Drop alerts, app how-tos, Magic Reveals, Pinnacle analytics shorts",
     whyFollow: "Fast drop alerts and practical Pinnacle how-tos without the hype spiral.",
+    avatarSrc: "/creators/magic-pin-collector/avatar.webp",
+    avatarAlt: "Magic Pin Collector YouTube channel avatar",
     links: [
       {
         platform: "x",
@@ -114,6 +124,8 @@ export const creators: Creator[] = [
     aka: "Briar Jay · Fairy Pin Mother",
     role: "Collector culture, cafe hangs, D23/Pinnacle chat",
     whyFollow: "Warm cafe energy — culture, community, and Pinnacle chat over coffee vibes.",
+    avatarSrc: "/creators/briar-jay/avatar.webp",
+    avatarAlt: "Briar Jay (Fairy Pin Mother) profile avatar",
     links: [
       {
         platform: "x",
@@ -148,6 +160,8 @@ export const creators: Creator[] = [
     aka: "Paul Campione",
     role: "Collecting culture, marketplace/D23, interviews",
     whyFollow: "Long-form collector stories — marketplace, D23, and interviews with the hobby’s people.",
+    avatarSrc: "/creators/paulie-wiz-wit/avatar.webp",
+    avatarAlt: "Paulie Wiz Wit profile avatar",
     links: [
       {
         platform: "x",

@@ -6,6 +6,7 @@ import { Section } from "@/components/Section";
 import { FindUsSection } from "@/components/SocialLinks";
 import { PinSiderLockup, PinSiderMark, PinSiderWordmark } from "@/components/PinSiderMark";
 import { getFeaturedThisWeek } from "@/data/creators";
+import { CreatorAvatar } from "@/components/CreatorAvatar";
 
 const thisWeek: {
   label: string;
@@ -303,12 +304,22 @@ export default function HomePage() {
         <div className="grid gap-4 md:grid-cols-3">
           {watchCreators.map((c) => (
             <article key={c.id} className="card p-6">
-              <p className="font-mono text-xs text-accent">{c.role}</p>
-              <h3 className="mt-2 font-display text-xl font-semibold text-text">{c.name}</h3>
-              {c.aka && (
-                <p className="mt-1 font-mono text-[11px] text-muted">aka {c.aka}</p>
-              )}
-              <p className="mt-2 text-sm leading-relaxed text-muted">{c.whyFollow}</p>
+              <div className="flex items-start gap-3 sm:gap-4">
+                <CreatorAvatar
+                  src={c.avatarSrc}
+                  alt={c.avatarAlt ?? c.name}
+                  size={64}
+                  className="mt-0.5"
+                />
+                <div className="min-w-0 flex-1">
+                  <p className="font-mono text-xs text-accent">{c.role}</p>
+                  <h3 className="mt-1 font-display text-xl font-semibold text-text">{c.name}</h3>
+                  {c.aka && (
+                    <p className="mt-1 font-mono text-[11px] text-muted">aka {c.aka}</p>
+                  )}
+                </div>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{c.whyFollow}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {c.links.slice(0, 3).map((l) => (
                   <a
