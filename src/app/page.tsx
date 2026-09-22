@@ -3,6 +3,7 @@ import { FloatingBadges } from "@/components/FloatingBadges";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { DigestForm } from "@/components/DigestForm";
 import { Section } from "@/components/Section";
+import { MintTotalCard } from "@/components/MintTotalCard";
 import { FindUsSection } from "@/components/SocialLinks";
 import { PinSiderLockup, PinSiderMark, PinSiderWordmark } from "@/components/PinSiderMark";
 import { getFeaturedThisWeek } from "@/data/creators";
@@ -222,6 +223,10 @@ export default function HomePage() {
         </Link>
       </Section>
 
+      {/* Mint desk */}
+      <Section className="!pt-0 !pb-6 sm:!pb-8">
+        <MintTotalCard />
+      </Section>
 
       {/* A club, not a store */}
       <Section className="!pt-0 !pb-6 sm:!pb-8">
