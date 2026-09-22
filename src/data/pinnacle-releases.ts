@@ -21,12 +21,22 @@ export type PinnacleRelease = {
 };
 
 /** When this index was last curated from the official Releases page. */
-export const pinnacleReleasesSnapshotDate = "2026-09-15";
+export const pinnacleReleasesSnapshotDate = "2026-09-22";
 
 export const officialReleasesUrl = "https://disneypinnacle.com/releases";
 
 /** Full unofficial index (225 releases), newest-first by startDate. */
 export const pinnacleReleases: PinnacleRelease[] = [
+  {
+    id: "912f3042-39d3-44b0-99dc-4d7953c56af6",
+    title: "Disney Cats & Dogs Vol.1 [4/4]",
+    url: "https://disneypinnacle.com/releases/912f3042-39d3-44b0-99dc-4d7953c56af6",
+    startDate: "2026-09-22",
+    endDate: "2026-09-29",
+    dateLabel: "Sep 22–29, 2026",
+    price: "$4.99",
+    excerpt: "The fourth and final wave of Disney's Cats & Dogs Vol.1 Open Edition digital pin set features Dinah, Bolt, and Mochi. Alice's curious kitten Dinah from Alice in Wonderland, the courageous canine star of Bolt, and the lovable Mochi from Big Hero 6 bring three very different personalities together to complete the Cats & Dogs collection.",
+  },
   {
     id: "ea47ea55-a332-400e-aae8-c67c52efed39",
     title: "Disney Cats & Dogs Vol.1 [3/4]",

@@ -24,7 +24,7 @@ export type ClubNote = {
 };
 
 /** When this index was last curated from the official News page. */
-export const pinnacleNewsSnapshotDate = "2026-09-21";
+export const pinnacleNewsSnapshotDate = "2026-09-22";
 
 export const officialNewsIndexUrl = "https://disneypinnacle.com/news";
 
@@ -34,6 +34,13 @@ export const officialNewsIndexUrl = "https://disneypinnacle.com/news";
  * Duplicate holiday-unlock test cards omitted.
  */
 export const pinnacleNewsItems: PinnacleNewsItem[] = [
+  {
+    date: "2026-09-21",
+    title: "September 2026 Trading Event",
+    category: "Drop Event",
+    url: "https://disneypinnacle.com/news/september-2026-trading-event",
+    blurb: "Mickey Mouse variants · 5 / 15 / 30 unique partners · through Sep 25, 9am PT. Confirm in app.",
+  },
   {
     date: "2026-09-20",
     title: "Summer Sunset Event",
