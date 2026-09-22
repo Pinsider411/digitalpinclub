@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { mintTotals } from "@/data/mint-totals";
+import { getMintTotals } from "@/data/mint-totals";
 
 function formatTotal(n: number): string {
   return new Intl.NumberFormat("en-US").format(n);
 }
 
-export function MintTotalCard() {
+export async function MintTotalCard() {
+  const mintTotals = await getMintTotals();
   const isLive =
     mintTotals.status === "live" && mintTotals.estimatedTotal != null;
   const displayTotal = isLive
