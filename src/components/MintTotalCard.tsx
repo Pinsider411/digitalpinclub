@@ -13,8 +13,8 @@ export async function MintTotalCard() {
     ? `~${formatTotal(mintTotals.estimatedTotal!)}`
     : "Indexing…";
   const meta = isLive
-    ? `Near-live · updated ${mintTotals.updatedLabel}`
-    : "Near-live · first catalog sync pending";
+    ? `Updated ${mintTotals.updatedLabel}`
+    : "Last pulled · first catalog sync pending";
 
   return (
     <article
@@ -42,11 +42,6 @@ export async function MintTotalCard() {
           {mintTotals.designsTracked != null ? (
             <p className="mt-1 font-mono text-[11px] text-muted/80">
               {mintTotals.designsTracked} designs tracked in club index
-            </p>
-          ) : null}
-          {isLive && mintTotals.sourceNote ? (
-            <p className="mt-1 font-mono text-[11px] text-muted/80">
-              {mintTotals.sourceNote}
             </p>
           ) : null}
           <p className="mt-3 max-w-xl text-xs leading-relaxed text-muted/90">
