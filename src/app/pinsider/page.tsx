@@ -129,9 +129,9 @@ export default function PinSiderPage() {
               Mint desk
             </h2>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
-              Near-live estimated platform mint total and per-design supply from
-              the club mint index. Search, filter by parallel, and sort without
-              leaving Digital Pin Club.
+              Estimated platform mint total and per-design supply from the club
+              mint index, with last-pulled sync time. Search, filter by
+              parallel, and sort without leaving Digital Pin Club.
             </p>
           </div>
           <Link

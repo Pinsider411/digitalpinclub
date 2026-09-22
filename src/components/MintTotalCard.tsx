@@ -13,8 +13,8 @@ export async function MintTotalCard() {
     ? `~${formatTotal(mintTotals.estimatedTotal!)}`
     : "Indexing…";
   const meta = isLive
-    ? `Near-live · updated ${mintTotals.updatedLabel}`
-    : "Near-live · first catalog sync pending";
+    ? `Updated ${mintTotals.updatedLabel}`
+    : "Last pulled · first catalog sync pending";
 
   return (
     <article

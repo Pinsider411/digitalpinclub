@@ -38,7 +38,7 @@ export const mintTotalsSnapshot: MintTotals = {
   estimatedTotal: 1_184_907,
   estimatedEffectiveSupply: 1_136_238,
   updatedAt: "2026-09-22T12:22:00-07:00",
-  updatedLabel: "Sep 22, 2026",
+  updatedLabel: "Sep 22, 12:22 PM PT",
   designsTracked: 2377,
   disclaimer: DISCLAIMER,
   sourceNote: SOURCE_NOTE,
@@ -48,12 +48,15 @@ export const mintTotalsSnapshot: MintTotals = {
 export const mintTotals: MintTotals = mintTotalsSnapshot;
 
 function formatUpdatedLabel(date: Date): string {
-  return new Intl.DateTimeFormat("en-US", {
+  const formatted = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/Los_Angeles",
     month: "short",
     day: "numeric",
-    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
   }).format(date);
+  return `${formatted} PT`;
 }
 
 function toLosAngelesIso(date: Date): string {

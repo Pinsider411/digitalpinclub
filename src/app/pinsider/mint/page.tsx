@@ -9,7 +9,7 @@ import { getPinEditions } from "@/data/pin-editions";
 export const metadata: Metadata = {
   title: "Mint desk · Pinsider",
   description:
-    "Near-live estimated mint totals and per-design supply from the Pinsider mint index.",
+    "Estimated mint totals and per-design supply from the Pinsider mint index, with last-pulled sync time.",
 };
 
 export const revalidate = 300;
@@ -45,7 +45,9 @@ export default async function MintDeskPage() {
   const totalDisplay = isLive
     ? formatInt(totals.estimatedTotal!)
     : "Indexing…";
-  const updatedChip = formatUpdatedChip(totals.updatedAt, totals.updatedLabel);
+  const updatedChip = isLive
+    ? `Updated ${totals.updatedLabel}`
+    : formatUpdatedChip(totals.updatedAt, totals.updatedLabel);
   const effective =
     totals.estimatedEffectiveSupply != null &&
     Number.isFinite(totals.estimatedEffectiveSupply)
@@ -93,9 +95,6 @@ export default async function MintDeskPage() {
               <span className="inline-flex items-center gap-1.5 rounded-full border border-[#245c45] bg-surface px-2.5 py-1 font-mono text-[11px] text-[#3ecf8e]">
                 <span aria-hidden>●</span>
                 {updatedChip}
-              </span>
-              <span className="rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-[11px] text-muted">
-                Near-live · hourly
               </span>
               {totals.designsTracked != null ? (
                 <span className="rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-[11px] text-muted">
