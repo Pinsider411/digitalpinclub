@@ -22,15 +22,10 @@ export type MintTotals = {
   /** Optional: designs/releases tracked in our index (not minted pins). */
   designsTracked?: number;
   disclaimer: string;
-  /** Optional note when status is live (source label). */
-  sourceNote?: string;
 };
 
 const DISCLAIMER =
   "Unofficial fan estimate · verify on Disney Pinnacle · OE totals move · LE can drop after burns";
-
-const SOURCE_NOTE =
-  "Sum of numMinted across designs on official Releases · unofficial fan index";
 
 /** Static fallback when DATABASE_URL is missing or Neon is unreachable. */
 export const mintTotalsSnapshot: MintTotals = {
@@ -41,7 +36,6 @@ export const mintTotalsSnapshot: MintTotals = {
   updatedLabel: "Sep 22, 12:22 PM PT",
   designsTracked: 2377,
   disclaimer: DISCLAIMER,
-  sourceNote: SOURCE_NOTE,
 };
 
 /** @deprecated Prefer getMintTotals() — kept for static imports / fallbacks. */
@@ -122,7 +116,6 @@ async function loadMintTotalsFromNeon(): Promise<MintTotals | null> {
         ? designsTracked
         : undefined,
       disclaimer: DISCLAIMER,
-      sourceNote: SOURCE_NOTE,
     };
   } catch (err) {
     console.error("[mint-totals] Neon read failed; using snapshot", err);

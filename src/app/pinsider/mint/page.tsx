@@ -139,7 +139,6 @@ export default async function MintDeskPage() {
 
       <p className="mt-6 max-w-3xl text-xs leading-relaxed text-muted">
         {DISCLAIMER}
-        {totals.sourceNote ? ` · ${totals.sourceNote}` : null}
       </p>
     </Section>
   );

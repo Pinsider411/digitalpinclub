@@ -44,11 +44,6 @@ export async function MintTotalCard() {
               {mintTotals.designsTracked} designs tracked in club index
             </p>
           ) : null}
-          {isLive && mintTotals.sourceNote ? (
-            <p className="mt-1 font-mono text-[11px] text-muted/80">
-              {mintTotals.sourceNote}
-            </p>
-          ) : null}
           <p className="mt-3 max-w-xl text-xs leading-relaxed text-muted/90">
             {mintTotals.disclaimer}
           </p>
