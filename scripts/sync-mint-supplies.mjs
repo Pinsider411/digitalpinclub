@@ -68,6 +68,8 @@ function mapEdition(e) {
     numMinted,
     maxMintSize: Number.isFinite(maxMintSize) ? maxMintSize : null,
     effectiveSupply: Number.isFinite(effectiveSupply) ? effectiveSupply : null,
+    // TODO: enrich name — Atlas editionTemplate.name is often an asset label
+    // (e.g. Set_Franchise_Pincard_Logo). Prefer collector title when available.
     name: tmpl.name || null,
     parallel: e.parallel || null,
     editionType: tmpl.editionType || null,

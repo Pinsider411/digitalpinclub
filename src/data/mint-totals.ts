@@ -14,6 +14,8 @@ export type MintTotals = {
   status: MintTotalsStatus;
   /** Platform-wide estimated minted pins — only when source is verifiable. */
   estimatedTotal: number | null;
+  /** Platform-wide estimated effective supply when available. */
+  estimatedEffectiveSupply: number | null;
   /** ISO 8601 with America/Los_Angeles offset when curated. */
   updatedAt: string;
   updatedLabel: string;
@@ -34,6 +36,7 @@ const SOURCE_NOTE =
 export const mintTotalsSnapshot: MintTotals = {
   status: "live",
   estimatedTotal: 1_184_907,
+  estimatedEffectiveSupply: 1_136_238,
   updatedAt: "2026-09-22T12:22:00-07:00",
   updatedLabel: "Sep 22, 2026",
   designsTracked: 2377,
@@ -87,6 +90,7 @@ async function loadMintTotalsFromNeon(): Promise<MintTotals | null> {
     const rows = await sql`
       SELECT
         estimated_total_minted,
+        estimated_total_effective_supply,
         edition_count,
         updated_at
       FROM mint_totals
@@ -96,6 +100,10 @@ async function loadMintTotalsFromNeon(): Promise<MintTotals | null> {
     const row = rows[0];
     if (!row) return null;
     const estimatedTotal = Number(row.estimated_total_minted);
+    const effectiveRaw = Number(row.estimated_total_effective_supply);
+    const estimatedEffectiveSupply = Number.isFinite(effectiveRaw)
+      ? effectiveRaw
+      : null;
     const designsTracked = Number(row.edition_count);
     if (!Number.isFinite(estimatedTotal) || estimatedTotal <= 0) return null;
     const updated = row.updated_at
@@ -104,6 +112,7 @@ async function loadMintTotalsFromNeon(): Promise<MintTotals | null> {
     return {
       status: "live",
       estimatedTotal,
+      estimatedEffectiveSupply,
       updatedAt: toLosAngelesIso(updated),
       updatedLabel: formatUpdatedLabel(updated),
       designsTracked: Number.isFinite(designsTracked)

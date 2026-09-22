@@ -56,10 +56,10 @@ export async function MintTotalCard() {
 
         <div className="shrink-0 sm:self-center">
           <Link
-            href="/pinsider"
+            href="/pinsider/mint"
             className="inline-flex w-full items-center justify-center gap-1 rounded-full border border-accent/40 bg-accent/10 px-4 py-2.5 text-sm font-medium text-accent transition hover:border-accent hover:bg-accent/20 sm:w-auto"
           >
-            Mint desk on Pinsider →
+            Open Mint desk →
           </Link>
         </div>
       </div>

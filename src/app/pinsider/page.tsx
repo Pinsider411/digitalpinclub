@@ -46,6 +46,30 @@ export default function PinSiderPage() {
           </ul>
         </div>
       </div>
+      <div className="mt-6 card border-accent/40 p-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="min-w-0">
+            <p className="font-mono text-xs uppercase tracking-widest text-accent">
+              Free · core lookups
+            </p>
+            <h2 className="mt-2 font-display text-xl font-semibold text-text">
+              Mint desk
+            </h2>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
+              Near-live estimated platform mint total and per-design supply from
+              the club mint index. Search, filter by parallel, and sort without
+              leaving Digital Pin Club.
+            </p>
+          </div>
+          <Link
+            href="/pinsider/mint"
+            className="inline-flex shrink-0 items-center justify-center gap-1 rounded-full border border-accent/40 bg-accent/10 px-4 py-2.5 text-sm font-medium text-accent transition hover:border-accent hover:bg-accent/20"
+          >
+            Open Mint desk →
+          </Link>
+        </div>
+      </div>
+
       <div className="mt-8 card p-8">
         <h2 className="font-display text-2xl font-semibold text-text">
           Club ≠ paywall
