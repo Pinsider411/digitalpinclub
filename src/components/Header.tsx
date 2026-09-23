@@ -11,7 +11,6 @@ const nav = [
   { href: "/learn", label: "Learn" },
   { href: "/community", label: "Community" },
   { href: "/news", label: "News" },
-  { href: "/pinsider", label: "Pinsider" },
 ];
 
 export function Header() {
