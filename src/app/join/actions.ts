@@ -4,6 +4,7 @@ import { getSql } from "@/lib/db";
 import { mirrorMemberToSheet } from "@/lib/sheets";
 import { DISNEY_IPS, COLLECTOR_LEVELS } from "@/lib/join-constants";
 import { sendWelcomeEmail } from "@/lib/welcome-email";
+import { setMemberCookie } from "@/lib/member-cookie";
 
 export type JoinState = {
   ok: boolean;
@@ -125,6 +126,8 @@ export async function joinClub(
       memberId: row.id as string,
     });
 
+    await setMemberCookie(String(row.id));
+
     return { ok: true };
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : String(err);
@@ -134,15 +137,28 @@ export async function joinClub(
       msg.includes("duplicate key") ||
       msg.includes("unique constraint")
     ) {
+      // Already on the roster — treat as unlock so they can enter the lobby.
+      try {
+        const sql = getSql();
+        const existing = await sql`
+          SELECT id::text FROM club_members WHERE lower(email) = ${email} LIMIT 1
+        `;
+        if (existing[0]?.id) {
+          await setMemberCookie(String(existing[0].id));
+        } else {
+          await setMemberCookie("1");
+        }
+      } catch {
+        await setMemberCookie("1");
+      }
       return {
-        ok: false,
+        ok: true,
         duplicate: true,
         error:
-          "That email is already on the club roster. You’re in — or try a different address.",
+          "That email is already on the club roster. You’re in — welcome back.",
       };
     }
     console.error("[join] insert failed:", err);
     return { ok: false, error: "Couldn’t save your signup. Please try again shortly." };
   }
 }
-

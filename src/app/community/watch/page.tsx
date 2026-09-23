@@ -32,7 +32,7 @@ export default function WatchFollowPage() {
 
       <WatchFollowClient featuredWeek={featuredWeek} />
 
-      <div className="mt-12">
+      <div className="mt-12" id="suggest">
         <p className="font-mono text-xs uppercase tracking-widest text-accent">
           Suggest someone
         </p>

@@ -10,7 +10,15 @@ export const metadata: Metadata = {
     "Sign up for Digital Pin Club — free collector community run by collectors.",
 };
 
-export default function JoinPage() {
+type Props = {
+  searchParams: Promise<{ email?: string; handle?: string }>;
+};
+
+export default async function JoinPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const defaultEmail = typeof params.email === "string" ? params.email : "";
+  const defaultHandle = typeof params.handle === "string" ? params.handle : "";
+
   return (
     <Section>
       <div className="mx-auto max-w-xl">
@@ -22,7 +30,7 @@ export default function JoinPage() {
           title="Become a member."
           description="Free signup for Digital Pin Club — tell us a bit about your collecting so we can welcome you properly."
         />
-        <JoinForm />
+        <JoinForm defaultEmail={defaultEmail} defaultHandle={defaultHandle} />
       </div>
     </Section>
   );

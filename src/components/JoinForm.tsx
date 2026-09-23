@@ -11,7 +11,13 @@ const field =
   "mt-1.5 w-full rounded-xl border border-border bg-bg px-4 py-2.5 text-sm text-text outline-none placeholder:text-muted focus:border-accent";
 const label = "block text-sm font-medium text-text";
 
-export function JoinForm() {
+export function JoinForm({
+  defaultEmail = "",
+  defaultHandle = "",
+}: {
+  defaultEmail?: string;
+  defaultHandle?: string;
+} = {}) {
   const [state, formAction, pending] = useActionState(joinClub, initial);
 
   if (state.ok) {
@@ -85,6 +91,7 @@ export function JoinForm() {
           autoComplete="email"
           className={field}
           placeholder="you@example.com"
+          defaultValue={defaultEmail}
         />
       </div>
 
@@ -99,6 +106,7 @@ export function JoinForm() {
           type="text"
           className={field}
           placeholder="@yourhandle"
+          defaultValue={defaultHandle}
         />
       </div>
 
