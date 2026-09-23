@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { BadgeMark } from "./BadgeMark";
+import { DpcLockup } from "./DpcLockup";
 import { PinSiderLockup } from "./PinSiderMark";
 
 const nav = [
@@ -19,12 +19,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border">
       <div className="glass">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <BadgeMark className="h-8 w-8" />
-            <span className="font-display text-base font-semibold text-accent sm:text-lg">
-              Digital Pin Club
-            </span>
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 md:h-[4.25rem]">
+          <Link href="/" className="shrink-0" aria-label="Digital Pin Club home">
+            <DpcLockup
+              markClassName="h-8 w-8 md:h-9 md:w-9"
+              showTagline
+              wordmarkClassName="text-[15px] sm:text-base md:text-lg"
+            />
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">

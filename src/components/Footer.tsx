@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BadgeMark } from "./BadgeMark";
+import { DpcLockup } from "./DpcLockup";
 import { SocialLinks } from "./SocialLinks";
 import { PinSiderLockup } from "./PinSiderMark";
 
@@ -17,9 +17,8 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-md">
-            <div className="mb-3 flex items-center gap-2">
-              <BadgeMark className="h-7 w-7" />
-              <span className="font-display font-semibold text-accent">Digital Pin Club</span>
+            <div className="mb-3">
+              <DpcLockup markClassName="h-7 w-7" wordmarkClassName="text-base sm:text-base" />
             </div>
             <p className="text-sm leading-relaxed text-muted">
               Digital Pin Club is an independent fan community. Not affiliated with,
