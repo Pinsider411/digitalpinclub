@@ -1,24 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight, IBM_Plex_Mono } from "next/font/google";
+import { Outfit, Source_Sans_3 } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PinSiderMark } from "@/components/PinSiderMark";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
+  variable: "--font-display-face",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const interTight = Inter_Tight({
-  variable: "--font-inter-tight",
+const sourceSans = Source_Sans_3({
+  variable: "--font-body",
   subsets: ["latin"],
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  weight: ["400", "500"],
-  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -35,6 +31,9 @@ export const metadata: Metadata = {
     siteName: "Digital Pin Club",
     type: "website",
   },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -45,29 +44,29 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${interTight.variable} ${ibmPlexMono.variable} h-full antialiased`}
+      className={`${outfit.variable} ${sourceSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-bg text-text">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:text-cta-text"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-gold focus:px-4 focus:py-2 focus:text-sm focus:text-cta-text"
         >
           Skip to content
         </a>
-        <div className="border-b border-border bg-surface">
-          <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2 text-center sm:justify-between sm:px-6">
-            <p className="inline-flex flex-wrap items-center justify-center gap-1.5 font-mono text-[11px] text-muted sm:text-xs">
+        <div className="border-b border-border bg-bg-elevated">
+          <div className="mx-auto flex max-w-[1160px] items-center justify-center gap-2 px-4 py-2 text-center sm:justify-between sm:px-6">
+            <p className="inline-flex flex-wrap items-center justify-center gap-1.5 text-[11px] text-muted sm:text-xs">
               Data desk on{" "}
               <a
                 href="https://pinsider.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-accent underline-offset-2 hover:underline"
+                className="inline-flex items-center gap-1.5 text-gold underline-offset-2 hover:underline"
                 aria-label="Pinsider"
               >
                 <PinSiderMark className="h-4 w-4" size={16} />
                 <span className="font-display text-xs font-semibold tracking-tight text-text">
-                  Pinsider<span className="text-[#D4AF37]">.io</span>
+                  Pinsider<span className="text-gold">.io</span>
                 </span>
                 <span aria-hidden="true">→</span>
               </a>

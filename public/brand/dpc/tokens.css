@@ -1,0 +1,79 @@
+/**
+ * Digital Pin Club — design tokens
+ * Clubhouse redesign · navy / gold · not a store
+ * Grain: apply a fixed, pointer-events-none overlay with low-opacity
+ * CSS noise or SVG fractalNoise on body::after (see homepage-wireframe.html).
+ */
+
+:root {
+  /* ——— Colors ——— */
+  --bg: #0A1628;
+  --bg-elevated: #0D1B2A;
+  --surface: #0F1F38;
+  --card: #13243F;
+  --card-inset: #0C1830;
+  --border: #2A3F5F;
+  --border-gold: #A8892A;
+  --text: #F5F0E6;
+  --text-soft: #C8C2B4;
+  --muted: #9AA8BC;
+  --gold: #D4AF37;
+  --gold-rich: #C9A227;
+  --gold-soft: #F0D78C;
+  --gold-deep: #A8892A;
+  --live: #5B9FD4;
+  --danger-muted: #8B5A5A;
+  --cta-text: #0A1628;
+
+  /* ——— Typography ——— */
+  --font-display: "Outfit", "Geist", "Inter Tight", system-ui, -apple-system, sans-serif;
+  --font-body: "Source Sans 3", "Nunito Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-meta: "Source Sans 3", "Nunito Sans", "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Type scale (rem) */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+
+  --tracking-tight: -0.02em;
+  --tracking-label: 0.12em; /* all-caps labels / eyebrows */
+
+  /* ——— Space (8px rhythm) ——— */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+
+  /* ——— Layout ——— */
+  --max-w: 1160px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-gold-hairline: 0 0 0 1px rgba(168, 137, 42, 0.45);
+
+  /* ——— Buttons ——— */
+  --btn-primary-bg: var(--gold);
+  --btn-primary-fg: var(--cta-text);
+  --btn-primary-hover: var(--gold-soft);
+  --btn-secondary-bg: transparent;
+  --btn-secondary-fg: var(--gold);
+  --btn-secondary-border: var(--border-gold);
+  --btn-pad-y: 0.7rem;
+  --btn-pad-x: 1.35rem;
+  --btn-radius: var(--radius-pill);
+  --btn-font: var(--font-display);
+  --btn-weight: 600;
+  --btn-size: var(--text-sm);
+}

@@ -42,10 +42,10 @@ export default function CommunityPage() {
             </li>
           </ul>
         </div>
-        <div className="card border-accent/40 overflow-hidden p-0">
+        <div className="card border-border-gold/40 overflow-hidden p-0">
           <div className="flex gap-4 p-8">
             <div className="min-w-0 flex-1">
-              <p className="font-mono text-xs text-accent">Ready?</p>
+              <p className="font-mono text-xs text-gold">Ready?</p>
               <h2 className="mt-2 font-display text-2xl font-semibold text-text">
                 Join the Club
               </h2>
@@ -64,7 +64,7 @@ export default function CommunityPage() {
                   href="https://pinsider.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pill inline-flex items-center gap-2 border border-border px-5 py-2.5 text-sm text-text hover:border-accent"
+                  className="pill inline-flex items-center gap-2 border border-border px-5 py-2.5 text-sm text-text hover:border-border-gold"
                   aria-label="Visit Pinsider"
                 >
                   <PinSiderMark className="h-5 w-5" size={20} />
@@ -100,9 +100,9 @@ export default function CommunityPage() {
       <div className="mt-8 max-w-xl">
         <Link
           href="/community/watch"
-          className="card block p-6 transition hover:border-accent"
+          className="card block p-6 transition hover:border-border-gold"
         >
-          <p className="font-mono text-xs text-accent">Watch &amp; Follow</p>
+          <p className="font-mono text-xs text-gold">Watch &amp; Follow</p>
           <h2 className="mt-2 font-display text-xl font-semibold text-text">
             Creators in the hobby
           </h2>
@@ -110,7 +110,7 @@ export default function CommunityPage() {
             Drop alerts, how-tos, cafe hangs, and collector podcasts — independent voices
             worth following. Listing is not an endorsement.
           </p>
-          <p className="mt-4 font-mono text-xs text-accent">Open Watch &amp; Follow →</p>
+          <p className="mt-4 font-mono text-xs text-gold">Open Watch &amp; Follow →</p>
         </Link>
       </div>
 

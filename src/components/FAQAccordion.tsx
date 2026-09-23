@@ -15,7 +15,7 @@ const faqs: { q: string; a: ReactNode }[] = [
           href="https://www.disneypinnacle.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-accent underline-offset-2 hover:underline"
+          className="text-gold underline-offset-2 hover:underline"
         >
           Disney Pinnacle
         </a>
@@ -33,7 +33,7 @@ const faqs: { q: string; a: ReactNode }[] = [
       <>
         Digital pins are collectible digital enamel-style pins you can collect, trade, and
         display in Pinbooks in Disney Pinnacle. Read our guide:{" "}
-        <Link href="/learn/what-are-digital-pins" className="text-accent underline-offset-2 hover:underline">
+        <Link href="/learn/what-are-digital-pins" className="text-gold underline-offset-2 hover:underline">
           What are digital pins?
         </Link>
       </>
@@ -46,7 +46,7 @@ const faqs: { q: string; a: ReactNode }[] = [
         Collectors trade inside the official app (Trade Links / offers) and on the official
         web Marketplace. Digital Pin Club helps you learn norms — we don’t run a marketplace
         on this site. See{" "}
-        <Link href="/learn/trading-and-marketplace" className="text-accent underline-offset-2 hover:underline">
+        <Link href="/learn/trading-and-marketplace" className="text-gold underline-offset-2 hover:underline">
           Trading &amp; Marketplace
         </Link>
         .
@@ -58,15 +58,15 @@ const faqs: { q: string; a: ReactNode }[] = [
     a: (
       <>
         Head to{" "}
-        <Link href="/start" className="text-accent underline-offset-2 hover:underline">
+        <Link href="/start" className="text-gold underline-offset-2 hover:underline">
           Start Here
         </Link>{" "}
         for a friendly path, then browse{" "}
-        <Link href="/learn" className="text-accent underline-offset-2 hover:underline">
+        <Link href="/learn" className="text-gold underline-offset-2 hover:underline">
           Learn
         </Link>{" "}
         for guides and{" "}
-        <Link href="/calendar" className="text-accent underline-offset-2 hover:underline">
+        <Link href="/calendar" className="text-gold underline-offset-2 hover:underline">
           Calendar
         </Link>{" "}
         for upcoming drops and hangouts.
@@ -92,7 +92,7 @@ export function FAQAccordion() {
             >
               <span className="font-medium text-text">{item.q}</span>
               <span
-                className={`font-mono text-accent transition ${isOpen ? "rotate-45" : ""}`}
+                className={`font-mono text-gold transition ${isOpen ? "rotate-45" : ""}`}
                 aria-hidden="true"
               >
                 +

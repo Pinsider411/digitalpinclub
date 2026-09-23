@@ -41,7 +41,7 @@ function CollectorCard({ collector, featured }: { collector: SpotlightCollector;
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             {collector.rankLabel && (
-              <p className="font-mono text-xs text-accent">{collector.rankLabel}</p>
+              <p className="font-mono text-xs text-gold">{collector.rankLabel}</p>
             )}
             <h2 className="mt-1 font-display text-2xl font-semibold text-text sm:text-3xl">
               {collector.handle}
@@ -62,7 +62,7 @@ function CollectorCard({ collector, featured }: { collector: SpotlightCollector;
                 href={collector.profileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pill border border-border bg-card px-4 py-2 text-xs font-medium text-text transition hover:border-accent"
+                className="pill border border-border bg-card px-4 py-2 text-xs font-medium text-text transition hover:border-border-gold"
               >
                 View on Watch Pinnacle →
               </a>
@@ -169,7 +169,7 @@ export default function SpotlightsPage() {
             <h2 className="mt-2 font-display text-2xl font-semibold text-text">
               {clubFounder.handle}
             </h2>
-            <p className="mt-1 font-mono text-xs text-accent">{clubFounder.role}</p>
+            <p className="mt-1 font-mono text-xs text-gold">{clubFounder.role}</p>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
               {clubFounder.blurb}
             </p>
@@ -186,7 +186,7 @@ export default function SpotlightsPage() {
                 href={clubFounder.xUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pill border border-accent px-5 py-2.5 text-sm font-medium text-accent transition hover:bg-accent/10"
+                className="pill border border-accent px-5 py-2.5 text-sm font-medium text-gold transition hover:bg-accent/10"
               >
                 X · @Apache1999
               </a>
@@ -225,7 +225,7 @@ export default function SpotlightsPage() {
 
       <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-accent">
+          <p className="font-mono text-xs uppercase tracking-widest text-gold">
             Featured collectors
           </p>
           <h2 className="mt-1 font-display text-2xl font-semibold text-text">
@@ -250,7 +250,7 @@ export default function SpotlightsPage() {
               href={watchPinnacleSpotlightUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent underline underline-offset-2"
+              className="text-gold underline underline-offset-2"
             >
               Watch Pinnacle
             </a>{" "}

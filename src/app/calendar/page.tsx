@@ -40,7 +40,7 @@ export default function CalendarPage() {
         <div className="mb-10">
           <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
             <div>
-              <p className="font-mono text-xs uppercase tracking-widest text-live">
+              <p className="font-mono text-xs uppercase tracking-[0.12em] text-live">
                 Happening now
               </p>
               <h2 className="mt-1 font-display text-2xl font-semibold text-text">
@@ -53,10 +53,10 @@ export default function CalendarPage() {
           </div>
           <ul className="space-y-3">
             {calendarEvents.map((event) => (
-              <li key={event.id} className="card border-accent/30 p-5 sm:p-6">
+              <li key={event.id} className="collectible-card p-5 sm:p-6">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
                   {event.imageSrc ? (
-                    <div className="w-full shrink-0 overflow-hidden rounded-xl border border-accent/20 bg-surface sm:w-36">
+                    <div className="w-full shrink-0 overflow-hidden rounded-xl border border-border-gold/25 bg-surface sm:w-36">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={event.imageSrc}

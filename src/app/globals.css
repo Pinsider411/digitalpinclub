@@ -1,37 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  /* Navy-gold soft luxury club — PREVIEW ONLY (locked tokens) */
+  /* Clubhouse redesign tokens — navy / gold · not a store */
   --bg: #0A1628;
+  --bg-elevated: #0D1B2A;
   --surface: #0F1F38;
   --card: #13243F;
+  --card-inset: #0C1830;
   --border: #2A3F5F;
+  --border-gold: #A8892A;
   --text: #F5F0E6;
+  --text-soft: #C8C2B4;
   --muted: #9AA8BC;
-  --accent: #D4AF37;
-  --accent-soft: #F0D78C;
-  --accent-deep: #A8892A;
+  --gold: #D4AF37;
+  --gold-rich: #C9A227;
+  --gold-soft: #F0D78C;
+  --gold-deep: #A8892A;
   --live: #5B9FD4;
-  --cta: #D4AF37;
+  --danger-muted: #8B5A5A;
   --cta-text: #0A1628;
+
+  /* Compat aliases used across existing pages */
+  --accent: var(--gold);
+  --accent-soft: var(--gold-soft);
+  --accent-deep: var(--gold-deep);
+  --cta: var(--gold);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-gold-hairline: 0 0 0 1px rgba(168, 137, 42, 0.45);
+  --max-w: 1160px;
+  --tracking-label: 0.12em;
+  --tracking-tight: -0.02em;
 }
 
 @theme inline {
   --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
   --color-surface: var(--surface);
   --color-card: var(--card);
+  --color-card-inset: var(--card-inset);
   --color-border: var(--border);
+  --color-border-gold: var(--border-gold);
   --color-text: var(--text);
+  --color-text-soft: var(--text-soft);
   --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-rich: var(--gold-rich);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-deep: var(--gold-deep);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-accent-deep: var(--accent-deep);
   --color-live: var(--live);
   --color-cta: var(--cta);
   --color-cta-text: var(--cta-text);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-inter-tight);
-  --font-mono: var(--font-ibm-plex-mono);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display-face);
+  --font-mono: var(--font-body);
 }
 
 * {
@@ -45,64 +74,144 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Subtle clubhouse grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 28%, transparent);
+  background: color-mix(in srgb, var(--gold) 28%, transparent);
   color: var(--text);
 }
 
 .font-display {
-  font-family: var(--font-inter-tight), var(--font-inter), system-ui, sans-serif;
-  letter-spacing: -0.03em;
+  font-family: var(--font-display-face), var(--font-body), system-ui, sans-serif;
+  letter-spacing: var(--tracking-tight);
 }
 
 .font-mono {
-  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-family: var(--font-body), system-ui, sans-serif;
+  letter-spacing: 0.02em;
 }
 
-/* Navy glass — soft gold wash at low opacity, no neon bloom */
 .glass {
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  background: color-mix(in srgb, var(--bg-elevated) 88%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+  border: 1px solid color-mix(in srgb, var(--border-gold) 45%, var(--border));
 }
 
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.collectible-card {
+  background: var(--card);
+  border: 1px solid color-mix(in srgb, var(--border-gold) 55%, var(--border));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.card-inset {
+  background: var(--card-inset);
+  border-radius: var(--radius-md);
 }
 
 .hairline {
   border: 1px solid var(--border);
 }
 
-.pill {
-  border-radius: 9999px;
+.section-rule {
+  border: 0;
+  height: 1px;
+  margin: 0;
+  background: linear-gradient(90deg, transparent, var(--gold-deep), transparent);
+  opacity: 0.55;
 }
 
-/* Soft gold elevation — no neon crypto bloom */
+.pill {
+  border-radius: var(--radius-pill);
+}
+
 .badge-glow {
-  filter: drop-shadow(0 6px 16px color-mix(in srgb, var(--accent) 16%, transparent));
+  filter: drop-shadow(0 6px 16px color-mix(in srgb, var(--gold) 16%, transparent));
 }
 
 .prose-club p {
-  color: var(--muted);
+  color: var(--text-soft);
   line-height: 1.7;
 }
 
 .prose-club a {
-  color: var(--accent);
+  color: var(--gold);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-/* Soft gold hover wash on navy */
 .gold-wash:hover {
-  background: color-mix(in srgb, var(--accent) 10%, var(--card));
+  background: color-mix(in srgb, var(--gold) 10%, var(--card));
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: var(--gold);
+  color: var(--cta-text);
+  border: 1.5px solid var(--gold);
+  font-family: var(--font-display-face), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.7rem 1.35rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-primary:hover {
+  background: var(--gold-soft);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--gold);
+  border: 1.5px solid var(--border-gold);
+  font-family: var(--font-display-face), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.7rem 1.35rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold-soft);
+  color: var(--gold-soft);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--gold-deep);
 }

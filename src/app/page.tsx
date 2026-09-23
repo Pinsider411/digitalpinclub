@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FloatingBadges } from "@/components/FloatingBadges";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { DigestForm } from "@/components/DigestForm";
 import { Section } from "@/components/Section";
@@ -16,13 +15,11 @@ const thisWeek: {
   body: string;
   href?: string;
   logoSrc?: string;
-  /** Optional hero thumb (event announce art) */
   imageSrc?: string;
   imageAlt?: string;
   imageCaption?: string;
   cta?: string;
   note?: string;
-  /** Live chip styling (text-live) */
   live?: boolean;
 }[] = [
   {
@@ -65,117 +62,146 @@ const thisWeek: {
   },
 ];
 
-const homeLearnTiles = [
+const learnPath = [
   {
+    num: "01",
     href: "/learn/what-are-digital-pins",
     title: "What are digital pins?",
-    body: "Friendly intro to the hobby.",
+    body: "Friendly intro to the hobby — ownership, Pinbooks, and why collectors care.",
   },
   {
-    href: "/learn/burns",
-    title: "Burns",
-    body: "Leftovers, circulating supply, and why collectors care.",
-  },
-  {
+    num: "02",
     href: "/learn/how-drops-work",
     title: "How drops work",
-    body: "Storefront, capsules, and windows.",
-  },
-];
-
-const pillars = [
-  {
-    href: "/learn",
-    title: "Learn",
-    body: "Guides for beginners and veterans — drops, editions, burns, board etiquette, and collecting smarter.",
+    body: "Storefront, capsules, windows — prepare without the FOMO spiral.",
   },
   {
-    href: "/community",
-    title: "Community",
-    body: "Find your people. Hangouts, spotlights, and a clubhouse vibe — not a storefront.",
-  },
-  {
-    href: "/pinsider",
-    title: "Pinsider",
-    body: "Companion data desk for prices, alerts, and history. Free tier + Pro ~$5/mo.",
+    num: "03",
+    href: "/learn/burns",
+    title: "Burns & supply",
+    body: "Leftovers, circulating supply, and why the numbers matter on the desk.",
   },
 ];
 
 export default function HomePage() {
   const watchCreators = getFeaturedThisWeek();
+  const featured = thisWeek[0];
+
   return (
     <>
       {/* Hero */}
-      <Section className="!pt-8 sm:!pt-12 !pb-4 sm:!pb-6">
+      <Section className="!pt-10 sm:!pt-14 !pb-8 sm:!pb-10" id="clubhouse">
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
-            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
-              The Clubhouse
-            </p>
-            <h1 className="font-display text-[2.75rem] font-semibold leading-[1.02] text-text sm:text-6xl lg:text-[4.25rem]">
-              Collect better. Trade smarter. Belong here.
+            <p className="eyebrow mb-3">Independent collectors · Clubhouse</p>
+            <h1 className="font-display text-[2.5rem] font-semibold leading-[1.05] text-text sm:text-5xl lg:text-[3.25rem]">
+              Welcome to the clubhouse
             </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-              Digital Pin Club is the independent community for people who collect digital
-              pins. Learn the hobby, follow drops, show off your board, and find your
-              people.
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-text-soft sm:text-lg">
+              A quiet lounge for independent digital pin collectors — follow the board,
+              learn the craft, and meet the community. Not a store.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/join"
-                className="pill bg-cta px-6 py-3 text-sm font-medium text-cta-text transition hover:brightness-110"
-              >
-                Join the Club
+              <Link href="/calendar" className="btn-primary">
+                See Drops
               </Link>
               <Link
-                href="/start"
-                className="pill border border-border bg-card px-6 py-3 text-sm font-medium text-text transition hover:border-accent"
+                href="/learn"
+                className="pill border border-border px-5 py-2.5 font-display text-sm font-semibold text-text-soft transition hover:border-muted hover:text-text"
               >
-                New? Start here
+                Start Learning
               </Link>
             </div>
-            <p className="mt-5 font-mono text-xs text-muted">
-              Free to join · Run by collectors
+            <p className="mt-5 text-xs text-muted">
+              Free to join · Run by collectors ·{" "}
+              <Link href="/join" className="text-gold hover:underline">
+                Join the Club
+              </Link>
             </p>
           </div>
-          <FloatingBadges />
+
+          {featured ? (
+            <article className="collectible-card overflow-hidden">
+              {featured.imageSrc ? (
+                <div className="card-inset m-3 overflow-hidden sm:m-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={featured.imageSrc}
+                    alt={featured.imageAlt ?? featured.title}
+                    width={600}
+                    height={450}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </div>
+              ) : null}
+              <div className="px-5 pb-5 sm:px-6 sm:pb-6">
+                <span
+                  className={`inline-flex rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${
+                    featured.live
+                      ? "bg-live/15 text-live"
+                      : "bg-gold/10 text-gold"
+                  }`}
+                >
+                  {featured.live ? "On the board" : featured.label}
+                </span>
+                <h3 className="mt-3 font-display text-xl font-semibold text-text">
+                  {featured.title}
+                </h3>
+                <p className="mt-1 text-xs text-muted">{featured.meta}</p>
+                <p className="mt-3 text-sm leading-relaxed text-text-soft">
+                  {featured.body}
+                </p>
+                {featured.href ? (
+                  <a
+                    href={featured.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex text-sm font-medium text-gold hover:text-gold-soft"
+                  >
+                    {featured.cta ?? "View details"} ↗
+                  </a>
+                ) : null}
+              </div>
+            </article>
+          ) : null}
         </div>
       </Section>
 
-      {/* This week */}
-      <Section className="!pt-4 sm:!pt-6 !pb-6 sm:!pb-8">
+      <hr className="section-rule mx-auto max-w-[1160px]" />
+
+      {/* This week on the board */}
+      <Section className="!pt-10 sm:!pt-12" id="board">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-live">This week</p>
+            <p className="eyebrow">This week</p>
             <h2 className="mt-2 font-display text-3xl font-semibold text-text sm:text-4xl">
-              What’s on the board
+              This week on the board
             </h2>
+            <p className="mt-2 max-w-xl text-sm text-text-soft">
+              Spots collectors are watching — clubhouse cards, not product tiles.
+            </p>
           </div>
-          <Link href="/calendar" className="hidden text-sm text-accent sm:inline hover:underline">
+          <Link
+            href="/calendar"
+            className="hidden text-sm text-gold hover:underline sm:inline"
+          >
             Full calendar →
           </Link>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {thisWeek.map((card) => (
-            <article
-              key={card.title}
-              className="glass flex flex-col rounded-[20px] p-5"
-            >
+            <article key={card.title} className="collectible-card flex flex-col p-5">
               <div className="flex items-start justify-between gap-3">
-                <p className={`font-mono text-xs ${card.live ? "text-live" : "text-accent"}`}>{card.label}</p>
-                {card.logoSrc ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={card.logoSrc}
-                    alt="Disney+"
-                    width={88}
-                    height={48}
-                    className="h-5 w-auto shrink-0 opacity-90"
-                  />
-                ) : null}
+                <p
+                  className={`text-xs font-semibold uppercase tracking-wider ${
+                    card.live ? "text-live" : "text-gold"
+                  }`}
+                >
+                  {card.label}
+                </p>
               </div>
               {card.imageSrc ? (
-                <figure className="mt-3 overflow-hidden rounded-xl border border-accent/20 bg-surface">
+                <figure className="card-inset mt-3 overflow-hidden border border-border-gold/25">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={card.imageSrc}
@@ -185,28 +211,26 @@ export default function HomePage() {
                     className="aspect-[4/3] w-full object-cover"
                   />
                   {card.imageCaption ? (
-                    <figcaption className="border-t border-accent/15 px-2.5 py-1.5 font-mono text-[10px] text-muted/80">
+                    <figcaption className="border-t border-border-gold/20 px-2.5 py-1.5 text-[10px] text-muted/80">
                       {card.imageCaption}
                     </figcaption>
                   ) : null}
                 </figure>
               ) : null}
-              <h3 className="mt-2 font-display text-xl font-semibold text-text">
+              <h3 className="mt-3 font-display text-xl font-semibold text-text">
                 {card.title}
               </h3>
-              <p className="mt-1 font-mono text-xs text-muted">{card.meta}</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{card.body}</p>
+              <p className="mt-1 text-xs text-muted">{card.meta}</p>
+              <p className="mt-3 text-sm leading-relaxed text-text-soft">{card.body}</p>
               {card.note ? (
-                <p className="mt-3 font-mono text-[10px] leading-snug text-muted/80">
-                  {card.note}
-                </p>
+                <p className="mt-3 text-[10px] leading-snug text-muted/80">{card.note}</p>
               ) : null}
               {card.href ? (
                 <a
                   href={card.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex w-fit items-center gap-1 rounded-full border border-accent/40 bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent transition hover:border-accent hover:bg-accent/20"
+                  className="mt-4 inline-flex w-fit items-center gap-1 rounded-full border border-border-gold/50 bg-gold/10 px-3 py-1.5 text-xs font-medium text-gold transition hover:border-gold hover:bg-gold/20"
                 >
                   {card.cta ?? "Learn more"}
                   <span aria-hidden="true">↗</span>
@@ -217,98 +241,117 @@ export default function HomePage() {
         </div>
         <Link
           href="/calendar"
-          className="mt-6 inline-block text-sm text-accent sm:hidden hover:underline"
+          className="mt-6 inline-block text-sm text-gold hover:underline sm:hidden"
         >
           Full calendar →
         </Link>
       </Section>
 
-      {/* Mint desk */}
-      <Section className="!pt-0 !pb-6 sm:!pb-8">
+      {/* Upcoming drop band */}
+      <Section className="!pt-0 !pb-8" id="drops">
+        <div className="overflow-hidden rounded-[18px] border border-border-gold/40 bg-surface">
+          <div className="grid lg:grid-cols-[1.2fr_1fr]">
+            <div className="p-6 sm:p-8">
+              <p className="eyebrow">Upcoming drop</p>
+              <h2 className="mt-2 font-display text-2xl font-semibold text-text sm:text-3xl">
+                Summer Sunset Event
+              </h2>
+              <p className="mt-2 text-sm text-muted">Sep 25 – Oct 2 · from $4.99</p>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-soft">
+                Seven sets · Limited + Open Edition · trade rewards and a Genesis chase.
+                Verify pack windows on official News — times can shift.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="https://disneypinnacle.com/news/summer-sunset-event"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  Official details ↗
+                </a>
+                <Link href="/calendar" className="btn-primary">
+                  View on calendar
+                </Link>
+              </div>
+            </div>
+            <div className="border-t border-border lg:border-l lg:border-t-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/events/summer-sunset/announce.webp"
+                alt="Summer Sunset Event official announce art"
+                width={600}
+                height={450}
+                className="h-full min-h-[200px] w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Mint desk — preserve live content */}
+      <Section className="!pt-0 !pb-8">
         <MintTotalCard />
       </Section>
 
-      {/* A club, not a store */}
-      <Section className="!pt-0 !pb-6 sm:!pb-8">
-        <h2 className="font-display text-3xl font-semibold text-text sm:text-4xl">
-          A club, not a store.
-        </h2>
-        <p className="mt-3 max-w-xl text-muted">
-          We exist for collectors — education, calendar, community, and data — not to sell
-          you pins.
-        </p>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {pillars.map((p) => (
+      <hr className="section-rule mx-auto max-w-[1160px]" />
+
+      {/* Learn path */}
+      <Section id="learn">
+        <div className="mb-8 max-w-xl">
+          <p className="eyebrow">Learn path</p>
+          <h2 className="mt-2 font-display text-3xl font-semibold text-text sm:text-4xl">
+            Three steps into the hobby
+          </h2>
+          <p className="mt-2 text-sm text-text-soft">
+            Collector-to-collector guides — no storefront pitch.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {learnPath.map((step) => (
             <Link
-              key={p.href}
-              href={p.href}
-              className="card gold-wash group p-6 transition hover:border-accent"
+              key={step.href}
+              href={step.href}
+              className="card gold-wash flex flex-col gap-3 p-6 transition hover:border-border-gold"
             >
-              <h3 className="font-display text-xl font-semibold text-text group-hover:text-accent">
-                {p.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{p.body}</p>
-              <span className="mt-4 inline-block text-sm text-accent">Explore →</span>
+              <span className="font-display text-sm font-semibold tracking-[0.12em] text-gold">
+                {step.num}
+              </span>
+              <h3 className="font-display text-xl font-semibold text-text">{step.title}</h3>
+              <p className="text-sm leading-relaxed text-text-soft">{step.body}</p>
+              <span className="mt-auto pt-2 text-sm text-gold">Read →</span>
             </Link>
           ))}
         </div>
-        <div className="mt-6 grid gap-3 sm:grid-cols-3">
-          {homeLearnTiles.map((t) => (
-            <Link
-              key={t.href}
-              href={t.href}
-              className="rounded-2xl border border-border bg-surface/60 px-4 py-4 transition hover:border-accent"
-            >
-              <p className="font-mono text-[11px] text-accent">Learn</p>
-              <p className="mt-1 font-display text-base font-semibold text-text">{t.title}</p>
-              <p className="mt-1 text-xs leading-relaxed text-muted">{t.body}</p>
-            </Link>
-          ))}
+        <div className="mt-6">
+          <Link href="/learn" className="text-sm text-gold hover:underline">
+            All guides →
+          </Link>
         </div>
       </Section>
 
-      {/* Full-width band */}
-      <div className="border-y border-border bg-surface">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 py-6 sm:py-7 sm:flex-row sm:items-center sm:px-6">
-          <div>
-            <h2 className="font-display text-2xl font-semibold text-text sm:text-3xl">
-              Never collected a digital pin?
-            </h2>
-            <p className="mt-2 text-muted">A short path from zero to your first board.</p>
-          </div>
-          <Link
-            href="/start"
-            className="pill bg-accent px-6 py-3 text-sm font-medium text-cta-text transition hover:brightness-110"
-          >
-            Start here
-          </Link>
-        </div>
-      </div>
-
-      {/* Watch the club */}
-      <Section className="!pt-6 sm:!pt-8">
+      {/* Community / creators */}
+      <Section className="!pt-0" id="community">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-accent">
-              Watch the club
-            </p>
+            <p className="eyebrow">Community</p>
             <h2 className="mt-2 font-display text-3xl font-semibold text-text sm:text-4xl">
-              Creators to follow
+              Creators & hangouts
             </h2>
-            <p className="mt-2 max-w-xl text-sm text-muted">
+            <p className="mt-2 max-w-xl text-sm text-text-soft">
               Independent collectors — views their own. Listing ≠ endorsement.
             </p>
           </div>
           <Link
             href="/community/watch"
-            className="hidden text-sm text-accent hover:underline sm:inline"
+            className="hidden text-sm text-gold hover:underline sm:inline"
           >
             Watch &amp; Follow →
           </Link>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {watchCreators.map((c) => (
-            <article key={c.id} className="card p-6">
+            <article key={c.id} className="collectible-card p-6">
               <div className="flex items-start gap-3 sm:gap-4">
                 <CreatorAvatar
                   src={c.avatarSrc}
@@ -317,14 +360,16 @@ export default function HomePage() {
                   className="mt-0.5"
                 />
                 <div className="min-w-0 flex-1">
-                  <p className="font-mono text-xs text-accent">{c.role}</p>
-                  <h3 className="mt-1 font-display text-xl font-semibold text-text">{c.name}</h3>
+                  <p className="text-xs text-gold">{c.role}</p>
+                  <h3 className="mt-1 font-display text-xl font-semibold text-text">
+                    {c.name}
+                  </h3>
                   {c.aka && (
-                    <p className="mt-1 font-mono text-[11px] text-muted">aka {c.aka}</p>
+                    <p className="mt-1 text-[11px] text-muted">aka {c.aka}</p>
                   )}
                 </div>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{c.whyFollow}</p>
+              <p className="mt-3 text-sm leading-relaxed text-text-soft">{c.whyFollow}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {c.links.slice(0, 3).map((l) => (
                   <a
@@ -332,7 +377,7 @@ export default function HomePage() {
                     href={l.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="pill border border-border px-3 py-1 font-mono text-[11px] text-muted transition hover:border-accent"
+                    className="pill border border-border px-3 py-1 text-[11px] text-muted transition hover:border-border-gold"
                   >
                     {l.label}
                   </a>
@@ -341,22 +386,28 @@ export default function HomePage() {
             </article>
           ))}
         </div>
-        <Link
-          href="/community/watch"
-          className="mt-6 inline-block text-sm text-accent hover:underline sm:hidden"
-        >
-          Watch &amp; Follow →
-        </Link>
+        <div className="mt-6 flex flex-wrap gap-4">
+          <Link href="/community" className="text-sm text-gold hover:underline">
+            Community hub →
+          </Link>
+          <Link href="/spotlights" className="text-sm text-gold hover:underline">
+            Spotlights →
+          </Link>
+          <Link
+            href="/community/watch"
+            className="text-sm text-gold hover:underline sm:hidden"
+          >
+            Watch &amp; Follow →
+          </Link>
+        </div>
       </Section>
 
-      {/* Pinsider panel */}
-      <Section className="!pt-0">
+      {/* Pinsider data desk teaser */}
+      <Section className="!pt-0" id="pinsider">
         <div className="card overflow-hidden p-0">
           <div className="grid lg:grid-cols-2">
             <div className="border-b border-border p-8 lg:border-b-0 lg:border-r">
-              <p className="font-mono text-xs uppercase tracking-widest text-accent">
-                Companion data desk
-              </p>
+              <p className="eyebrow">Companion data desk</p>
               <h2 className="mt-3">
                 <PinSiderLockup
                   markSize={40}
@@ -366,12 +417,12 @@ export default function HomePage() {
                   label="Pinsider"
                 />
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
+              <p className="mt-3 text-sm leading-relaxed text-text-soft">
                 Prices, alerts, and history for collectors who want signal without noise.
                 Digital Pin Club stays free and open — Pinsider is optional tooling next
                 door.
               </p>
-              <ul className="mt-5 space-y-2 text-sm text-muted">
+              <ul className="mt-5 space-y-2 text-sm text-text-soft">
                 <li className="flex gap-2">
                   <span className="text-live">✓</span> Free: core lookups & history
                 </li>
@@ -387,7 +438,7 @@ export default function HomePage() {
                   href="https://pinsider.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pill inline-flex items-center gap-2 bg-accent px-5 py-2.5 text-sm font-medium text-cta-text hover:brightness-110"
+                  className="btn-primary inline-flex items-center gap-2"
                   aria-label="Open Pinsider"
                 >
                   <PinSiderMark className="h-5 w-5 ring-[#0A1628]/20" size={20} />
@@ -395,20 +446,17 @@ export default function HomePage() {
                     Open <span className="font-semibold">Pinsider</span>
                   </span>
                 </a>
-                <Link
-                  href="/pinsider"
-                  className="pill border border-border px-5 py-2.5 text-sm text-text hover:border-accent"
-                >
+                <Link href="/pinsider" className="btn-secondary">
                   Learn more
                 </Link>
               </div>
             </div>
-            <div className="bg-bg/40 p-8">
+            <div className="bg-card-inset/60 p-8">
               <div className="space-y-3">
                 {["Floor pulse", "Watchlist alerts", "Set history"].map((row) => (
                   <div
                     key={row}
-                    className="flex items-center justify-between rounded-2xl border border-border bg-card px-4 py-3"
+                    className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3"
                   >
                     <span className="text-sm text-text">{row}</span>
                     <span className="inline-flex items-center gap-1.5" aria-label="pinsider.io">
@@ -423,20 +471,17 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Find us / Connect */}
+      {/* Find us */}
       <FindUsSection />
-
 
       {/* Digest */}
       <Section className="!pt-0">
-        <div className="rounded-[20px] border border-border bg-surface px-6 py-10 sm:px-10">
-          <p className="font-mono text-xs uppercase tracking-widest text-accent">
-            Sunday digest
-          </p>
+        <div className="rounded-[18px] border border-border-gold/35 bg-surface px-6 py-10 sm:px-10">
+          <p className="eyebrow">Sunday digest</p>
           <h2 className="mt-2 font-display text-3xl font-semibold text-text">
             Pin Press in your inbox
           </h2>
-          <p className="mt-3 max-w-lg text-sm text-muted">
+          <p className="mt-3 max-w-lg text-sm text-text-soft">
             One calm email a week: drops, hangouts, spotlights, and what the club is
             talking about.
           </p>

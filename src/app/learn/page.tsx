@@ -73,24 +73,24 @@ export default function LearnPage() {
           <Link
             key={g.href}
             href={g.href}
-            className="card block p-6 transition hover:border-accent"
+            className="collectible-card block p-6 transition hover:border-border-gold"
           >
-            <p className="font-mono text-xs text-accent">{g.level}</p>
+            <p className="font-mono text-xs text-gold">{g.level}</p>
             <h2 className="mt-2 font-display text-xl font-semibold text-text">
               {g.title}
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted">{g.body}</p>
-            <p className="mt-4 font-mono text-xs text-accent">Read guide →</p>
+            <p className="mt-4 font-mono text-xs text-gold">Read guide →</p>
           </Link>
         ))}
       </div>
       <p className="mt-8 text-sm text-muted">
         Brand new?{" "}
-        <Link href="/start" className="text-accent hover:underline">
+        <Link href="/start" className="text-gold hover:underline">
           Start here
         </Link>{" "}
         for a sequenced path. Prefer video?{" "}
-        <Link href="/community/watch" className="text-accent hover:underline">
+        <Link href="/community/watch" className="text-gold hover:underline">
           Watch &amp; Follow
         </Link>
         . Official platform:{" "}
@@ -98,7 +98,7 @@ export default function LearnPage() {
           href="https://www.disneypinnacle.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-accent hover:underline"
+          className="text-gold hover:underline"
         >
           disneypinnacle.com
         </a>
