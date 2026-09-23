@@ -247,6 +247,63 @@ export default function HomePage() {
         </Link>
       </Section>
 
+      {/* Disney+ Perks — dedicated band (not a board tile) */}
+      <Section className="!pt-0 !pb-8" id="disney-plus-perks">
+        <article className="collectible-card overflow-hidden">
+          <div className="grid lg:grid-cols-[1.15fr_1fr]">
+            <div className="flex flex-col p-6 sm:p-8">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <p className="eyebrow !mb-0">Disney+ Perks</p>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/brand/disney-plus/disney-plus-wordmark.svg"
+                  alt="Disney+"
+                  width={88}
+                  height={48}
+                  className="h-5 w-auto shrink-0 opacity-90"
+                />
+              </div>
+              <h2 className="mt-3 font-display text-2xl font-semibold text-text sm:text-3xl">
+                Monthly free digital pin
+              </h2>
+              <p className="mt-2 text-xs text-muted">Disney+ · Opt-in</p>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-soft">
+                Disney+ subscribers can opt into Disney+ Perks and redeem a monthly Mystery
+                Capsule with an Open Edition Disney Pinnacle digital pin. Sign up with the
+                same email as your Disney+ account — eligibility and terms live on Disney+.
+              </p>
+              <p className="mt-3 text-[10px] leading-snug text-muted/80">
+                Independent tip · not affiliated with Disney+
+              </p>
+              <div className="mt-6">
+                <a
+                  href="https://www.disneyplus.com/perks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary inline-flex items-center gap-1"
+                >
+                  Sign up for Perks
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+            <figure className="border-t border-border-gold/30 bg-card-inset lg:border-l lg:border-t-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/events/disney-plus-perks/hero.webp"
+                alt="Disney+ Perks Mystery Capsule promotional art"
+                width={600}
+                height={450}
+                className="h-full min-h-[220px] w-full object-cover"
+              />
+              <figcaption className="border-t border-border-gold/20 px-3 py-2 text-[10px] text-muted/80">
+                Official Perks art · Disney Pinnacle
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+      </Section>
+
       {/* Upcoming drop band */}
       <Section className="!pt-0 !pb-8" id="drops">
         <div className="overflow-hidden rounded-[18px] border border-border-gold/40 bg-surface">
