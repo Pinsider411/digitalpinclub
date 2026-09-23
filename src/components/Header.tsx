@@ -3,12 +3,14 @@
 import Link from "next/link";
 import { useState } from "react";
 import { DpcLockup } from "./DpcLockup";
+import { PinSiderLockup } from "./PinSiderMark";
 
 const nav = [
   { href: "/", label: "Clubhouse" },
   { href: "/calendar", label: "Drops" },
   { href: "/learn", label: "Learn" },
   { href: "/community", label: "Community" },
+  { href: "/news", label: "News" },
   { href: "/pinsider", label: "Pinsider" },
 ];
 
@@ -34,7 +36,19 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
+          <Link
+            href="/pinsider"
+            className="inline-flex items-center gap-1.5 transition hover:opacity-90"
+            aria-label="Pinsider"
+          >
+            <PinSiderLockup
+              markSize={22}
+              markClassName="h-[22px] w-[22px]"
+              wordmarkSize="sm"
+              withIo
+            />
+          </Link>
           <Link
             href="/join"
             className="pill border-[1.5px] border-border-gold px-5 py-2.5 font-display text-sm font-semibold text-gold transition hover:border-gold-soft hover:text-gold-soft"
@@ -74,6 +88,19 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/pinsider"
+              className="inline-flex w-fit items-center gap-1.5"
+              aria-label="Pinsider"
+              onClick={() => setOpen(false)}
+            >
+              <PinSiderLockup
+                markSize={22}
+                markClassName="h-[22px] w-[22px]"
+                wordmarkSize="sm"
+                withIo
+              />
+            </Link>
             <Link
               href="/join"
               className="pill mt-2 inline-flex w-full items-center justify-center border-[1.5px] border-border-gold px-5 py-3 font-display text-sm font-semibold text-gold"
