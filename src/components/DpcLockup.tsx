@@ -11,6 +11,13 @@ type DpcLockupProps = {
   wordmarkClassName?: string;
 };
 
+const GOLD_BULLET = (
+  <span className="text-[#E0B84A]" aria-hidden="true">
+    {" "}
+    •{" "}
+  </span>
+);
+
 /**
  * Site brand lockup: gold pin mark + camelCase DigitalPinClub (+ optional tagline).
  * Body/UI copy elsewhere may stay spaced "Digital Pin Club".
@@ -37,7 +44,7 @@ export function DpcLockup({
         </span>
         {showTagline && (
           <span className={taglineClass} aria-hidden={!taglineAlways}>
-            collect • trade • community
+            collect{GOLD_BULLET}trade{GOLD_BULLET}community
           </span>
         )}
       </span>

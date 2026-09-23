@@ -1,15 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Digital Pin Club">
   <defs>
-    <linearGradient id="dpc-gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#F0D78C"/>
-      <stop offset="40%" stop-color="#D4AF37"/>
+    <!-- Richer metallic gold: specular champagne → warm core → bronze deep -->
+    <linearGradient id="dpc-gold" x1="0.12" y1="0.08" x2="0.92" y2="0.95">
+      <stop offset="0%" stop-color="#FFF1C2"/>
+      <stop offset="18%" stop-color="#F0D78C"/>
+      <stop offset="48%" stop-color="#E0B84A"/>
+      <stop offset="72%" stop-color="#D4AF37"/>
       <stop offset="100%" stop-color="#A8892A"/>
     </linearGradient>
+    <linearGradient id="dpc-gold-border" x1="0.05" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF1C2"/>
+      <stop offset="28%" stop-color="#F0D78C"/>
+      <stop offset="55%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#A8892A"/>
+    </linearGradient>
+    <!-- Soft top-left specular wash for metallic sheen -->
+    <radialGradient id="dpc-gold-sheen" cx="32%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#FFF8DC" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#F0D78C" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#A8892A" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <!-- Rounded square plate — thin gold border, navy fill -->
+  <!-- Rounded square plate — thin metallic gold border, navy fill -->
   <rect width="64" height="64" rx="14" fill="#0A1628"/>
-  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="url(#dpc-gold)" stroke-width="2"/>
-  <!-- Geometric location pin (slightly flattened for small header sizes) -->
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="url(#dpc-gold-border)" stroke-width="2.25"/>
+  <!-- Geometric location pin -->
   <path d="M32 11 C41.5 11 49 18.5 49 28 C49 39.5 32 53 32 53 C32 53 15 39.5 15 28 C15 18.5 22.5 11 32 11 Z" fill="url(#dpc-gold)"/>
+  <path d="M32 11 C41.5 11 49 18.5 49 28 C49 39.5 32 53 32 53 C32 53 15 39.5 15 28 C15 18.5 22.5 11 32 11 Z" fill="url(#dpc-gold-sheen)"/>
   <circle cx="32" cy="26.5" r="6.5" fill="#0A1628"/>
 </svg>

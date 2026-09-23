@@ -8,7 +8,7 @@ export function BadgeMark({ className = "h-9 w-9", size = 36 }: BadgeMarkProps) 
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/brand/dpc/DPC-logo-mark.svg"
+      src="/brand/dpc/DPC-logo-mark.svg?v=metallic-2"
       alt=""
       width={size}
       height={size}

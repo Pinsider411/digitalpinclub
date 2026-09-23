@@ -1,6 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Digital Pin Club">
+  <defs>
+    <linearGradient id="dpc-gold-flat" x1="0.1" y1="0.05" x2="0.9" y2="0.95">
+      <stop offset="0%" stop-color="#F0D78C"/>
+      <stop offset="45%" stop-color="#E0B84A"/>
+      <stop offset="100%" stop-color="#A8892A"/>
+    </linearGradient>
+  </defs>
   <rect width="64" height="64" rx="14" fill="#0A1628"/>
-  <rect x="2.5" y="2.5" width="59" height="59" rx="12" fill="none" stroke="#D4AF37" stroke-width="2.5"/>
-  <path d="M32 11 C41.5 11 49 18.5 49 28 C49 39.5 32 53 32 53 C32 53 15 39.5 15 28 C15 18.5 22.5 11 32 11 Z" fill="#D4AF37"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="12" fill="none" stroke="url(#dpc-gold-flat)" stroke-width="2.5"/>
+  <path d="M32 11 C41.5 11 49 18.5 49 28 C49 39.5 32 53 32 53 C32 53 15 39.5 15 28 C15 18.5 22.5 11 32 11 Z" fill="url(#dpc-gold-flat)"/>
   <circle cx="32" cy="26.5" r="6.5" fill="#0A1628"/>
 </svg>
