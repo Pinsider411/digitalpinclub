@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Sync pin_editions + mint_totals from Atlas public SearchEditions API.
+ * Sync pin_editions + mint_totals + mint_hourly_snapshots from Atlas
+ * public SearchEditions API.
  *
  * Prefers POST /public/atlas.v1.EditionService/SearchEditions (paginated).
  * Falls back to seed-editions.json totals if API returns fewer editions than
@@ -109,6 +110,28 @@ async function upsertEditions(editions) {
   }
 }
 
+
+async function writeHourlySnapshot({ minted, count }) {
+  // Truncate "now" to the current America/Los_Angeles hour for the bucket key.
+  const rows = await sql`
+    INSERT INTO mint_hourly_snapshots (
+      hour_start, estimated_total_minted, edition_count, recorded_at
+    ) VALUES (
+      date_trunc('hour', now() AT TIME ZONE 'America/Los_Angeles')
+        AT TIME ZONE 'America/Los_Angeles',
+      ${minted},
+      ${count},
+      now()
+    )
+    ON CONFLICT (hour_start) DO UPDATE SET
+      estimated_total_minted = EXCLUDED.estimated_total_minted,
+      edition_count = EXCLUDED.edition_count,
+      recorded_at = now()
+    RETURNING hour_start, estimated_total_minted, edition_count, recorded_at
+  `;
+  console.log("mint_hourly_snapshots upsert:", rows[0]);
+}
+
 async function writeTotals({ minted, supply, count, source }) {
   await sql`
     INSERT INTO mint_totals (
@@ -123,6 +146,7 @@ async function writeTotals({ minted, supply, count, source }) {
       source = EXCLUDED.source,
       updated_at = now()
   `;
+  await writeHourlySnapshot({ minted, count });
 }
 
 function loadSeedFallback() {

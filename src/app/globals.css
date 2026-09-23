@@ -18,6 +18,8 @@
   --gold-deep: #A8892A;
   --live: #5B9FD4;
   --danger-muted: #8B5A5A;
+  --mint-up: #73D7A0;
+  --mint-down: #F0A0A0;
   --cta-text: #0A1628;
 
   /* Compat aliases used across existing pages */
@@ -56,6 +58,8 @@
   --color-accent-soft: var(--accent-soft);
   --color-accent-deep: var(--accent-deep);
   --color-live: var(--live);
+  --color-mint-up: var(--mint-up);
+  --color-mint-down: var(--mint-down);
   --color-cta: var(--cta);
   --color-cta-text: var(--cta-text);
   --font-sans: var(--font-body);
