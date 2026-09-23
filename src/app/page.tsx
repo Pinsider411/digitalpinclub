@@ -26,6 +26,19 @@ const thisWeek: {
   live?: boolean;
 }[] = [
   {
+    label: "Live drop",
+    title: "Cats & Dogs Vol.1 [4/4]",
+    meta: "Sep 22–29 · $4.99",
+    body: "Final OE wave — Dinah, Bolt, and Mochi with Standard, Silver Sparkle, Golden, and Digital Display. Capsules through Sep 29.",
+    href: "https://disneypinnacle.com/releases/912f3042-39d3-44b0-99dc-4d7953c56af6",
+    imageSrc: "/events/cats-dogs-vol1-4/banner.webp",
+    imageAlt: "Disney Cats & Dogs Vol.1 [4/4] official release banner",
+    imageCaption: "Official release art · Disney Pinnacle",
+    cta: "Official release →",
+    note: "Confirm window and pricing officially in the Disney Pinnacle app.",
+    live: true,
+  },
+  {
     label: "Upcoming drop",
     title: "Summer Sunset Event",
     meta: "Sep 25 – Oct 2 · from $4.99",
@@ -49,19 +62,6 @@ const thisWeek: {
     cta: "Official details →",
     note: "Confirm timing and rules officially in the Disney Pinnacle app.",
     live: true,
-  },
-  {
-    label: "Disney+ Perks",
-    title: "Monthly free digital pin",
-    meta: "Disney+ · Opt-in",
-    body: "Disney+ subscribers can opt into Disney+ Perks and redeem a monthly Mystery Capsule with an Open Edition Disney Pinnacle digital pin. Sign up with the same email as your Disney+ account — eligibility and terms live on Disney+.",
-    href: "https://www.disneyplus.com/perks",
-    logoSrc: "/brand/disney-plus/disney-plus-wordmark.svg",
-    imageSrc: "/events/disney-plus-perks/hero.webp",
-    imageAlt: "Disney+ Perks Mystery Capsule promotional art",
-    imageCaption: "Official Perks art · Disney Pinnacle",
-    cta: "Sign up for Perks",
-    note: "Independent tip · not affiliated with Disney+",
   },
 ];
 
