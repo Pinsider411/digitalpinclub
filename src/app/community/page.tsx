@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { CommunityJoinWall } from "@/components/community/CommunityJoinWall";
 import { CommunityLobby } from "@/components/community/CommunityLobby";
+import { getApprovedBoardGallery } from "@/lib/board-submissions";
 import { hasMemberCookie } from "@/lib/member-cookie";
 
 export const metadata: Metadata = {
@@ -31,9 +32,15 @@ export default async function CommunityPage({ searchParams }: Props) {
     if (view === "guest") showLobby = false;
   }
 
+  const galleryCards = showLobby ? await getApprovedBoardGallery() : [];
+
   return (
     <Section>
-      {showLobby ? <CommunityLobby /> : <CommunityJoinWall />}
+      {showLobby ? (
+        <CommunityLobby galleryCards={galleryCards} />
+      ) : (
+        <CommunityJoinWall />
+      )}
     </Section>
   );
 }

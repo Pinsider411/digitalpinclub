@@ -20,8 +20,8 @@ export function BoardSubmitForm() {
           Snapshot submitted
         </p>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted">
-          We’ll review for the next weekly gallery refresh. Snapshots may be outdated —
-          this is not a live Pinbook sync.
+          Submissions wait for a light daily approve — the gallery updates after approve.
+          Snapshots may be outdated; this is not a live Pinbook sync.
         </p>
       </div>
     );
@@ -83,7 +83,7 @@ export function BoardSubmitForm() {
         {pending ? "Submitting…" : "Submit your Pinbook"}
       </button>
       <p className="text-xs leading-relaxed text-muted">
-        Member-submitted · refreshed weekly · may be outdated. Not a live pull from
+        Member-submitted · light daily approve · may be outdated. Not a live pull from
         Pinnacle.
       </p>
     </form>

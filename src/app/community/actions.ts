@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { getSql } from "@/lib/db";
 import { setMemberCookie } from "@/lib/member-cookie";
 
@@ -68,7 +69,7 @@ export async function unlockByEmail(
   }
 }
 
-/** Member Pinbook snapshot submission for weekly gallery refresh. */
+/** Member Pinbook snapshot submission — pending until light daily approve. */
 export async function submitBoard(
   _prev: BoardSubmitState,
   formData: FormData,
@@ -93,6 +94,8 @@ export async function submitBoard(
       INSERT INTO board_submissions (handle, pinbook_url, note, source)
       VALUES (${handle}, ${pinbookUrl}, ${note}, ${"community-lobby"})
     `;
+    // Gallery only shows approved rows; revalidate so lobby refreshes after approve.
+    revalidatePath("/community");
     return { ok: true };
   } catch (err) {
     console.error("[board-submit] insert failed:", err);

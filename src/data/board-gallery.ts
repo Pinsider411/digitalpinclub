@@ -1,6 +1,7 @@
 /**
- * Curated member-submitted Pinbook snapshots for the clubhouse gallery.
- * Refreshed weekly by hand — NOT a live Pinnacle Pinbook sync.
+ * Types + note for the clubhouse board gallery.
+ * Live cards come from Neon-approved submissions (see getApprovedBoardGallery).
+ * Sample cards below are unused leftovers for local reference only.
  */
 export type BoardGalleryCard = {
   handle: string;
@@ -17,8 +18,9 @@ function tradeFor(handle: string): string {
 }
 
 export const boardGalleryNote =
-  "Member-submitted Pinbook snapshots — editorial picks, refreshed weekly. Not a live pull from Pinnacle.";
+  "Member-submitted Pinbook snapshots — refreshed after a light daily approve. May be outdated; not a live pull from Pinnacle.";
 
+/** @deprecated Unused sample cards — gallery uses Neon approved rows. */
 export const boardGalleryCards: BoardGalleryCard[] = [
   {
     handle: "@mrnonel",

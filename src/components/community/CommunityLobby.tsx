@@ -3,8 +3,8 @@ import { DiscordInvite, DISCORD_INVITE_URL } from "@/components/DiscordInvite";
 import { PinSiderMark } from "@/components/PinSiderMark";
 import { clubHangs } from "@/data/club-hangs";
 import {
-  boardGalleryCards,
   boardGalleryNote,
+  type BoardGalleryCard,
 } from "@/data/board-gallery";
 import { spotlightsData } from "@/data/spotlights";
 import { calendarEvents } from "@/data/calendar-events";
@@ -17,7 +17,11 @@ const pinBg: Record<"g" | "b" | "r" | "n", string> = {
   n: "bg-[radial-gradient(circle_at_35%_30%,#f5f0e6,#8a9bb0_55%,#2a3f5f)]",
 };
 
-export function CommunityLobby() {
+type CommunityLobbyProps = {
+  galleryCards?: BoardGalleryCard[];
+};
+
+export function CommunityLobby({ galleryCards = [] }: CommunityLobbyProps) {
   const spotlightHandles = spotlightsData.collectors
     .slice(0, 3)
     .map((c) => c.handle);
@@ -186,67 +190,85 @@ export function CommunityLobby() {
               Submit your Pinbook →
             </a>
             <p className="mt-1.5 text-[11px] text-muted">
-              Refreshed weekly · may be outdated
+              Refreshed after daily approve · may be outdated
             </p>
           </div>
         </div>
         <p className="mb-4 max-w-xl text-[13px] text-muted">{boardGalleryNote}</p>
-        <div className="grid grid-cols-1 gap-3.5 md:grid-cols-3">
-          {boardGalleryCards.map((card) => (
-            <article
-              key={card.handle}
-              className="overflow-hidden rounded-2xl border border-border bg-card"
+        {galleryCards.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-border bg-card/60 px-5 py-10 text-center">
+            <p className="font-display text-lg font-semibold tracking-tight text-text">
+              No approved boards yet
+            </p>
+            <p className="mx-auto mt-2 max-w-md text-[13px] leading-relaxed text-muted">
+              Member snapshots appear here after a light daily approve. Snapshots may be
+              outdated — this is not a live Pinbook sync.
+            </p>
+            <a
+              href="#submit-pinbook"
+              className="mt-5 inline-flex items-center justify-center rounded-full border border-gold/45 bg-[rgba(212,175,55,0.12)] px-4 py-2.5 text-[13px] font-semibold text-gold-soft hover:border-gold/60"
             >
-              <div
-                className="relative grid aspect-[4/3] place-items-center"
-                style={{
-                  background:
-                    "radial-gradient(circle at 30% 35%, rgba(212,175,55,.28), transparent 42%), radial-gradient(circle at 70% 60%, rgba(91,159,212,.22), transparent 45%), linear-gradient(145deg, #163053, #0b1830)",
-                }}
+              Submit your Pinbook →
+            </a>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-3.5 md:grid-cols-3">
+            {galleryCards.map((card) => (
+              <article
+                key={`${card.handle}-${card.shareUrl}`}
+                className="overflow-hidden rounded-2xl border border-border bg-card"
               >
-                <span className="absolute left-2.5 top-2.5 rounded-full border border-gold/35 bg-[rgba(7,17,31,0.75)] px-2 py-1 font-mono text-[9px] font-semibold uppercase tracking-widest text-gold-soft">
-                  Snapshot
-                </span>
-                <div className="grid grid-cols-3 gap-2">
-                  {card.pinColors.map((c, i) => (
-                    <span
-                      key={`${card.handle}-${i}`}
-                      className={`h-[42px] w-[42px] rounded-full border border-[rgba(245,240,230,0.25)] shadow-[0_6px_14px_rgba(0,0,0,0.28)] ${pinBg[c]}`}
-                    />
-                  ))}
+                <div
+                  className="relative grid aspect-[4/3] place-items-center"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 30% 35%, rgba(212,175,55,.28), transparent 42%), radial-gradient(circle at 70% 60%, rgba(91,159,212,.22), transparent 45%), linear-gradient(145deg, #163053, #0b1830)",
+                  }}
+                >
+                  <span className="absolute left-2.5 top-2.5 rounded-full border border-gold/35 bg-[rgba(7,17,31,0.75)] px-2 py-1 font-mono text-[9px] font-semibold uppercase tracking-widest text-gold-soft">
+                    Snapshot
+                  </span>
+                  <div className="grid grid-cols-3 gap-2">
+                    {card.pinColors.map((c, i) => (
+                      <span
+                        key={`${card.handle}-${i}`}
+                        className={`h-[42px] w-[42px] rounded-full border border-[rgba(245,240,230,0.25)] shadow-[0_6px_14px_rgba(0,0,0,0.28)] ${pinBg[c]}`}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="px-3.5 pb-4 pt-3.5">
-                <p className="text-sm font-semibold text-text">{card.handle}</p>
-                <p className="mt-1 text-xs leading-snug text-muted">{card.note}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <a
-                    href={card.tradeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-gold/45 bg-[rgba(212,175,55,0.12)] px-2.5 py-1.5 text-[11px] text-gold-soft"
-                  >
-                    Trade
-                  </a>
-                  {card.shareUrl && card.shareUrl !== "#" ? (
+                <div className="px-3.5 pb-4 pt-3.5">
+                  <p className="text-sm font-semibold text-text">{card.handle}</p>
+                  <p className="mt-1 text-xs leading-snug text-muted">{card.note}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
                     <a
-                      href={card.shareUrl}
+                      href={card.tradeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full border border-border bg-bg/40 px-2.5 py-1.5 text-[11px] text-text"
+                      className="rounded-full border border-gold/45 bg-[rgba(212,175,55,0.12)] px-2.5 py-1.5 text-[11px] text-gold-soft"
                     >
-                      Open share link
+                      Trade
                     </a>
-                  ) : (
-                    <span className="rounded-full border border-border bg-bg/40 px-2.5 py-1.5 text-[11px] text-muted">
-                      Open share link
-                    </span>
-                  )}
+                    {card.shareUrl && card.shareUrl !== "#" ? (
+                      <a
+                        href={card.shareUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full border border-border bg-bg/40 px-2.5 py-1.5 text-[11px] text-text"
+                      >
+                        Open share link
+                      </a>
+                    ) : (
+                      <span className="rounded-full border border-border bg-bg/40 px-2.5 py-1.5 text-[11px] text-muted">
+                        Open share link
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
+              </article>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Pathways + join */}
@@ -343,8 +365,9 @@ export function CommunityLobby() {
           Submit your Pinbook
         </h2>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
-          Share a Pinbook link for the weekly member-submitted gallery. Curators refresh
-          picks by hand — snapshots may be outdated; this is not live sync.
+          Share a Pinbook link for the member-submitted gallery. Submissions wait for a
+          light daily approve before they appear — snapshots may be outdated; this is not
+          live sync.
         </p>
         <div className="mt-5 max-w-xl">
           <BoardSubmitForm />
