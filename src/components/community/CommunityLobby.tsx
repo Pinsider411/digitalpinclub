@@ -17,6 +17,63 @@ const pinBg: Record<"g" | "b" | "r" | "n", string> = {
   n: "bg-[radial-gradient(circle_at_35%_30%,#f5f0e6,#8a9bb0_55%,#2a3f5f)]",
 };
 
+
+function BoardGalleryMedia({ card }: { card: BoardGalleryCard }) {
+  const mediaClass =
+    "relative grid aspect-[1200/630] place-items-center overflow-hidden bg-[#0b1830]";
+  const mediaStyle = {
+    background:
+      "radial-gradient(circle at 30% 35%, rgba(212,175,55,.28), transparent 42%), radial-gradient(circle at 70% 60%, rgba(91,159,212,.22), transparent 45%), linear-gradient(145deg, #163053, #0b1830)",
+  } as const;
+  const badge = (
+    <span className="pointer-events-none absolute left-2.5 top-2.5 z-10 rounded-full border border-gold/35 bg-[rgba(7,17,31,0.75)] px-2 py-1 font-mono text-[9px] font-semibold uppercase tracking-widest text-gold-soft">
+      Snapshot
+    </span>
+  );
+  const mediaInner = card.imageUrl ? (
+    // eslint-disable-next-line @next/next/no-img-element -- external Disney OG may change; plain img is fine
+    <img
+      src={card.imageUrl}
+      alt={`${card.handle} Pinbook snapshot`}
+      loading="lazy"
+      decoding="async"
+      className="h-full w-full object-contain"
+    />
+  ) : (
+    <div className="grid grid-cols-3 gap-2">
+      {card.pinColors.map((c, i) => (
+        <span
+          key={`${card.handle}-${i}`}
+          className={`h-[42px] w-[42px] rounded-full border border-[rgba(245,240,230,0.25)] shadow-[0_6px_14px_rgba(0,0,0,0.28)] ${pinBg[c]}`}
+        />
+      ))}
+    </div>
+  );
+
+  if (card.shareUrl && card.shareUrl !== "#") {
+    return (
+      <a
+        href={card.shareUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${mediaClass} block transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold`}
+        style={mediaStyle}
+        aria-label={`Open ${card.handle} Pinbook on Disney Pinnacle`}
+      >
+        {badge}
+        {mediaInner}
+      </a>
+    );
+  }
+
+  return (
+    <div className={mediaClass} style={mediaStyle}>
+      {badge}
+      {mediaInner}
+    </div>
+  );
+}
+
 type CommunityLobbyProps = {
   galleryCards?: BoardGalleryCard[];
 };
@@ -218,36 +275,7 @@ export function CommunityLobby({ galleryCards = [] }: CommunityLobbyProps) {
                 key={`${card.handle}-${card.shareUrl}`}
                 className="overflow-hidden rounded-2xl border border-border bg-card"
               >
-                <div
-                  className="relative grid aspect-[4/3] place-items-center overflow-hidden"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 30% 35%, rgba(212,175,55,.28), transparent 42%), radial-gradient(circle at 70% 60%, rgba(91,159,212,.22), transparent 45%), linear-gradient(145deg, #163053, #0b1830)",
-                  }}
-                >
-                  <span className="absolute left-2.5 top-2.5 z-10 rounded-full border border-gold/35 bg-[rgba(7,17,31,0.75)] px-2 py-1 font-mono text-[9px] font-semibold uppercase tracking-widest text-gold-soft">
-                    Snapshot
-                  </span>
-                  {card.imageUrl ? (
-                    // eslint-disable-next-line @next/next/no-img-element -- external Disney OG may change; plain img is fine
-                    <img
-                      src={card.imageUrl}
-                      alt={`${card.handle} Pinbook snapshot`}
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                  ) : (
-                    <div className="grid grid-cols-3 gap-2">
-                      {card.pinColors.map((c, i) => (
-                        <span
-                          key={`${card.handle}-${i}`}
-                          className={`h-[42px] w-[42px] rounded-full border border-[rgba(245,240,230,0.25)] shadow-[0_6px_14px_rgba(0,0,0,0.28)] ${pinBg[c]}`}
-                        />
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <BoardGalleryMedia card={card} />
                 <div className="px-3.5 pb-4 pt-3.5">
                   <p className="text-sm font-semibold text-text">{card.handle}</p>
                   <p className="mt-1 text-xs leading-snug text-muted">{card.note}</p>
