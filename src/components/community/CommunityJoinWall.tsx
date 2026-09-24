@@ -93,7 +93,17 @@ export function CommunityJoinWall() {
               Join the Club — free
             </Link>
 
-            <div className="mt-5 border-t border-border/70 pt-4">
+            <div className="mt-5 border-t border-border/70 pt-5">
+              <div className="mb-3.5 flex items-center gap-3" role="separator">
+                <span className="h-px flex-1 bg-border/80" aria-hidden />
+                <span className="shrink-0 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-gold-soft">
+                  Already joined?
+                </span>
+                <span className="h-px flex-1 bg-border/80" aria-hidden />
+              </div>
+              <p className="mb-3 text-[13px] leading-snug text-muted">
+                Returning member — unlock with the email you used to join. No need to fill out /join again.
+              </p>
               <UnlockMemberForm />
             </div>
 
