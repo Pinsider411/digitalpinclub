@@ -5,19 +5,27 @@ const COLOR_CYCLE: Array<"g" | "b" | "r" | "n"> = ["g", "b", "r", "n"];
 const DEFAULT_NOTE = "Member-submitted snapshot";
 const GALLERY_LIMIT = 24;
 
-const PINBOOK_ID_RE =
+const PINBOOK_PREFIXED_ID_RE =
   /pinbook-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i;
+const BARE_UUID_RE =
+  /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i;
 
 /**
  * Derive Disney Pinbook OG image URL from a share/Pinbook URL.
- * Matches /pinbooks/pinbook-<uuid>, collection display paths, or any path
- * containing pinbook-<uuid>.
+ * Prefers pinbook-<uuid> (apache1999 / sarah_lynn9 style) → /og/pinbook/pinbook-<uuid>.
+ * Falls back to a bare UUID in the path (Kirk SIMP style) → /og/pinbook/<uuid>.
+ * Do not rewrite bare UUIDs to pinbook-; Disney 404s that OG form for those books.
  */
 export function ogImageFromPinbookUrl(url: string): string | null {
   if (!url || typeof url !== "string") return null;
-  const match = url.match(PINBOOK_ID_RE);
-  if (!match) return null;
-  const id = match[0].toLowerCase();
+  const prefixed = url.match(PINBOOK_PREFIXED_ID_RE);
+  if (prefixed) {
+    const id = prefixed[0].toLowerCase();
+    return `https://disneypinnacle.com/og/pinbook/${id}`;
+  }
+  const bare = url.match(BARE_UUID_RE);
+  if (!bare) return null;
+  const id = bare[0].toLowerCase();
   return `https://disneypinnacle.com/og/pinbook/${id}`;
 }
 
