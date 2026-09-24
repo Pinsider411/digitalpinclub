@@ -10,6 +10,8 @@ export type BoardGalleryCard = {
   shareUrl: string;
   /** Decorative pin color classes for the mock art grid */
   pinColors: Array<"g" | "b" | "r" | "n">;
+  /** Derived Disney Pinbook OG image URL when shareUrl contains a pinbook id */
+  imageUrl?: string | null;
 };
 
 function tradeFor(handle: string): string {

@@ -5,6 +5,22 @@ const COLOR_CYCLE: Array<"g" | "b" | "r" | "n"> = ["g", "b", "r", "n"];
 const DEFAULT_NOTE = "Member-submitted snapshot";
 const GALLERY_LIMIT = 24;
 
+const PINBOOK_ID_RE =
+  /pinbook-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i;
+
+/**
+ * Derive Disney Pinbook OG image URL from a share/Pinbook URL.
+ * Matches /pinbooks/pinbook-<uuid>, collection display paths, or any path
+ * containing pinbook-<uuid>.
+ */
+export function ogImageFromPinbookUrl(url: string): string | null {
+  if (!url || typeof url !== "string") return null;
+  const match = url.match(PINBOOK_ID_RE);
+  if (!match) return null;
+  const id = match[0].toLowerCase();
+  return `https://disneypinnacle.com/og/pinbook/${id}`;
+}
+
 function tradeFor(handle: string): string {
   const h = handle.startsWith("@") ? handle : `@${handle}`;
   return `https://disneypinnacle.com/trade?user=${encodeURIComponent(h)}`;
@@ -56,6 +72,7 @@ export async function getApprovedBoardGallery(): Promise<BoardGalleryCard[]> {
         tradeUrl: tradeFor(handle),
         shareUrl: row.pinbook_url,
         pinColors: pinColorsFromHandle(handle),
+        imageUrl: ogImageFromPinbookUrl(row.pinbook_url),
       };
     });
   } catch (err) {

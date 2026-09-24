@@ -219,23 +219,34 @@ export function CommunityLobby({ galleryCards = [] }: CommunityLobbyProps) {
                 className="overflow-hidden rounded-2xl border border-border bg-card"
               >
                 <div
-                  className="relative grid aspect-[4/3] place-items-center"
+                  className="relative grid aspect-[4/3] place-items-center overflow-hidden"
                   style={{
                     background:
                       "radial-gradient(circle at 30% 35%, rgba(212,175,55,.28), transparent 42%), radial-gradient(circle at 70% 60%, rgba(91,159,212,.22), transparent 45%), linear-gradient(145deg, #163053, #0b1830)",
                   }}
                 >
-                  <span className="absolute left-2.5 top-2.5 rounded-full border border-gold/35 bg-[rgba(7,17,31,0.75)] px-2 py-1 font-mono text-[9px] font-semibold uppercase tracking-widest text-gold-soft">
+                  <span className="absolute left-2.5 top-2.5 z-10 rounded-full border border-gold/35 bg-[rgba(7,17,31,0.75)] px-2 py-1 font-mono text-[9px] font-semibold uppercase tracking-widest text-gold-soft">
                     Snapshot
                   </span>
-                  <div className="grid grid-cols-3 gap-2">
-                    {card.pinColors.map((c, i) => (
-                      <span
-                        key={`${card.handle}-${i}`}
-                        className={`h-[42px] w-[42px] rounded-full border border-[rgba(245,240,230,0.25)] shadow-[0_6px_14px_rgba(0,0,0,0.28)] ${pinBg[c]}`}
-                      />
-                    ))}
-                  </div>
+                  {card.imageUrl ? (
+                    // eslint-disable-next-line @next/next/no-img-element -- external Disney OG may change; plain img is fine
+                    <img
+                      src={card.imageUrl}
+                      alt={`${card.handle} Pinbook snapshot`}
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  ) : (
+                    <div className="grid grid-cols-3 gap-2">
+                      {card.pinColors.map((c, i) => (
+                        <span
+                          key={`${card.handle}-${i}`}
+                          className={`h-[42px] w-[42px] rounded-full border border-[rgba(245,240,230,0.25)] shadow-[0_6px_14px_rgba(0,0,0,0.28)] ${pinBg[c]}`}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className="px-3.5 pb-4 pt-3.5">
                   <p className="text-sm font-semibold text-text">{card.handle}</p>
