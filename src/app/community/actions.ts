@@ -59,6 +59,7 @@ export async function unlockByEmail(
     }
 
     await setMemberCookie(String(rows[0].id));
+    revalidatePath("/community");
     return { ok: true };
   } catch (err) {
     console.error("[unlock] lookup failed:", err);
