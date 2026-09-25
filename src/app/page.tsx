@@ -306,19 +306,20 @@ export default function HomePage() {
         </article>
       </Section>
 
-      {/* Upcoming drop band */}
+      {/* Drop event band */}
       <Section className="!pt-0 !pb-8" id="drops">
         <div className="overflow-hidden rounded-[18px] border border-border-gold/40 bg-surface">
           <div className="grid lg:grid-cols-[1.2fr_1fr]">
             <div className="p-6 sm:p-8">
-              <p className="eyebrow">Upcoming drop</p>
+              <p className="eyebrow">Live drop event</p>
               <h2 className="mt-2 font-display text-2xl font-semibold text-text sm:text-3xl">
                 Summer Sunset Event
               </h2>
               <p className="mt-2 text-sm text-muted">Sep 25 – Oct 2 · from $4.99</p>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-soft">
-                Seven sets · Limited + Open Edition · trade rewards and a Genesis chase.
-                Verify pack windows on official News — times can shift.
+                Doors are open — seven sets · Standard $4.99 and Premium $99.99 packs ·
+                trade rewards, set-completion backgrounds, and a 1-of-1 Genesis chase.
+                Official pages list different close times on Oct 2 — confirm in the app.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
