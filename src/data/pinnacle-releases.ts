@@ -3,7 +3,7 @@
  * Sourced from https://disneypinnacle.com/releases — titles, availability
  * windows, prices, and excerpts from the official Releases archive.
  * Cards link OUT to official release URLs. No licensed artwork.
- * Full index: Star Wars Holiday / earliest through current (225 releases).
+ * Full index: Star Wars Holiday / earliest through current (228 releases).
  */
 
 export type PinnacleRelease = {
@@ -21,12 +21,32 @@ export type PinnacleRelease = {
 };
 
 /** When this index was last curated from the official Releases page. */
-export const pinnacleReleasesSnapshotDate = "2026-09-22";
+export const pinnacleReleasesSnapshotDate = "2026-09-25";
 
 export const officialReleasesUrl = "https://disneypinnacle.com/releases";
 
-/** Full unofficial index (225 releases), newest-first by startDate. */
+/** Full unofficial index (228 releases), newest-first by startDate. */
 export const pinnacleReleases: PinnacleRelease[] = [
+  {
+    id: "9a6626f4-3b23-4836-a246-b19b45653f99",
+    title: "Summer Sunset - Premium Pack",
+    url: "https://disneypinnacle.com/releases/9a6626f4-3b23-4836-a246-b19b45653f99",
+    startDate: "2026-09-25",
+    endDate: "2026-10-02",
+    dateLabel: "Sep 25–Oct 2, 2026",
+    price: "$99.99",
+    excerpt: "The Summer Sunset Premium Pack is built for collectors looking for guaranteed scarce content across the seven sets featured in the event. Each pack contains five Mystery Capsules, including three guaranteed Limited digital pins and two guaranteed Digital Display variants.",
+  },
+  {
+    id: "376fa147-2d0e-4969-9c37-b2e992e75162",
+    title: "Summer Sunset - Standard Pack",
+    url: "https://disneypinnacle.com/releases/376fa147-2d0e-4969-9c37-b2e992e75162",
+    startDate: "2026-09-25",
+    endDate: "2026-10-02",
+    dateLabel: "Sep 25–Oct 2, 2026",
+    price: "$4.99",
+    excerpt: "The Summer Sunset Standard Pack offers a chance to collect digital pins from all seven sets featured in the final summer event. Each Mystery Capsule reveals one digital pin, with Open Edition, Limited Edition, and Limited Event Edition digital pins all available to discover.",
+  },
   {
     id: "912f3042-39d3-44b0-99dc-4d7953c56af6",
     title: "Disney Cats & Dogs Vol.1 [4/4]",

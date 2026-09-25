@@ -33,7 +33,7 @@ export default function CalendarPage() {
       <PageHero
         eyebrow="Schedule"
         title="Release calendar / history"
-        description="An index of 225 Disney Pinnacle releases from the official Releases page — from Star Wars Holiday / earliest through current — with availability windows when known, optional prices, and More info links out."
+        description="An index of 228 Disney Pinnacle releases from the official Releases page — from Star Wars Holiday / earliest through current — with availability windows when known, optional prices, and More info links out."
       />
 
       {calendarEvents.length > 0 ? (
