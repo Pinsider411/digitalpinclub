@@ -7,7 +7,7 @@ import { PinSiderLockup, PinSiderMark } from "@/components/PinSiderMark";
 export const metadata: Metadata = {
   title: "Pinsider",
   description:
-    "Pinsider is the companion data desk for digital pin collectors — free Marketplace Newest, Leaderboards, Editions, and Reviews; optional Pro for Live feed, Stats, Insights, and more.",
+    "Pinsider is the companion data desk for digital pin collectors — free Marketplace Newest, Leaderboards, Editions, and Reviews; optional Pro for Live feed, Mint Desk, Insights, and more.",
 };
 
 const FREE_FEATURES = [
@@ -35,8 +35,8 @@ const PRO_FEATURES = [
     detail: "Full live activity stream with filters and depth",
   },
   {
-    title: "Stats",
-    detail: "Market volume, charts, and time-range analytics",
+    title: "Mint Desk",
+    detail: "Minted totals, hourly mint activity, and designs tracked",
   },
   {
     title: "Collector Insights",
