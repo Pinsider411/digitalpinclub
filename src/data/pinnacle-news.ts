@@ -46,7 +46,7 @@ export const pinnacleNewsItems: PinnacleNewsItem[] = [
     title: "Summer Sunset Event",
     category: "Drop Event",
     url: "https://disneypinnacle.com/news/summer-sunset-event",
-    blurb: "Live Sep 25–Oct 2 · seven sets, Standard $4.99 / Premium $99.99, trade rewards. Confirm windows in the app.",
+    blurb: "Live Sep 25, 9:00 AM PT – Oct 2, 9:00 AM PT · seven sets, Standard $4.99 / Premium $99.99, trade rewards.",
   },
   {
     date: "2026-08-12",

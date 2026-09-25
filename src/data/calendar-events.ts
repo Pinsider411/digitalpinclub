@@ -26,9 +26,9 @@ export const calendarEvents: CalendarEvent[] = [
     chip: "Live drop",
     chipTone: "live",
     title: "Summer Sunset Event",
-    dates: "Sep 25 – Oct 2, 2026",
+    dates: "Sep 25, 9:00 AM PT – Oct 2, 2026, 9:00 AM PT",
     oneLiner:
-      "Seven sets · Standard $4.99 / Premium $99.99 · Genesis chase · trade pin at 5 / 15 / 30 · confirm close time officially",
+      "Seven sets · Standard $4.99 / Premium $99.99 · Genesis chase · trade pin at 5 / 15 / 30 · ends Oct 2, 9:00 AM PT",
     href: "https://disneypinnacle.com/news/summer-sunset-event",
     cta: "Official details →",
     secondaryHref: "https://disneypinnacle.com/releases/376fa147-2d0e-4969-9c37-b2e992e75162",
@@ -41,7 +41,7 @@ export const calendarEvents: CalendarEvent[] = [
     chip: "Live drop",
     chipTone: "live",
     title: "Summer Sunset Premium Pack",
-    dates: "Sep 25 – Oct 2, 2026",
+    dates: "Sep 25, 9:00 AM PT – Oct 2, 2026, 9:00 AM PT",
     oneLiner:
       "$99.99 · 5 capsules · guaranteed Limited + Limited Event + 2 Digital Display · 300 packs",
     href: "https://disneypinnacle.com/releases/9a6626f4-3b23-4836-a246-b19b45653f99",

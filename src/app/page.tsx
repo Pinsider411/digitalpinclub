@@ -25,20 +25,20 @@ const thisWeek: {
   {
     label: "Live drop",
     title: "Summer Sunset Event",
-    meta: "Sep 25 – Oct 2 · from $4.99",
+    meta: "Sep 25, 9:00 AM PT – Oct 2, 9:00 AM PT · from $4.99",
     body: "Live now — seven sets, 48 pins: four Limited sets (The Little Mermaid, Scrooge's Great Expedition, Disney Retro, Star Wars Pop Art) plus Open Edition Rio 2, Onward, and Disney Princes & Heroes. Standard Pack has a 1-of-1 Genesis chase; trade at 5 / 15 / 30 unique collectors for the event trade pin.",
     href: "https://disneypinnacle.com/releases/376fa147-2d0e-4969-9c37-b2e992e75162",
     imageSrc: "/events/summer-sunset/standard-pack-banner.webp",
     imageAlt: "Summer Sunset Standard Pack official release banner",
     imageCaption: "Official release art · Disney Pinnacle",
     cta: "Official release →",
-    note: "Official pages list different close times (9am vs 9pm PT on Oct 2) — confirm in the Disney Pinnacle app.",
+    note: "Ends Oct 2, 9:00 AM PT. Confirm pricing and pull rates in the Disney Pinnacle app.",
     live: true,
   },
   {
     label: "Live drop · Premium",
     title: "Summer Sunset Premium Pack",
-    meta: "Sep 25 – Oct 2 · $99.99 · 300 packs",
+    meta: "Sep 25, 9:00 AM PT – Oct 2, 9:00 AM PT · $99.99 · 300 packs",
     body: "Five Mystery Capsules: a guaranteed Limited Edition, a guaranteed Limited Event Edition, a third Limited pin with a chase shot, and two guaranteed Digital Display variants.",
     href: "https://disneypinnacle.com/releases/9a6626f4-3b23-4836-a246-b19b45653f99",
     imageSrc: "/events/summer-sunset/premium-pack-banner.webp",
@@ -315,11 +315,11 @@ export default function HomePage() {
               <h2 className="mt-2 font-display text-2xl font-semibold text-text sm:text-3xl">
                 Summer Sunset Event
               </h2>
-              <p className="mt-2 text-sm text-muted">Sep 25 – Oct 2 · from $4.99</p>
+              <p className="mt-2 text-sm text-muted">Sep 25, 9:00 AM PT – Oct 2, 9:00 AM PT · from $4.99</p>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-soft">
                 Doors are open — seven sets · Standard $4.99 and Premium $99.99 packs ·
                 trade rewards, set-completion backgrounds, and a 1-of-1 Genesis chase.
-                Official pages list different close times on Oct 2 — confirm in the app.
+                Ends Oct 2, 9:00 AM PT.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
