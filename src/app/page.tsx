@@ -136,14 +136,14 @@ export default function HomePage() {
 
           <article className="collectible-card overflow-hidden">
             {featuredPinbookImage ? (
-              <div className="card-inset m-3 overflow-hidden bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_70%)] sm:m-4">
+              <div className="card-inset m-3 overflow-hidden sm:m-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={featuredPinbookImage}
                   alt={`${featuredPinbook.collector}'s Pinbook share image from Disney Pinnacle`}
                   width={1200}
                   height={630}
-                  className="aspect-[4/3] w-full object-contain"
+                  className="aspect-[1200/630] w-full object-cover"
                 />
               </div>
             ) : null}
