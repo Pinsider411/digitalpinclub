@@ -7,18 +7,7 @@ import { FindUsSection } from "@/components/SocialLinks";
 import { PinSiderLockup, PinSiderMark, PinSiderWordmark } from "@/components/PinSiderMark";
 import { getFeaturedThisWeek } from "@/data/creators";
 import { CreatorAvatar } from "@/components/CreatorAvatar";
-import { ogImageFromPinbookUrl } from "@/lib/board-submissions";
-
-/**
- * Hero: featured collector's Pinbook (mockup).
- * Data from the Pinbook's public share image (disneypinnacle.com/og/pinbook/<uuid>):
- * collector handle "JGhost9", label "My Pinbook". No pin count is published, so none is shown.
- */
-const featuredPinbook = {
-  url: "https://disneypinnacle.com/pinbooks/d628a3ca-3c28-448f-b295-5aebd1da21d9",
-  collector: "JGhost9",
-  meta: "My Pinbook · Disney Pinnacle",
-};
+import { getFeaturedPinbook } from "@/data/featured-pinbook";
 
 const thisWeek: {
   label: string;
@@ -97,9 +86,10 @@ const learnPath = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
   const watchCreators = getFeaturedThisWeek();
-  const featuredPinbookImage = ogImageFromPinbookUrl(featuredPinbook.url);
+  const featuredPinbook = await getFeaturedPinbook();
+  const featuredPinbookImage = featuredPinbook.imageUrl;
 
   return (
     <>

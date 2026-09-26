@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "sync:mint": "node scripts/sync-mint-supplies.mjs",
-    "seed:mint": "node scripts/seed-mint-totals.mjs"
+    "seed:mint": "node scripts/seed-mint-totals.mjs",
+    "feature:pinbook": "node scripts/feature-pinbook.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
