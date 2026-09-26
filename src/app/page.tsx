@@ -124,7 +124,10 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <article className="collectible-card overflow-hidden">
+          <article
+            className="collectible-card overflow-hidden"
+            data-featured-source={featuredPinbook.source}
+          >
             {featuredPinbookImage ? (
               <div className="card-inset m-3 overflow-hidden sm:m-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
