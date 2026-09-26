@@ -7,6 +7,18 @@ import { FindUsSection } from "@/components/SocialLinks";
 import { PinSiderLockup, PinSiderMark, PinSiderWordmark } from "@/components/PinSiderMark";
 import { getFeaturedThisWeek } from "@/data/creators";
 import { CreatorAvatar } from "@/components/CreatorAvatar";
+import { ogImageFromPinbookUrl } from "@/lib/board-submissions";
+
+/**
+ * Hero: featured collector's Pinbook (mockup).
+ * Data from the Pinbook's public share image (disneypinnacle.com/og/pinbook/<uuid>):
+ * collector handle "JGhost9", label "My Pinbook". No pin count is published, so none is shown.
+ */
+const featuredPinbook = {
+  url: "https://disneypinnacle.com/pinbooks/d628a3ca-3c28-448f-b295-5aebd1da21d9",
+  collector: "JGhost9",
+  meta: "My Pinbook · Disney Pinnacle",
+};
 
 const thisWeek: {
   label: string;
@@ -87,7 +99,7 @@ const learnPath = [
 
 export default function HomePage() {
   const watchCreators = getFeaturedThisWeek();
-  const featured = thisWeek[0];
+  const featuredPinbookImage = ogImageFromPinbookUrl(featuredPinbook.url);
 
   return (
     <>
@@ -122,50 +134,49 @@ export default function HomePage() {
             </p>
           </div>
 
-          {featured ? (
-            <article className="collectible-card overflow-hidden">
-              {featured.imageSrc ? (
-                <div className="card-inset m-3 overflow-hidden sm:m-4">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={featured.imageSrc}
-                    alt={featured.imageAlt ?? featured.title}
-                    width={600}
-                    height={450}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-              ) : null}
-              <div className="px-5 pb-5 sm:px-6 sm:pb-6">
-                <span
-                  className={`inline-flex rounded-full px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${
-                    featured.live
-                      ? "bg-live/15 text-live"
-                      : "bg-gold/10 text-gold"
-                  }`}
-                >
-                  {featured.live ? "On the board" : featured.label}
-                </span>
-                <h3 className="mt-3 font-display text-xl font-semibold text-text">
-                  {featured.title}
-                </h3>
-                <p className="mt-1 text-xs text-muted">{featured.meta}</p>
-                <p className="mt-3 text-sm leading-relaxed text-text-soft">
-                  {featured.body}
-                </p>
-                {featured.href ? (
-                  <a
-                    href={featured.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex text-sm font-medium text-gold hover:text-gold-soft"
-                  >
-                    {featured.cta ?? "View details"} ↗
-                  </a>
-                ) : null}
+          <article className="collectible-card overflow-hidden">
+            {featuredPinbookImage ? (
+              <div className="card-inset m-3 overflow-hidden bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.08),transparent_70%)] sm:m-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={featuredPinbookImage}
+                  alt={`${featuredPinbook.collector}'s Pinbook share image from Disney Pinnacle`}
+                  width={1200}
+                  height={630}
+                  className="aspect-[4/3] w-full object-contain"
+                />
               </div>
-            </article>
-          ) : null}
+            ) : null}
+            <div className="px-5 pb-5 sm:px-6 sm:pb-6">
+              <span className="inline-flex rounded-full bg-gold/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-gold">
+                Featured collector
+              </span>
+              <h3 className="mt-3 font-display text-xl font-semibold text-text">
+                {featuredPinbook.collector}
+              </h3>
+              <p className="mt-1 text-xs text-muted">{featuredPinbook.meta}</p>
+              <p className="mt-3 text-sm leading-relaxed text-text-soft">
+                This week&apos;s featured Pinbook from the community — open the live book to
+                see the full layout on Disney Pinnacle.
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+                <a
+                  href={featuredPinbook.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex text-sm font-medium text-gold hover:text-gold-soft"
+                >
+                  View live Pinbook →
+                </a>
+                <Link
+                  href="/community"
+                  className="text-xs text-muted transition hover:text-text"
+                >
+                  Submit your Pinbook
+                </Link>
+              </div>
+            </div>
+          </article>
         </div>
       </Section>
 
